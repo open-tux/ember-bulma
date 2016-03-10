@@ -1,0 +1,55 @@
+<h1 class="title">Messages</h1>
+<h2 class="subtitle">
+  Colored <strong>message</strong> blocks, to emphasize part of your page</h2>
+<hr>
+{{#bulma-columns}}
+  {{#bulma-column isHalf=true}}
+    {{#bulma-message}}
+      <div class="message-header">
+        Hello World
+      </div>
+      <div class="message-body">
+        <p>
+          Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra <strong>adventus resi dentevil vultus comedat</strong> cerebella viventium.
+        </p>
+        <br>
+        <p>
+          {{bulma-button label="Cancel" }} {{bulma-button label="Confirm" isSuccess=true}}
+        </p>
+      </div>
+    {{/bulma-message}}
+    {{bulma-message header="Hello World" body=demo.sampleBody isPrimary=true}}
+    {{bulma-message header="Hello World" body=demo.sampleBody isInfo=true}}
+    {{bulma-message header="Hello World" body=demo.sampleBody isSuccess=true}}
+    {{bulma-message header="Hello World" body=demo.sampleBody isWarning=true}}
+    {{bulma-message header="Hello World" body=demo.sampleBody isDanger=true}}
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-message&#125;&#125;
+  &lt;div class="message-header"&gt;
+    Hello World
+  &lt;/div&gt;
+  &lt;div class="message-body"&gt;
+    &lt;p&gt;
+      Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro...
+    &lt;/p&gt;
+    &lt;div class="content is-text-right">
+        &#123;&#123;bulma-button label="Cancel"&#125;&#125;
+        &#123;&#123;bulma-button label="Confirm" isSuccess=true&#125;&#125;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&#123;&#123;/bulma-message}}
+
+&#123;&#123;bulma-message header="Hello World" body=model.messageBody isPrimary=true&#125;&#125;
+
+&#123;&#123;bulma-message header="Hello World" body=model.messageBody isInfo=true&#125;&#125;
+
+&#123;&#123;bulma-message header="Hello World" body=model.messageBody isSuccess=true&#125;&#125;
+
+&#123;&#123;bulma-message header="Hello World" body=model.messageBody isWarning=true&#125;&#125;
+
+&#123;&#123;bulma-message header="Hello World" body=model.messageBody isDanger=true&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}

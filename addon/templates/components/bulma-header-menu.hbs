@@ -1,0 +1,9 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{#each links as |link|}}
+    <span class="header-item">
+      {{link-to link.name link.route}}
+    </span>
+  {{/each}}
+{{/if}}

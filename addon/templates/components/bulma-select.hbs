@@ -1,0 +1,13 @@
+<p class="{{if control 'control' 'is-inline'}}">
+  <span class="select">
+    {{#if hasBlock}}
+      {{yield}}
+    {{else}}
+      <select onchange={{action "handleChange"}}>
+        {{#each options as |option|}}
+          <option>{{option}}</option>
+        {{/each}}
+      </select>
+    {{/if}}
+  </span>
+</p>

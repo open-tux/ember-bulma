@@ -1,0 +1,16 @@
+{{#unless hasBlock}}
+  <ul>
+    {{#each _processedTabs as |tab|}}
+      <li class="tab {{if tab.isActive 'is-active'}}">
+        <a href="#" {{action "_handleRouting" tab}}>
+          {{#if tab.icon}}
+            <i class="{{tab.icon}}"></i>
+          {{/if}}
+          {{tab.name}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  {{yield (action "routeTab")}}
+{{/unless}}

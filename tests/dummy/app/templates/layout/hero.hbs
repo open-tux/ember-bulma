@@ -1,0 +1,435 @@
+<h1 class="title">Hero</h1>
+<h2 class="subtitle">
+  An imposing <strong>hero banner</strong> to showcase something
+</h2>
+
+<div class="example with-padding">
+{{#bulma-hero}}
+  {{#bulma-hero-content}}
+    <h1 class="title">
+      Hero title
+    </h1>
+    <h2 class="subtitle">
+      Hero subtitle
+    </h2>
+  {{/bulma-hero-content}}
+{{/bulma-hero}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-hero&#125;&#125;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+    &lt;h1 class="title"&gt;
+      Hero title
+    &lt;/h1&gt;
+    &lt;h2 class="subtitle"&gt;
+      Hero subtitle
+    &lt;/h2&gt;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+&#123;&#123;/bulma-hero&#125;&#125;
+{{/themed-syntax}}
+</div>
+
+
+<br>
+<hr>
+<h3 class="title">Colors</h3>
+<h4 class="subtitle">
+  As with buttons, you can choose one of the <strong>5 different colors</strong>
+</h4>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isPrimary=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Primary title
+      </h1>
+      <h2 class="subtitle">
+        Primary subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+
+  {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-hero isPrimary=true&#125;&#125;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+    &lt;h1 class="title"&gt;
+      Hero title
+    &lt;/h1&gt;
+    &lt;h2 class="subtitle"&gt;
+      Hero subtitle
+    &lt;/h2&gt;
+  &#123;&#123;/bulma-hero-content&#125;&#125;
+&#123;&#123;/bulma-hero&#125;&#125;
+  {{/themed-syntax}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isInfo=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Info title
+      </h1>
+      <h2 class="subtitle">
+        Info subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isSuccess=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Success title
+      </h1>
+      <h2 class="subtitle">
+        Success subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isWarning=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Warning title
+      </h1>
+      <h2 class="subtitle">
+        Warning subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isDanger=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Danger title
+      </h1>
+      <h2 class="subtitle">
+        Danger subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isDark=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Dark title
+      </h1>
+      <h2 class="subtitle">
+        Dark subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<br><hr>
+<h3 class="title">
+  Gradients
+  {{bulma-tag isWarning=true tag="Experimental"}}
+</h3>
+<h4 class="subtitle">
+  By adding the <code>is-bold</code> modifier, you can generate a subtle <strong>gradient</strong>
+</h4>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isPrimary=true bold=true medium=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Primary bold title
+      </h1>
+      <h2 class="subtitle">
+        Primary bold subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+
+  {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-hero isPrimary=true bold=true medium=true&#125;&#125;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+    &lt;h1 class="title"&gt;
+      Primary bold title
+    &lt;/h1&gt;
+    &lt;h2 class="subtitle"&gt;
+      Primary bold subtitle
+    &lt;/h2&gt;
+  &#123;&#123;/bulma-hero-content&#125;&#125;
+&#123;&#123;/bulma-hero&#125;&#125;
+  {{/themed-syntax}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isInfo=true bold=true medium=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Info bold title
+      </h1>
+      <h2 class="subtitle">
+        Info bold subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isSuccess=true bold=true medium=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Success bold title
+      </h1>
+      <h2 class="subtitle">
+        Success bold subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isWarning=true bold=true medium=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Warning bold title
+      </h1>
+      <h2 class="subtitle">
+        Warning bold subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isDanger=true bold=true medium=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Danger bold title
+      </h1>
+      <h2 class="subtitle">
+        Danger bold subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero dark=true bold=true medium=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Dark bold title
+      </h1>
+      <h2 class="subtitle">
+        Dark bold subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+</div>
+
+<br><hr>
+<h3 class="title">Sizes</h3>
+<h4 class="subtitle">
+  You can have even more imposing banners by using one of <strong>3 different sizes</strong>
+</h4>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isPrimary=true bold=true large=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Large title
+      </h1>
+      <h2 class="subtitle">
+        Large subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+
+  {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-hero isPrimary=true bold=true large=true&#125;&#125;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+    &lt;h1 class="title"&gt;
+      Large title
+    &lt;/h1&gt;
+    &lt;h2 class="subtitle"&gt;
+      Large subtitle
+    &lt;/h2&gt;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+&#123;&#123;/bulma-hero&#125;&#125;
+  {{/themed-syntax}}
+</div>
+
+<div class="with-padding">
+  {{#bulma-hero isSuccess=true bold=true fullHeight=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Full height title
+      </h1>
+      <h2 class="subtitle">
+        Full height subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+
+  {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-hero isSuccess=true bold=true fullHeight=true&#125;&#125;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+    &lt;h1 class="title"&gt;
+      Full height title
+    &lt;/h1&gt;
+    &lt;h2 class="subtitle"&gt;
+      Full height subtitle
+    &lt;/h2&gt;
+  &#123;&#123;/bulma-hero-content&#125;&#125;
+&#123;&#123;/bulma-hero&#125;&#125;
+  {{/themed-syntax}}
+</div>
+
+<br><hr>
+<h3 class="title">Alignment</h3>
+<h4 class="subtitle">
+  The hero is centered by default, but you can align its content <strong>left</strong> or <strong>right</strong>
+</h4>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isWarning=true left=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Left title
+      </h1>
+      <h2 class="subtitle">
+        Left subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+
+  {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-hero isWarning=true left=true&#125;&#125;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+    &lt;h1 class="title"&gt;
+      Left title
+    &lt;/h1&gt;
+    &lt;h2 class="subtitle"&gt;
+      Left subtitle
+    &lt;/h2&gt;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+&#123;&#123;/bulma-hero&#125;&#125;
+  {{/themed-syntax}}
+</div>
+
+<div class="with-padding example with-padding">
+  {{#bulma-hero isDanger=true right=true}}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Right title
+      </h1>
+      <h2 class="subtitle">
+        Right subtitle
+      </h2>
+    {{/bulma-hero-content}}
+  {{/bulma-hero}}
+
+  {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-hero isDanger=true right=true&#125;&#125;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+    &lt;h1 class="title"&gt;
+      Right title
+    &lt;/h1&gt;
+    &lt;h2 class="subtitle"&gt;
+      Right subtitle
+    &lt;/h2&gt;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+&#123;&#123;/bulma-hero&#125;&#125;
+  {{/themed-syntax}}
+</div>
+
+<br><hr>
+<h3 class="title">Full height hero</h3>
+<h4 class="subtitle">And vertically centered</h4>
+<div class="content">
+  <p>You can split the hero in <strong>3 vertical parts</strong>:</p>
+  <ul>
+    <li>
+      <code>hero</code>
+      <ul>
+        <li><code>hero-header</code> (always at the top)</li>
+        <li><code>hero-content</code> (always vertically centered)</li>
+        <li><code>hero-footer</code> (always at the bottom)</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="with-padding example with-padding">
+  {{#bulma-hero isWarning=true as | classNames |}}
+    {{! Hero header: will stick at the top }}
+    {{#bulma-hero-header isInfo=trueclassNames}}
+      {{#bulma-header}}
+          {{#bulma-header-menu left=true}}
+            <a class="header-item" href="#">
+              <img src="http://emberjs.com/images/brand/ember_Ember-Light.png" alt="logo" />
+            </a>
+          {{/bulma-header-menu}}
+          <span class="header-item">
+            {{bulma-tabs tabs=demoLinks}}
+          </span>
+          <span class="header-item">
+            {{bulma-button isDanger=true isInverted=true icon="fa fa-github" label="Download"}}
+          </span>
+      {{/bulma-header}}
+    {{/bulma-hero-header}}
+
+    {{! Hero content: will be in the middle }}
+    {{#bulma-hero-content}}
+      <h1 class="title">
+        Hero title
+      </h1>
+      <h2 class="subtitle">
+        Hero subtitle
+      </h2>
+    {{/bulma-hero-content}}
+
+    {{! Hero footer: will stick at the bottom }}
+    {{#bulma-hero-footer}}
+      {{bulma-tabs tabs=demoLinks}}
+    {{/bulma-hero-footer}}
+  {{/bulma-hero}}
+
+  {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-hero isWarning=true as | classNames |&#125;&#125;
+
+  &#123;&#123;! Hero header: will stick at the top &#125;&#125;
+  &#123;&#123;#bulma-hero-header isInfo=trueclassNames&#125;&#125;
+    &#123;&#123;#bulma-header&#125;&#125;
+        &#123;&#123;#bulma-header-menu left=true&#125;&#125;
+          &lt;a class="header-item" href="#"&gt;
+            &lt;img src="http://emberjs.com/images/brand/ember_Ember-Light.png" alt="logo" /&gt;
+          &lt;/a&gt;
+        &#123;&#123;/bulma-header-menu&#125;&#125;
+        &lt;span class="header-item"&gt;
+          &#123;&#123;bulma-tabs tabs=someTabs&#125;&#125;
+        &lt;/span&gt;
+        &lt;span class="header-item"&gt;
+          &#123;&#123;bulma-button isInfo=true"is-danger is-inverted" icon="fa fa-github" label="Download" onmousedown=(action "someAction")&#125;&#125;
+        &lt;/span&gt;
+    &#123;&#123;/bulma-header&#125;&#125;
+  &#123;&#123;/bulma-hero-header&#125;&#125;
+
+  &#123;&#123;! Hero content: will be in the middle &#125;&#125;
+  &#123;&#123;#bulma-hero-content&#125;&#125;
+    &lt;h1 class="title"&gt;
+      Hero title
+    &lt;/h1&gt;
+    &lt;h2 class="subtitle"&gt;
+      Hero subtitle
+    &lt;/h2&gt;
+  &#123;&#123;/bulma-hero-content&#125;&#125;
+
+  &#123;&#123;! Hero footer: will stick at the bottom &#125;&#125;
+  &#123;&#123;#bulma-hero-footer&#125;&#125;
+    &#123;&#123;bulma-tabs tabs=someTabs&#125;&#125;
+  &#123;&#123;/bulma-hero-footer&#125;&#125;
+
+&#123;&#123;/bulma-hero&#125;&#125;
+  {{/themed-syntax}}
+</div>

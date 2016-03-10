@@ -1,0 +1,8 @@
+{{#if hasBlock}}
+  {{yield (action "close")}}
+{{else}}
+  {{#if _displayClose}}
+    <button class="delete" onmousedown={{action "close"}}></button>
+  {{/if}}
+  {{notification}}
+{{/if}}

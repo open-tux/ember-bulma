@@ -1,0 +1,116 @@
+<h1 class="title">Themes</h1>
+<h2 class="subtitle">
+  To create a <strong>theme</strong>, include a few styles in the consuming app
+</h2>
+
+<div class="columns my-theme">
+  <div class="column is-half">
+    {{#each elements as | element |}}
+      <h3 class="subtitle">{{element.label}}</h3>
+
+      <p class="control">
+        {{bulma-button label="Button" isPrimary=element.primary isInfo=element.info isSuccess=element.success isWarning=element.warning isDanger=element.danger}}
+        {{bulma-button label="Button" icon="fa fa-github"isPrimary=element.primary isInfo=element.info isSuccess=element.success isWarning=element.warning isDanger=element.danger}}
+        {{bulma-button label="Button" isPrimary=element.primary isInfo=element.info isSuccess=element.success isWarning=element.warning isDanger=element.danger outlined=true}}
+        {{bulma-button label="Button" icon="fa fa-github" isPrimary=element.primary isInfo=element.info isSuccess=element.success isWarning=element.warning isDanger=element.danger outlined=true}}
+      </p>
+
+      <p class="control">
+        {{#bulma-select}}
+        <select>
+          {{#each elements as | element |}}
+            <option>{{element.label}}</option>
+          {{/each}}
+        </select>
+        {{/bulma-select}}
+      </p>
+
+      <p class="control">
+        {{bulma-input label="Radio"  type="radio" checked=checked}}
+      </p>
+
+      <p class="control">
+        {{bulma-message isPrimary=element.primary isInfo=element.info isSuccess=element.success isWarning=element.warning isDanger=element.danger header="Message" message="Hello theme!"}}
+      </p>
+
+      <p class="control">
+        {{bulma-notification isPrimary=element.primary isInfo=element.info isSuccess=element.success isWarning=element.warning isDanger=element.danger notification="Notification"}}
+      </p>
+
+      <p class="control">
+        {{bulma-tag tag="Tag" isPrimary=element.primary isInfo=element.info isSuccess=element.success isWarning=element.warning isDanger=element.danger}}
+      </p>
+
+      <hr>
+    {{/each}}
+  </div>
+
+  <div class="column is-half">
+    <p class="control">HTMLBars</p>
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&lt;main class="my-theme"&gt;
+  &#123;&#123;outlet&#125;&#125;
+&lt;/main&gt;
+    {{/themed-syntax}}
+    <br>
+    <p class="control">SCSS</p>
+    {{#themed-syntax transparent="true" language="scss"}}
+$map: (
+  "is-primary": #650360,
+  "is-info": #00A4D9,
+  "is-success": #5eadb2,
+  "is-warning": #fce473,
+  "is-danger": #ed6c63
+);
+
+$generic: #aeb1b5;
+
+.my-theme {
+  div.notification, div.message, a.button, span.tag, .checkbox input:checked, .menu-checkbox input:checked, .radio input:checked {
+    @each $modifier, $color in $map {
+      &amp;.#{$modifier} {
+        background: #{$color};
+        border-color: #{$color};
+
+        &amp;:hover {
+          background: #{$color};
+          border-color: #{$color};
+        }
+
+        &amp;.is-outlined {
+          border-color: #{$color};
+          background: none;
+          color: #{$color};
+        }
+
+        /*
+         outliers
+        */
+        .message-header {
+          background: #{$color};
+        }
+
+        .message-body {
+          border-color: #{$color};
+          background: white;
+        }
+      }
+    }
+  }
+
+  //Bulma source: Select control currently does not have modifiers applied (use generic)
+  .select, .control .select {
+    select {
+      &amp;:hover, &amp;:focus {
+        border-color: $generic;
+        outline-color: $generic;
+      }
+    }
+    &amp;:after {
+      border-color: $generic
+    }
+  }
+}
+    {{/themed-syntax}}
+  </div>
+</div>

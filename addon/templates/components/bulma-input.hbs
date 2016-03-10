@@ -1,0 +1,40 @@
+{{!TODO: consider breaking this up into separate components}}
+{{#unless hasBlock}}
+  <span data-computed="{{_requiresControl}}"/>
+  <p class="{{if control 'control' 'is-inline'}} {{if isLoading 'is-loading'}} {{if _hasIcon 'has-icon'}}">
+    {{#if isTextArea}}
+    {{textarea
+       class="textarea"
+       key-up="handleChange"
+       cols=cols
+       disabled=disabled
+       form=form
+       maxlength=maxlength
+       placeholder=placeholder
+       readonly=readonly
+       required=required
+       rows=rows
+       wrap=wrap
+       value=value
+       autofocus=autofocus}}
+    {{else}}
+      {{#if _useLabel}}
+        {{!Checkbox or Radio input}}
+        <label class="{{type}}">
+          {{input class=_classes type=_inputType placeholder=placeholder name=name id=id key-up="handleChange" checked=checked disabled=disabled}}
+          {{label}}
+        </label>
+      {{else}}
+        {{!Text input}}
+        {{input class=_classes value=value type=_inputType placeholder=placeholder name=name id=id key-up="handleChange" disabled=disabled}}
+      {{/if}}
+    {{/if}}
+    {{#if _hasIcon}}
+      <i class="{{icon}}"></i>
+    {{/if}}
+  </p>
+{{else}}
+  <p class="{{if inline 'is-inline' 'control'}}">
+    {{yield}}
+  </p>
+{{/unless}}

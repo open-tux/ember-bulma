@@ -1,0 +1,200 @@
+<h1 class="title">Buttons</h1>
+<h2 class="subtitle">
+  The classic <strong>button</strong>, in different colors, sizes, and states
+</h2>
+<hr>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>
+      {{buttonLabel.label}}
+      {{bulma-button label="Button" onmousedown=(action "buttonAction")}}
+      {{bulma-button label="Primary" isPrimary=true onmousedown=(action "buttonAction")}}
+      {{bulma-button label="Info" isInfo=true onmousedown=(action "buttonAction")}}
+      {{bulma-button label="Success" isSuccess=true onmousedown=(action "buttonAction")}}
+      {{bulma-button label="Warning" isWarning=true onmousedown=(action "buttonAction")}}
+      {{bulma-button label="Danger" isDanger=true onmousedown=(action "buttonAction")}}
+    </p>
+    <p class="small">
+      The button component has an onmousedown event which sends up an action that returns the instance of the button.
+    </p>
+    <p class="small">
+      {{#themed-syntax transparent="true" language="javascript" }}
+
+myButtonAction(buttonInstance) {
+  buttonInstance.set('isLoading', true);
+
+  something.aysnc.then(() => {
+    buttonInstance.setProperties({
+      'isLoading': false,
+      'isOutlined': true
+    });
+  });
+}
+      {{/themed-syntax}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+
+&#123;&#123;#bulma-button onmousedown=(action "myButtonAction")&#125;&#125;
+  Button
+&#123;&#123;/bulma-button&#125;&#125;
+
+&#123;&#123;bulma-button label="Button" onmousedown=(action "myButtonAction")&#125;&#125;
+
+&#123;&#123;bulma-button label="Primary" isPrimary=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Submit" isInfo=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Submit" isSuccess=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Submit" isWarning=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Submit" isDanger=true&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<hr>
+<p class="title">Sizes</p>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>
+      {{bulma-button label="Small" isSmall=true}}
+      {{bulma-button label="Normal"}}
+      {{bulma-button label="Medium" isMedium=true}}
+      {{bulma-button label="Large" isLarge=true}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-button label="Small" isInfo=true isSmall=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Normal"&#125;&#125;
+
+&#123;&#123;bulma-button label="Medium" isInfo=true isMedium=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Large" isInfo=true isLarge=true&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<hr>
+<p class="title">Styles</p>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>
+      {{bulma-button label="Button"}}
+      {{bulma-button label="Primary" isPrimary=true isOutlined=true}}
+      {{bulma-button label="Info" isInfo=true isOutlined=true}}
+      {{bulma-button label="Success" isSuccess=true isOutlined=true}}
+      {{bulma-button label="Warning" isWarning=true isOutlined=true}}
+      {{bulma-button label="Danger" isDanger=true isOutlined=true}}
+    </p>
+
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-button label="Outlined" isOutlined=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Primary" isPrimary=true isOutlined=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Info" isInfo=true isOutlined=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Success" isSuccess=true isOutlined=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Warning" isWarning=true isOutlined=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Danger" isDanger=true isOutlined=true&#125;&#125;
+
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<hr>
+<p class="title">States</p>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>
+      {{bulma-button label="Loading" isLoading=true}}
+      {{bulma-button label="Loading" isLoading=true isPrimary=true}}
+      {{bulma-button label="Loading" isLoading=true isInfo=true}}
+      {{bulma-button label="Loading" isLoading=true isSuccess=true}}
+      {{bulma-button label="Loading" isLoading=true isWarning=true}}
+      {{bulma-button label="Loading" isLoading=true isDanger=true}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-button label="Loading" isLoading=myBoolean&#125;&#125;
+
+&#123;&#123;bulma-button label="Loading" isLoading=myBoolean isPrimary=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Loading" isLoading=myBoolean isInfo=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Loading" isLoading=myBoolean isSuccess=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Loading" isLoading=myBoolean isWarning=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Loading" isLoading=myBoolean isDanger=true&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<p class="subtitle">Disabled</p>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>
+      {{bulma-button label="Disabled" isOutlined=true disabled=true}}
+      {{bulma-button label="Disabled" isPrimary=true disabled=true}}
+      {{bulma-button label="Disabled" isInfo=true disabled=true}}
+      {{bulma-button label="Disabled" isSuccess=true disabled=true}}
+      {{bulma-button label="Disabled" isWarning=true disabled=true}}
+      {{bulma-button label="Disabled" isDanger=true disabled=true}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-button label="Disabled" isOutlined=true disabled=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Disabled" isPrimary=true disabled=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Disabled" isInfo=true disabled=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Disabled" isSuccess=true disabled=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Disabled" isWarning=true disabled=true&#125;&#125;
+
+&#123;&#123;bulma-button label="Disabled" isDanger=true disabled=true&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<p class="subtitle">With Font Awesome icons</p>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>
+      {{bulma-button isPrimary=true icon="fa fa-github" label="Github"}}
+      {{bulma-button isInfo=true icon="fa fa-twitter" label="Twitter"}}
+      {{bulma-button isSuccess=true icon="fa fa-check" label="Save"}}
+      {{bulma-button isDanger=true icon="fa fa-times" label="Delete"}}
+      {{#bulma-button isDanger=true isOutlined=true}}
+        <i class="fa fa-times"/>
+        Delete
+      {{/bulma-button}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-button isPrimary=true icon="fa fa-github" label="Github"&#125;&#125;
+
+&#123;&#123;bulma-button isInfo=true icon="fa fa-twitter" label="Twitter"&#125;&#125;
+
+&#123;&#123;bulma-button isSuccess=true icon="fa fa-check" label="Save"&#125;&#125;
+
+&#123;&#123;bulma-button isDanger=true icon="fa fa-times" label="Delete"&#125;&#125;
+
+&#123;&#123;! Or &#125;&#125;
+
+&#123;&#123;#bulma-button isDanger=true isOutlined=true&#125;&#125;
+&nbsp;&nbsp;&lt;i class="fa fa-times"/&gt;
+&nbsp;&nbsp;Delete
+&#123;&#123;/bulma-button&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}

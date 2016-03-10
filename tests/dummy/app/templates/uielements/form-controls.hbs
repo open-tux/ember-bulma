@@ -1,0 +1,216 @@
+<h1 class="title">Form controls</h1>
+<h2 class="subtitle">
+  All generic <strong>form controls</strong>, designed for consistency
+</h2>
+<hr>
+<div class="content">
+  <p>The following form controls <strong>classNames</strong> are supported:</p>
+    <ul>
+      <li><code>.input</code></li>
+      <li><code>.textarea</code></li>
+      <li><code>.select</code></li>
+      <li><code>.checkbox</code></li>
+      <li><code>.radio</code></li>
+      <li><code>.button</code></li>
+    </ul>
+  <p>When combining several controls in a <strong>form</strong>, use the <code>.control</code> class as a <strong>container</strong> or set <code>control=true</code>, to keep the spacing consistent.</p>
+</div>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>{{demo.greeting}}, {{demo.inputValue}}</p>
+    <p>
+      {{bulma-input placeholder="First name" control=true value=demo.inputValue key-up=(action "changeAction")}}
+      {{#bulma-select control=true}}
+        <select onchange={{action (mut demo.greeting) value="target.value"}}>
+          <option value="Hello">English</option>
+          <option value="Hola">Español</option>
+        </select>
+      {{/bulma-select}}
+      {{bulma-input isTextArea=true control=true placeholder="Text area" value=demo.textAreaValue}}
+      <p>
+        <div class="tag {{if demoTextAreaCharsWarning 'is-danger'}}">{{demoTextAreaCharsRemaining}} chars remaining</div>
+      </p>
+      {{bulma-input label="Remember me" type="checkbox" control=true}}
+      <p class="control">
+        {{bulma-input label="Yes" name="question" type="radio"}}
+        {{bulma-input label="No" name="question" type="radio"}}
+      </p>
+      <p class="control">
+        {{bulma-button isPrimary=true label="Submit" onmousedown=(action "submitAction")}}
+        {{bulma-button label="Cancel"}}
+      </p>
+      {{#themed-syntax transparent="true" language="javascript" }}
+//Consuming App's Controller
+mySubmitAction(button) {
+  button.set('isLoading', true);
+
+  somethingAsyncHappens.then(() => {
+    button.setProperties({
+      'isLoading': false,
+      'icon':  'fa fa-check',
+      'isPrimary': false,
+      'isSuccess': 'true',
+      'label': 'Sent'
+    });
+  });
+}
+      {{/themed-syntax}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-input placeholder="Text input" control=true value=firstName&#125;&#125;
+
+&#123;&#123;bulma-select options=options onchange=(action "mySelectAction") control=true&#125;&#125;
+
+&#123;&#123;! or &#125;&#125;
+
+&lt;p class="control"&gt;
+  &#123;&#123;#bulma-select&#125;&#125;
+    &lt;select onchange=&#123;&#123;action (mut language) value="target.value"&#125;&#125;&gt;
+      &lt;option value="en">English&lt;/option&gt;
+      &lt;option value="es">Español&lt;/option&gt;
+    &lt;/select&gt;
+  &#123;&#123;/bulma-select&#125;&#125;
+&lt;/p&gt;
+
+&#123;&#123;bulma-input isTextarea=true control=true placeholder="Text area" value=message&#125;&#125;
+
+&#123;&#123;bulma-input label="Remember me" type="checkbox" control=true&#125;&#125;
+
+&lt;p class="control"&gt;
+  &#123;&#123;bulma-input label="Yes" name="question" type="radio"&#125;&#125;
+  &#123;&#123;bulma-input label="No" name="question" type="radio"&#125;&#125;
+&lt;/p&gt;
+
+&lt;p class="control"&gt;
+  &#123;&#123;bulma-button isPrimary=true label="Submit" onmousedown=(action "mySubmitAction")&#125;&#125;
+  &#123;&#123;bulma-button label="Cancel" onmousedown=(action "myCancel")&#125;&#125;
+&lt;/p&gt;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<hr>
+<h3 class="title">Sizes</h3>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>
+      {{bulma-input placeholder="Small input" isInfo=true isSmall=true control=true}}
+      {{bulma-input placeholder="Normal input" control=true}}
+      {{bulma-input placeholder="Medium input" isInfo=true isMedium=true control=true}}
+      {{bulma-input placeholder="Large input" isInfo=true isLarge=true control=true}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-input placeholder="Small input" isInfo=true isSmall=true control=true&#125;&#125;
+&#123;&#123;bulma-input placeholder="Normal input" control=true&#125;&#125;
+&#123;&#123;bulma-input placeholder="Medium input" isInfo=true isMedium=true control=true&#125;&#125;
+&#123;&#123;bulma-input placeholder="Large input" isInfo=true isLarge=true control=true&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<hr>
+<h3 class="title">States</h3>
+<h4 class="subtitle">Loading</h4>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>
+      {{bulma-input placeholder="Loading input" isLoading=true control=true}}
+      {{bulma-input placeholder="Loading textarea" isTextArea=true isLoading=true control=true}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-input placeholder="Loading input" isLoading=true control=true&#125;&#125;
+&#123;&#123;bulma-input placeholder="Loading textarea" isTextArea=true isLoading=true control=true&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<h4 class="subtitle">Disabled</h4>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p>
+      {{bulma-input placeholder="Disabled input" control=true disabled=true}}
+      {{bulma-input isTextArea=true control=true placeholder="Disabled textarea" disabled=true}}
+      {{bulma-input label="Remember me" type="checkbox" control=true disabled=true}}
+      <p class="control">
+        {{bulma-input label="Yes" name="question" type="radio" disabled=true}}
+        {{bulma-input label="No" name="question" type="radio" disabled=true}}
+      </p>
+      <p class="control">
+        {{bulma-button isPrimary=true label="Submit" disabled=true}}
+        {{bulma-button label="Cancel" disabled=true}}
+      </p>
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-input placeholder="Disabled input" control=true disabled=true&#125;&#125;
+
+&#123;&#123;bulma-input isTextarea=true control=true placeholder="Disabled textarea" disabled=true&#125;&#125;
+
+&#123;&#123;bulma-input label="Remember me" type="checkbox" control=true disabled=true&#125;&#125;
+
+&lt;p class="control"&gt;
+  &#123;&#123;bulma-input label="Yes" name="question" type="radio" disabled=true&#125;&#125;
+  &#123;&#123;bulma-input label="No" name="question" type="radio" disabled=true&#125;&#125;
+&lt;/p&gt;
+
+&lt;p class="control"&gt;
+  &#123;&#123;bulma-button isPrimary=true label="Submit" disabled=true&#125;&#125;
+  &#123;&#123;bulma-button label="Cancel" disabled=true&#125;&#125;
+&lt;/p&gt;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+
+<h1 class="title">Form addons</h1>
+<h2 class="subtitle">
+  <p>If you want to <strong>attach</strong> controls together, use the <code>is-grouped</code> modifier on the <code>control</code> container:</p></h2>
+<hr>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p class="control is-grouped">
+      {{bulma-input placeholder="Find a repository" control=false}}
+      {{bulma-button isInfo=true icon="fa fa-search"}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&lt;p class="control is-grouped"&gt;
+  &#123;&#123;bulma-input placeholder="Find a repository" control=false key-up=(action "owasp")&#125;&#125;
+  &#123;&#123;bulma-button isInfo=true icon="fa fa-search"&#125;&#125;
+&lt;/p&gt;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<div class="content">
+<p>
+  You can attach inputs, buttons, and dropdowns.
+</p>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    <p class="control is-grouped">
+      {{bulma-select options=demo.currencies onchange=(action (mut demo.currency)) value="target.value"}}
+      {{bulma-input type="number" placeholder="Email" placeholder="Enter an amount" control=false value=demo.amount key-up=(action "format" demo.amount)}}
+      {{bulma-button label="Transfer" isSuccess=true onmousedown=(action "transfer" demo.amount demo.currency)}}
+    </p>
+    <p>
+      <div class="tag">Currency in {{demoSelectedCurrency}}s</div>
+    </p>
+    {{/bulma-column}}
+    {{#bulma-column content=true isHalf=true}}
+      {{#themed-syntax transparent="true" language="handlebars" }}
+&lt;p class="control is-grouped"&gt;
+  &#123;&#123;bulma-select options=options onchange=(action (mut currency)) value="target.value"&#125;&#125;
+  &#123;&#123;bulma-input type="number" placeholder="Enter an amount" control=false value=amount&#125;&#125;
+  &#123;&#123;bulma-button
+    label="Transfer"
+    isSuccess=true
+    onmousedown=(action "transfer" amount currency)&#125;&#125;
+&lt;/p&gt;
+      {{/themed-syntax}}
+    {{/bulma-column}}
+  {{/bulma-columns}}
+</div>

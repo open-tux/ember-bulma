@@ -1,0 +1,28 @@
+$yellow: #fce473;
+
+.example {
+  position: relative;
+  display: block;
+  border: 1px solid $yellow;
+  margin: 3em 0 1em 0;
+  &:before {
+    content: 'EXAMPLE';
+    display: block;
+    position: absolute;
+    top: -2.25em;
+    height: 2.25em;
+    left: -1px;
+    background: $yellow;
+    font-size: 0.5em;
+    letter-spacing: 0.25em;
+    padding: 0.5em;
+    font-weight: 600;
+  }
+  &.with-padding {
+    padding: 1em;
+  }
+}
+
+pre, code {
+  overflow-y: hidden;
+}

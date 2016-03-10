@@ -1,0 +1,50 @@
+<h1 class="title">Notifications</h1>
+<h2 class="subtitle">
+  Bold <strong>notification</strong> blocks, to alert your users of something
+</h2>
+<hr>
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#if demo.open.a}}
+      {{bulma-notification notification=demo.sampleNotification close=(action "closeAction" "a")}}
+    {{/if}}
+
+    {{#if demo.open.b}}
+      {{bulma-notification notification=demo.sampleNotification isPrimary=true close=(action "closeAction" "b")}}
+    {{/if}}
+
+    {{#if demo.open.c}}
+      {{bulma-notification notification=demo.sampleNotification isInfo=true close=(action "closeAction" "c")}}
+    {{/if}}
+
+    {{#if demo.open.d}}
+      {{bulma-notification notification=demo.sampleNotification isSuccess=true close=(action "closeAction" "d")}}
+    {{/if}}
+
+    {{#if demo.open.e}}
+      {{bulma-notification notification=demo.sampleNotification isWarning=true close=(action "closeAction" "e")}}
+    {{/if}}
+
+    {{#if demo.open.f}}
+      {{bulma-notification notification=demo.sampleNotification isDanger=true close=(action "closeAction" "f")}}
+    {{/if}}
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-notification&#125;&#125;
+  &lt;button class="delete" onmousedown=&#123;&#123;action "closeAction"&#125;&#125;&gt;&lt;/button&gt;
+  Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
+&#123;&#123;/bulma-notification&#125;&#125;
+
+&#123;&#123;bulma-notification notification=demo.sampleNotification isPrimary=true close=(action "closeAction")&#125;&#125;
+
+&#123;&#123;bulma-notification notification=demo.sampleNotification isInfo=true close=(action "closeAction")&#125;&#125;
+
+&#123;&#123;bulma-notification notification=demo.sampleNotification isSuccess=true close=(action "closeAction")&#125;&#125;
+
+&#123;&#123;bulma-notification notification=demo.sampleNotification isWarning=true close=(action "closeAction")&#125;&#125;
+
+&#123;&#123;bulma-notification notification=demo.sampleNotification isDanger=true close=(action "closeAction")&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}

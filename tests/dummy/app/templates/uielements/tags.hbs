@@ -1,0 +1,88 @@
+<h1 class="title">Tags</h1>
+<h2 class="subtitle">
+  Small <strong>tag</strong> labels to insert anywhere
+</h2>
+<hr>
+{{#bulma-columns}}
+  {{#bulma-column content=true is4=true}}
+    By default, a <strong>tag</strong> is a 24px high label.
+  {{/bulma-column}}
+  {{#bulma-column content=true is2=true}}
+    {{#bulma-tag}}
+      Tag Label
+    {{/bulma-tag}}
+  {{/bulma-column}}
+  {{#bulma-column content=true is6=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-tag&#125;&#125;
+  Tag Label
+&#123;&#123;/bulma-tag&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+{{#bulma-columns}}
+  {{#bulma-column content=true is4=true}}
+    There are <strong>6 different colors</strong> available.
+  {{/bulma-column}}
+  {{#bulma-column content=true is2=true}}
+    {{#each demo.tags as |tag|}}
+      <p class="control">
+        {{bulma-tag tag=tag.name isDark=tag.dark isInfo=tag.info isPrimary=tag.primary isSuccess=tag.success isWarning=tag.warning isDanger=tag.danger}}
+      </p>
+    {{/each}}
+  {{/bulma-column}}
+  {{#bulma-column content=true is6=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+  &#123;&#123;bulma-tag tag="some tag" isInfo=true&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+{{#bulma-columns}}
+  {{#bulma-column content=true is4=true}}
+    And <strong>2 additional</strong> sizes.
+  {{/bulma-column}}
+  {{#bulma-column content=true is2=true}}
+    <p class="control">
+      {{#bulma-tag isPrimary=true isMedium=true}}
+        Medium
+      {{/bulma-tag}}
+    </p>
+    <p class="control">
+      {{bulma-tag tag="Large" isInfo=true isLarge=true}}
+    </p>
+  {{/bulma-column}}
+  {{#bulma-column content=true is6=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-tag isPrimary=true isMedium=true&#125;&#125;
+  Medium
+&#123;&#123;/bulma-tag&#125;&#125;
+
+&#123;&#123;bulma-tag tag="Large" isInfo=true isLarge=true&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+{{#bulma-columns}}
+  {{#bulma-column content=true is4=true}}
+    <p>You can also append a <strong>remove button</strong>. The remove action returns the tag's name.</p>
+
+    {{#themed-syntax transparent="true" language="javascript" }}
+genericRemoveAction(tagName) {
+  let tags = this.get('tags');
+  let tag  = tags.findBy('name', tagName);
+  this.set('tags', tags.without(tag));
+}
+    {{/themed-syntax}}
+  {{/bulma-column}}
+  {{#bulma-column content=true is2=true}}
+    {{#each demo.tagsSubset as |tag|}}
+      <p class="control">
+        {{bulma-tag tag=tag.name isDark=tag.dark isInfo=tag.info isPrimary=tag.primary isSuccess=tag.success isWarning=tag.warning isDanger=tag.danger remove=(action "removeAction")}}
+      </p>
+    {{/each}}
+  {{/bulma-column}}
+  {{#bulma-column content=true is6=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+    &#123;&#123;bulma-tag tag=tag.name isInfo=true remove=(action "genericRemoveAction")&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}

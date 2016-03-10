@@ -1,0 +1,8 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{tag}}
+  {{#if _canDelete}}
+    <button class="delete" onmousedown={{action "remove"}}></button>
+  {{/if}}
+{{/if}}

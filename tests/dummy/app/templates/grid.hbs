@@ -1,0 +1,754 @@
+<h1 class="title">Grid</h1>
+<h2 class="subtitle">A simple way to build columns</h2>
+<hr>
+<div class="content">
+  <p>To build a <strong>grid</strong>, just:</p>
+  <ol>
+    <li>Add a <code>columns</code> container</li>
+    <li>Add as many <code>column</code> elements as you want</li>
+  </ol>
+</div>
+
+{{#bulma-columns}}
+  {{#bulma-column}}
+    {{bulma-notification notification="First column" isPrimary=true}}
+  {{/bulma-column}}
+  {{#bulma-column}}
+    {{bulma-notification notification="Second column" isSuccess=true}}
+  {{/bulma-column}}
+  {{#bulma-column}}
+    {{bulma-notification notification="Third column" isWarning=true}}
+  {{/bulma-column}}
+  {{#bulma-column}}
+    {{bulma-notification notification="Fourth column" isDanger=true}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-columns&#125;&#125;
+  &#123;&#123;!col1&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;
+    &#123;&#123;bulma-notification notification="First column" isPrimary=true&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+
+  &#123;&#123;!col2&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;
+    &#123;&#123;bulma-notification notification="Second column" isSuccess=true&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+
+  &#123;&#123;!col3&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;
+    &#123;&#123;bulma-notification notification="Third column" isWarning=true&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+
+  &#123;&#123;!col4&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;
+    &#123;&#123;bulma-notification notification="Fourth column" isDanger=true&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+{{/themed-syntax}}
+
+
+<hr>
+
+<h3 class="title">Sizes</h3>
+<div class="content">
+ <p>If you want to change the <strong>size</strong> of a single column, you can use one the following classes:</p>
+ <ul>
+   <li>
+     <code>isHalf</code>
+   </li>
+   <li>
+     <code>isThird</code>
+   </li>
+   <li>
+     <code>isQuarter</code>
+   </li>
+ </ul>
+ <p>The <em>other</em> columns will fill up the <strong>remaining</strong> space automatically.</p>
+</div>
+
+{{#bulma-columns}}
+      {{#bulma-column isHalf=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">isHalf</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="Auto"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isDanger=true  notification="Auto"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column isThird=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">isThird</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="Auto"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="Auto"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column isQuarter=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">isQuarter</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="Auto"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isDanger=true notification="Auto"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-columns&#125;&#125;
+  &#123;&#123;#bulma-column isHalf=true&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+
+  &#123;&#123;#bulma-column isThird=true&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+
+  &#123;&#123;#bulma-column isQuarter=true&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+{{/themed-syntax}}
+
+<hr>
+<div class="content">
+  <h4 class="title is-4">12 columns</h4>
+  <p>As the grid can be divided into <strong>12</strong> columns, there are size classes for each division:</p>
+  <ul>
+    <li><code>is2</code></li>
+    <li><code>is3</code></li>
+    <li><code>is4</code></li>
+    <li><code>is5</code></li>
+    <li><code>is6</code></li>
+    <li><code>is7</code></li>
+    <li><code>is8</code></li>
+    <li><code>is9</code></li>
+    <li><code>is10</code></li>
+    <li><code>is11</code></li>
+  </ul>
+</div>
+
+{{#bulma-message isDanger=true header="Naming"}}
+  <p class="message-body">Each modifier class is named after <strong>how many columns you want out of 12</strong>. So if you want 7 columns out of 12, use <code>is7=true</code>.</p>
+{{/bulma-message}}
+
+{{#bulma-columns}}
+      {{#bulma-column is2=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is2=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column is3=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is3=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column is4=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is4=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column is5=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is5=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column is6=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is6=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column is7=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is7=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column is8=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is8=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column is9=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is9=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column is10=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is10=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isSuccess=true notification="1"}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+      {{#bulma-column is11=true}}
+        {{#bulma-notification isInfo=true}}
+          <code class="html">is11=true</code>
+        {{/bulma-notification}}
+      {{/bulma-column}}
+
+      {{#bulma-column}}
+        {{bulma-notification isWarning=true notification="1"}}
+      {{/bulma-column}}
+{{/bulma-columns}}
+
+<hr>
+<div class="content">
+  <h4 class="title is-4">Offset</h4>
+  <p>
+    While you can use <em>empty columns</em> (like <code>&#123;&#123;bulma-column&#125;&#125;</code>) to create horizontal space around <code>.column</code> elements, you can also use <strong>offset</strong> modifiers like <code>.is-offset-x</code>:
+  </p>
+</div>
+
+<div class="columns is-mobile">
+  <div class="column is-half is-offset-quarter"></div>
+</div>
+
+{{#bulma-columns isMobile=true}}
+  {{#bulma-column isHalf=true isOffsetQuarter=true}}
+    {{#bulma-notification isInfo=true}}
+      <code class="html">isHalf=true</code>
+      <code class="html">isOffsetQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns isMobile=true}}
+  {{#bulma-column is4=true isOffset8=true}}
+    {{#bulma-notification isInfo=true}}
+      <code class="html">is4=true</code>
+      <code class="html">isOffset8=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns isMobile=true}}
+  {{#bulma-column is11=true isOffset1=true}}
+    {{#bulma-notification isInfo=true}}
+      <code class="html">is11=true</code>
+      <code class="html">isOffset1=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-columns isMobile=true&#125;&#125;
+  &#123;&#123;#bulma-column isHalf=true isOffsetQuarter=true&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+
+&#123;&#123;#bulma-columns isMobile=true&#125;&#125;
+  &#123;&#123;#bulma-column is4=true isOffset8=true&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+
+&#123;&#123;#bulma-columns isMobile=true&#125;&#125;
+  &#123;&#123;#bulma-column is11=true isOffset1=true&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+{{/themed-syntax}}
+
+<hr>
+<div class="content">
+  <h4 class="title is-4">Responsiveness</h4>
+  <p>By default, columns are only activated from <strong>tablet</strong> onwards. This means columns are stacked on top of each other on <strong>mobile</strong>.</p>
+  <p>If you want columns to work on <strong>mobile too</strong>, just add the <code>isMobile</code> modifier on the <code>columns</code> container:</p>
+</div>
+
+{{#bulma-columns mobile=true}}
+  {{#bulma-column}}{{bulma-notification isInfo=true notification="1"}}{{/bulma-column}}
+  {{#bulma-column}}{{bulma-notification isSuccess=true notification="2"}}{{/bulma-column}}
+  {{#bulma-column}}{{bulma-notification isWarning=true notification="3"}}{{/bulma-column}}
+  {{#bulma-column}}{{bulma-notification isDanger=true notification="4"}}{{/bulma-column}}
+{{/bulma-columns}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-columns isMobile=true&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;1&#123;&#123;/bulma-column&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;2&#123;&#123;/bulma-column&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;3&#123;&#123;/bulma-column&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;4&#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+
+&#123;&#123;!Or simply&#125;&#125;
+
+&#123;&#123;#bulma-columns mobile=true&#125;&#125;
+  &#123;&#123;!...&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+{{/themed-syntax}}
+
+<br>
+{{bulma-message isInfo=true header="Resize" body="If you want to see the difference, resize your browser and see when the columns are stacked and when they are horizontally distributed."}}
+
+<p>If you <em>only</em> want columns on <strong>desktop</strong>, just use the <code>isDesktop</code> modifier on the <code>columns</code> container:</p>
+
+<br>
+{{#bulma-columns desktop=true}}
+  {{#bulma-column}}{{bulma-notification isInfo=true notification="1"}}{{/bulma-column}}
+  {{#bulma-column}}{{bulma-notification isSuccess=true notification="2"}}{{/bulma-column}}
+  {{#bulma-column}}{{bulma-notification isWarning=true notification="3"}}{{/bulma-column}}
+  {{#bulma-column}}{{bulma-notification isDanger=true notification="4"}}{{/bulma-column}}
+{{/bulma-columns}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-columns isDesktop=true&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;1&#123;&#123;/bulma-column&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;2&#123;&#123;/bulma-column&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;3&#123;&#123;/bulma-column&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;4&#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+
+&#123;&#123;!Or simply&#125;&#125;
+
+&#123;&#123;#bulma-columns desktop=true&#125;&#125;
+  &#123;&#123;!...&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+{{/themed-syntax}}
+
+<hr>
+<div class="content">
+  <h4 class="title is-4">Different sizes per breakpoint</h4>
+  <p>You can define a <strong>column size</strong> for <em>each</em> viewport size: mobile, tablet, and desktop.</p>
+</div>
+
+{{#bulma-columns isMobile=true}}
+  {{#bulma-column isHalfMobile=true isThirdTablet=true isQuarterDesktop=true}}
+    {{#bulma-notification isPrimary=true}}
+      <code>isHalfMobile=true</code>
+      <code>isThirdTablet=true</code>
+      <code>isQuarterDesktop=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column}} {{bulma-notification notification="1" isInfo=true}} {{/bulma-column}}
+  {{#bulma-column}} {{bulma-notification notification="1" isSuccess=true}} {{/bulma-column}}
+  {{#bulma-column}} {{bulma-notification notification="1" isWarning=true}} {{/bulma-column}}
+  {{#bulma-column}} {{bulma-notification notification="1" isDanger=true}} {{/bulma-column}}
+{{/bulma-columns}}
+
+<br>
+{{bulma-message message="If you want to see these classes in action, resize your browser window and see how the same column varies in width at each breakpoint.
+" header="resize" isInfo=true}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-column isHalfMobile=true isThirdTablet=true isQuarterDesktop=true&#125;&#125;
+  &#123;&#123;!...&#125;&#125;
+&#123;&#123;/bulma-column&#125;&#125;
+{{/themed-syntax}}
+
+<hr>
+<div class="content">
+  <h4 class="title is-4">Multiline</h4>
+  <p>Whenever you want to start a new line, you can close a <code>columns</code> container and start a new one. But you can also add the <code>isMultiline=true</code> modifier and add <strong>more</strong> column elements that would fit in a single row.</p>
+</div>
+
+{{#bulma-columns isMultiline=true isMobile=true}}
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isInfo=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isSuccess=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isWarning=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isDanger=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isHalf=true}}
+    {{#bulma-notification isInfo=true}}
+      <code>isHalf=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isSuccess=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isWarning=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column}}
+    {{bulma-notification isDanger=true notification="Auto"}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-columns isMultiline=true isMobile=true&#125;&#125;
+  &#123;&#123;#bulma-column isQuarter=true&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+{{/themed-syntax}}
+
+<hr>
+<div class="content">
+  <h4 class="title is-4">Gapless</h4>
+  <p>If you want to remove the <strong>space</strong> between the columns, add the <code>isGapless=true</code> modifier on the <code>columns</code> container:</p>
+</div>
+
+{{#bulma-columns isGapless=true}}
+  {{#bulma-column}}
+    {{bulma-notification isInfo=true notification="First column"}}
+  {{/bulma-column}}
+  {{#bulma-column}}
+    {{bulma-notification isSuccess=true notification="Second column"}}
+  {{/bulma-column}}
+  {{#bulma-column}}
+    {{bulma-notification isWarning=true notification="Third column"}}
+  {{/bulma-column}}
+  {{#bulma-column}}
+    {{bulma-notification isDanger=true notification="Fourth column"}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-columns isGapless=true&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+{{/themed-syntax}}
+<br>
+
+<div class="content">
+  <p>You can combine it with the <code>isMultiline=true</code> modifier:</p>
+</div>
+
+{{#bulma-columns isGapless=true isMultiline=true isMobile=true}}
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isInfo=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isSuccess=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isWarning=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isDanger=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isHalf=true}}
+    {{#bulma-notification isInfo=true}}
+      <code>isHalf=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isSuccess=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column isQuarter=true}}
+    {{#bulma-notification isWarning=true}}
+      <code>isQuarter=true</code>
+    {{/bulma-notification}}
+  {{/bulma-column}}
+
+  {{#bulma-column}}
+    {{bulma-notification isDanger=true notification="Auto"}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-columns isGapless=true isMultiline=true isMobile=true&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-column&#125;&#125;
+&#123;&#123;/bulma-columns&#125;&#125;
+{{/themed-syntax}}

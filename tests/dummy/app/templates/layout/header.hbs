@@ -1,0 +1,43 @@
+<h1 class="title">Header</h1>
+<h2 class="subtitle">
+  A responsive horizontal <strong>header</strong> that can contain links, tabs, buttons, icons, and a logo
+</h2>
+<hr>
+{{#bulma-container isFluid=true}}
+  <div class="example with-padding">
+    {{#bulma-header}}
+      {{#bulma-header-menu left=true}}
+        {{#link-to "layout.header" class="header-tab"}}
+          <img src="http://emberjs.com/images/brand/ember_Ember-Light.png" />
+        {{/link-to}}
+        {{link-to "One" "layout.header" class="header-tab is-active"}}
+        {{link-to "Two" "layout.header" class="header-tab"}}
+      {{/bulma-header-menu}}
+
+      {{#bulma-header-menu right=true}}
+        {{link-to "Three" "layout.header" class="button header-tab"}}
+        {{link-to "Four" "layout.header" class="header-tab"}}
+        {{link-to "Five" "layout.header" class="header-tab"}}
+      {{/bulma-header-menu}}
+    {{/bulma-header}}
+
+
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-header&#125;&#125;
+  &#123;&#123;#bulma-header-menu left=true&#125;&#125;
+    &#123;&#123;#link-to "some.route" class="header-tab"&#125;&#125;
+      &lt;img src="http://emberjs.com/images/brand/ember_Ember-Light.png" /&gt;
+    &#123;&#123;/link-to&#125;&#125;
+    &#123;&#123;link-to "One" "some.route" class="header-tab"&#125;&#125;
+    &#123;&#123;link-to "Two" "some.route" class="header-tab"&#125;&#125;
+  &#123;&#123;/bulma-header-menu&#125;&#125;
+
+  &#123;&#123;#bulma-header-menu right=true&#125;&#125;
+    &#123;&#123;link-to "Three" "some.route" class="button header-tab"&#125;&#125;
+    &#123;&#123;link-to "Four" "some.route" class="header-tab"&#125;&#125;
+    &#123;&#123;link-to "Five" "some.route" class="header-tab"&#125;&#125;
+  &#123;&#123;/bulma-header-menu&#125;&#125;
+&#123;&#123;/bulma-header&#125;&#125;
+    {{/themed-syntax}}
+  </div>
+{{/bulma-container}}

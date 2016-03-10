@@ -1,0 +1,8 @@
+{{#if header}}
+  <p class="message-header">{{header}}</p>
+{{/if}}
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <p class="message-body">{{body}}</p>
+{{/if}}

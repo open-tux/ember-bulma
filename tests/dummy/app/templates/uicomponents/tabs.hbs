@@ -1,0 +1,177 @@
+<h1 class="title">Tabs</h1>
+<h2 class="subtitle">
+  Simple responsive horizontal navigation <strong>tabs</strong>, with different styles
+</h2>
+<hr>
+{{#bulma-columns}}
+  {{#bulma-column isHalf=true}}
+    <p class="control">
+      <strong>Tabs</strong> can be provided a model with the properties <code>name</code>, <code>route</code>, and (optionally) <code>icon</code>. Alternatively, you can use a block to wrap a list.
+    </p>
+    <p class="control">
+      The <strong>default</strong> tabs style has a single border at the bottom.
+    </p>
+    <p>
+      {{#bulma-tabs as | routeTab |}}
+        <ul>
+          {{#each plain as | tab |}}
+            <!-- <select onchange={{action (mut language) value="target.value"}}> -->
+            <li class="{{if tab.isActive 'is-active'}}">
+              <a {{action routeTab tab plain}}>{{tab.name}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{/bulma-tabs}}
+    </p>
+
+    {{#themed-syntax transparent="true" language="javascript" }}
+model() {
+  return {
+    myTabs: [
+      {
+        name: 'Pictures',
+        route: 'media.pictures',
+        icon: 'fa fa-image'
+      },
+      {
+        name: 'Music',
+        route: 'media.music',
+        icon: 'fa fa-music'
+      }
+    ]
+  };
+}
+    {{/themed-syntax}}
+  {{/bulma-column}}
+  {{#bulma-column isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;! Use all the included stuff&#125;&#125;
+
+&#123;&#123;bulma-tabs tabs=myTabs&#125;&#125;
+
+&#123;&#123;! Or use some of the included stuff (exposed routeTab action)&#125;&#125;
+
+&#123;&#123;#bulma-tabs as | routeTab |&#125;&#125;
+  &lt;ul&gt;
+    &#123;&#123;#each myTabs as | tab |&#125;&#125;
+      &lt;li class="&#123;&#123;if tab.isActive 'is-active'&#125;&#125;"&gt;
+        &lt;a &#123;&#123;action routeTab tab myTabs&#125;&#125;&gt;&#123;&#123;tab.name&#125;&#125;&lt;/a&gt;
+      &lt;/li&gt;
+    &#123;&#123;/each&#125;&#125;
+  &lt;/ul&gt;
+&#123;&#123;/bulma-tabs&#125;&#125;
+
+&#123;&#123;! Or just the container with your model&#125;&#125;
+
+&#123;&#123;#bulma-tabs&#125;&#125;
+  &lt;ul&gt;
+    &#123;&#123;#each myTabs as | tab |&#125;&#125;
+      &lt;li&gt;
+        &lt;i class="&#123;&#123;tab.icon&#125;&#125;"&gt;&lt;/i&gt;
+        &#123;&#123;link-to tab.name tab.route&#125;&#125;
+      &lt;/li&gt;
+    &#123;&#123;/each&#125;&#125;
+  &lt;/ul&gt;
+&#123;&#123;#bulma-tabs&#125;&#125;
+
+&#123;&#123;! Or just the container (and add some icons for flare)&#125;&#125;
+
+&#123;&#123;#bulma-tabs&#125;&#125;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &#123;&#123;#link-to "media.music"&#125;&#125;
+        &lt;i class="fa fa-music"&gt;&lt;/i&gt;
+        Music
+      &#123;&#123;/link-to&#125;&#125;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &#123;&#123;#link-to "media.pictures"&#125;&#125;
+        &lt;i class="fa fa-image"&gt;&lt;/i&gt;
+        Pictures
+      &#123;&#123;/link-to&#125;&#125;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&#123;&#123;#bulma-tabs&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+<hr>
+<h3 class="title">Alignment</h3>
+<p class="content">You can <strong>center</strong> the tabs, or align them to the <strong>right</strong>, by using either <code>is-centered</code> or <code>is-right</code>.</p>
+{{#bulma-columns}}
+  {{#bulma-column isHalf=true}}
+    <div>
+      {{#bulma-message}}
+        <br>
+        {{bulma-tabs tabs=browsers isCentered=true}}
+      {{/bulma-message}}
+      {{#bulma-message}}
+        <br>
+        {{bulma-tabs tabs=media isSuccess=true isRight=true isBoxed=true}}
+      {{/bulma-message}}
+    </div>
+  {{/bulma-column}}
+  {{#bulma-column isHalf=true}}
+    <div class="content with-padding">
+      <p>
+        {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-tabs tabs=myTabs isCentered=true&#125;&#125;
+        {{/themed-syntax}}
+      </p>
+      <p>
+        {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-tabs tabs=myTabs isRight=true isBoxed=true&#125;&#125;
+        {{/themed-syntax}}
+      </p>
+    </div>
+  {{/bulma-column}}
+{{/bulma-columns}}
+<hr>
+<h3 class="title">Styles</h3>
+<p class="content">
+  If you want a more classic style with <strong>borders</strong>, just append the <code>is-boxed</code> modifier.
+</p>
+{{#bulma-columns}}
+  {{#bulma-column isHalf=true}}
+    <div>
+      {{#bulma-message}}
+        <br>
+        {{bulma-tabs tabs=tech isRight=true isBoxed=true}}
+      {{/bulma-message}}
+
+      <p class="content">
+        If you want <strong>mutually exclusive</strong> tabs (like radio buttons where clicking one deselects all other ones), use the <code>is-toggle</code> modifier.
+      </p>
+
+      {{#bulma-message}}
+        <br>
+        {{bulma-tabs tabs=social isRight=true isToggled=true}}
+        <br>
+      {{/bulma-message}}
+
+      <p class="content">
+        If you want the tabs to take up the <strong>whole width</strong> available, use <code>is-fullwidth</code>.
+        You can also <strong>combine</strong> different modifiers. For with-padding, you can have <strong>centered boxed</strong> tabs, or <strong>fullwidth toggle</strong> ones.
+      </p>
+
+      {{#bulma-message}}
+        <br>
+        {{bulma-tabs tabs=git isBoxed=true isFullwidth=true}}
+        <br>
+      {{/bulma-message}}
+    </div>
+  {{/bulma-column}}
+  {{#bulma-column isHalf=true}}
+    <div class="content with-padding">
+      <p>
+        {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-tabs tabs=myTabs isBoxed=true&#125;&#125;
+
+&#123;&#123;bulma-tabs tabs=myTabs isCentered=true&#125;&#125;
+
+&#123;&#123;bulma-tabs tabs=myTabs isBoxed=true isCentered=true&#125;&#125;
+        {{/themed-syntax}}
+      </p>
+    </div>
+  {{/bulma-column}}
+{{/bulma-columns}}

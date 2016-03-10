@@ -1,0 +1,34 @@
+<main class="no-theme">
+  {{#bulma-hero isInfo=true isLeft=true isBold=true}}
+    {{#bulma-hero-content withContainer=true}}
+      <p class="title">
+        Ember Bulma
+      </p>
+      <p class="subtitle">
+        <strong>Ember Bulma</strong> is an <em>ember addon</em> for <strong xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Bulma</strong> by <strong xmlns:cc="http://creativecommons.org/ns#" href="http://jgthms.com" property="cc:attributionName" rel="cc:attributionURL">Jeremy Thomas</strong>.
+      </p>
+    {{/bulma-hero-content}}
+    {{#bulma-hero-footer}}
+      {{bulma-tabs isBoxed=true isCentered=true tabs=model.demoTabs isSiteNav=true}}
+    {{/bulma-hero-footer}}
+  {{/bulma-hero}}
+
+  {{#bulma-section withContainer=false}}
+    {{#if demoSubTabs.length}}
+      {{bulma-tabs tabs=demoSubTabs isCentered=true}}
+    {{/if}}
+    {{#bulma-container isFluid=true}}
+      {{outlet}}
+    {{/bulma-container}}
+  {{/bulma-section}}
+</main>
+
+{{#bulma-footer}}
+  {{#bulma-container}}
+    <div class="content is-text-centered">
+      <p>
+          <strong>Ember Bulma</strong> is an ember addon for <strong xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Bulma</strong> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://jgthms.com" property="cc:attributionName" rel="cc:attributionURL">Jeremy Thomas</a>. The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+      </p>
+    </div>
+  {{/bulma-container}}
+{{/bulma-footer}}

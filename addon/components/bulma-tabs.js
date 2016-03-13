@@ -13,7 +13,7 @@ const {
 export default Ember.Component.extend({
   layout,
   classNames: 'tabs',
-  classNameBindings: ['isBoxed:is-boxed', 'boxed:is-boxed', 'centered:is-centered', 'isCentered:is-centered', 'isToggled:is-toggled', 'toggled:is-toggled'],
+  classNameBindings: ['isFullwidth:is-fullwidth', 'isBoxed:is-boxed', 'boxed:is-boxed', 'centered:is-centered', 'isCentered:is-centered', 'isToggle:is-toggle', 'toggle:is-toggle'],
 
   /**
     Signal if to be used as site navigation (top level routes)

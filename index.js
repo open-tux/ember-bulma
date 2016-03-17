@@ -21,8 +21,9 @@ module.exports = {
     this._super.included(app);
 
     var target = (parentAddon || app);
-    var options = target.options.emberCliFontAwesome || {};
+    var options = target.options || {};
 
+    /** Font Awesome **/
     if (!('includeFontAwesomeAssets' in options)) {
       options.includeFontAwesomeAssets = true;
     }
@@ -40,7 +41,7 @@ module.exports = {
       target.import(target.bowerDirectory + "/font-awesome/fonts/FontAwesome.otf", { destDir: "fonts" });
     }
 
-    //Include Bulma
+    /** Bulma **/
     if (!('includeBulmaAssets' in options)) {
       options.includeBulmaAssets = true;
     }

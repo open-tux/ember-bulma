@@ -361,9 +361,9 @@
   </ul>
 </div>
 <div class="with-padding example with-padding">
-  {{#bulma-hero isWarning=true as | classNames |}}
+  {{#bulma-hero isWarning=true}}
     {{! Hero header: will stick at the top }}
-    {{#bulma-hero-header isInfo=trueclassNames}}
+    {{#bulma-hero-header}}
       {{#bulma-header}}
           {{#bulma-header-menu left=true}}
             <a class="header-item" href="#">
@@ -391,15 +391,15 @@
 
     {{! Hero footer: will stick at the bottom }}
     {{#bulma-hero-footer}}
-      {{bulma-tabs tabs=demoLinks}}
+      {{bulma-tabs tabs=demoLinks isBoxed=true}}
     {{/bulma-hero-footer}}
   {{/bulma-hero}}
 
   {{#themed-syntax transparent="true" language="handlebars" }}
-&#123;&#123;#bulma-hero isWarning=true as | classNames |&#125;&#125;
+&#123;&#123;#bulma-hero isWarning=true&#125;&#125;
 
   &#123;&#123;! Hero header: will stick at the top &#125;&#125;
-  &#123;&#123;#bulma-hero-header isInfo=trueclassNames&#125;&#125;
+  &#123;&#123;#bulma-hero-header&#125;&#125;
     &#123;&#123;#bulma-header&#125;&#125;
         &#123;&#123;#bulma-header-menu left=true&#125;&#125;
           &lt;a class="header-item" href="#"&gt;
@@ -427,7 +427,7 @@
 
   &#123;&#123;! Hero footer: will stick at the bottom &#125;&#125;
   &#123;&#123;#bulma-hero-footer&#125;&#125;
-    &#123;&#123;bulma-tabs tabs=someTabs&#125;&#125;
+    &#123;&#123;bulma-tabs tabs=someTabs isBoxed=true&#125;&#125;
   &#123;&#123;/bulma-hero-footer&#125;&#125;
 
 &#123;&#123;/bulma-hero&#125;&#125;

@@ -1,7 +1,7 @@
 {
   "name": "ember-bulma",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Ember Bulma is an ember addon for Bulma by Jeremy Thomas.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,11 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/open-tux/ember-bulma",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Open Tux",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
@@ -51,6 +51,7 @@
     "ember-computed-decorators": "^0.2.2"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://open-tux.github.io/ember-bulma/"
   }
 }

@@ -8,7 +8,7 @@ module.exports = function(environment) {
     baseURL: '/ember-bulma',
     locationType: 'auto',
     contentSecurityPolicy: {
-      'img-src': "'self' emberjs.com assets-cdn.github.com",
+      'img-src': "'self' data: emberjs.com assets-cdn.github.com",
     },
     EmberENV: {
       FEATURES: {

@@ -4,7 +4,8 @@ import computed from 'ember-computed-decorators';
 const {
   get,
   set,
-  A
+  A,
+  run
 } = Ember;
 
 export default Ember.Controller.extend({
@@ -25,7 +26,9 @@ export default Ember.Controller.extend({
       let filtered = A(get(tab, 'subnav')).filterBy('route', currentPath);
       if (filtered.length) {
         filteredByCurrentPath = get(tab, 'subnav');
-        set(tab,'isActive', true);
+        run.schedule('afterRender', function() {
+          set(tab,'isActive', true);
+        });
       }
     });
     return filteredByCurrentPath || [];

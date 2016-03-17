@@ -41,6 +41,13 @@
         {{bulma-tag tag="Tag" isPrimary=element.primary isInfo=element.info isSuccess=element.success isWarning=element.warning isDanger=element.danger}}
       </p>
 
+      <p class="control">
+        {{#bulma-hero isPrimary=element.primary isInfo=element.info isSuccess=element.success isWarning=element.warning isDanger=element.danger}}
+          {{#bulma-hero-content}}
+            Hero
+          {{/bulma-hero-content}}
+        {{/bulma-hero}}
+      </p>
       <hr>
     {{/each}}
   </div>
@@ -66,7 +73,7 @@ $map: (
 $generic: #aeb1b5;
 
 .my-theme {
-  div.notification, div.message, a.button, span.tag, .checkbox input:checked, .menu-checkbox input:checked, .radio input:checked {
+  .hero, div.notification, div.message, a.button, span.tag, .checkbox input:checked, .menu-checkbox input:checked, .radio input:checked {
     @each $modifier, $color in $map {
       &amp;.#{$modifier} {
         background: #{$color};

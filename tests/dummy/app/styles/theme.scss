@@ -11,7 +11,7 @@ $generic: #aeb1b5;
 // TODO: Border radius
 
 .my-theme {
-  div.notification, div.message, a.button, span.tag, .checkbox input:checked, .menu-checkbox input:checked, .radio input:checked {
+  .hero, div.notification, div.message, a.button, span.tag, .checkbox input:checked, .menu-checkbox input:checked, .radio input:checked {
     @each $modifier, $color in $map {
       &.#{$modifier} {
         background: #{$color};

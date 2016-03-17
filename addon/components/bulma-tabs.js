@@ -41,17 +41,12 @@ export default Ember.Component.extend({
     @returns Array
     @private
   */
-  @computed('tabs')
-  _processedTabs(tabs) {
-    //Expose the current route name
-    let containerRouteName = this.get('_containerRouter.currentRouteName');
-
+  @computed('tabs.[]', '_containerRouter.currentRouteName')
+  _processedTabs(tabs, routeName) {
     //Compare the provided route to the current route
     if (tabs) {
       return tabs.map((tab) => {
-        if (!tab.hasOwnProperty('isActive')) {
-          set(tab, 'isActive', isEqual(get(tab, 'route'), containerRouteName));
-        }
+        set(tab, 'isActive', isEqual(get(tab, 'route'), routeName));
         return tab;
       });
     } else {

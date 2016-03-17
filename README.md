@@ -1,26 +1,24 @@
 # ember-bulma
 
-Ember Bulma is an ember addon for Bulma by Jeremy Thomas.
+[Ember Bulma](http://open-tux.github.io/ember-bulma/) is an ember addon for [Bulma](https://github.com/jgthms/bulma) by Jeremy Thomas.
+
+---
+
+**Ember Bulma is still very much in Beta. When you come across anything that needs addressing, please [open an issue](https://github.com/open-tux/ember-bulma/issues). Thanks!**
+
 
 ## Installation
+  
+`ember install ember-bulma`
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
 
-## Running
+## Documentation
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+- Ember Bulma: <http://open-tux.github.io/ember-bulma/>
+- Bulma: <http://bulma.io/documentation/>
 
-## Running Tests
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+## Source
 
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+- Ember Bulma: <https://github.com/open-tux/ember-bulma>
+- Bulma: <https://github.com/jgthms/bulma/>

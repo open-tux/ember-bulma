@@ -15,7 +15,7 @@
 ## Documentation
 
 - Ember Bulma: <http://open-tux.github.io/ember-bulma/>
-- Bulma: <http://bulma.io/documentation/>
+- Bulma: <http://bulma.io/documentation/overview/start/>
 
 
 ## Source

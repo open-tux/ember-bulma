@@ -4,7 +4,7 @@ import layout from '../templates/components/bulma-header-menu';
 export default Ember.Component.extend({
   layout,
   classNames: ['header-menu'],
-  classNameBindings: ['left:header-left', 'right:header-right'],
+  classNameBindings: ['isLeft:header-left', 'isRight:header-right', 'left:header-left', 'right:header-right'],
   /**
     Array of links for this menu
 

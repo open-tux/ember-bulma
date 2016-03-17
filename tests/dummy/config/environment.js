@@ -5,7 +5,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'dummy',
     environment: environment,
-    baseURL: '/',
+    baseURL: '/ember-bulma',
     locationType: 'auto',
     contentSecurityPolicy: {
       'img-src': "'self' emberjs.com assets-cdn.github.com",

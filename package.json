@@ -1,6 +1,6 @@
 {
   "name": "ember-bulma",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Ember Bulma is an ember addon for Bulma by Jeremy Thomas.",
   "directories": {
     "doc": "doc",
@@ -37,7 +37,6 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-lodash": "0.0.5",
-    "ember-sort-filter-table": "0.1.83",
     "ember-suave": "2.0.1",
     "ember-themed-syntax": "0.0.4",
     "ember-try": "~0.0.8"
@@ -48,7 +47,8 @@
   "dependencies": {
     "ember-cli-babel": "^5.1.5",
     "ember-cli-htmlbars": "^1.0.2",
-    "ember-computed-decorators": "^0.2.2"
+    "ember-computed-decorators": "^0.2.2",
+    "ember-sort-filter-table": "0.2.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",

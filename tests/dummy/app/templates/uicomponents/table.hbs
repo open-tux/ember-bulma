@@ -7,8 +7,6 @@
   {{bulma-table table=table}}
 
   {{#themed-syntax transparent="true" language="handlebars" }}
-&#123;&#123;!Extends ember-sort-filter-table&#125;&#125;
-
 &#123;&#123;#bulma-table&#125;&#125;
   &lt;thead&gt;
     &#123;&#123;!...&#125;&#125;
@@ -17,33 +15,6 @@
     &#123;&#123;!...&#125;&#125;
   &lt;/tbody&gt;
 &#123;&#123;/bulma-table&#125;&#125;
-
-&#123;&#123;!Or&#125;&#125;
-
-&#123;&#123;bulma-table table=myTable&#125;&#125;
-  {{/themed-syntax}}
-
-<br>
-  {{#themed-syntax transparent="true" language="javascript" }}
-//Model
-myTable: {
-  rows: [
-    {
-      '' : '&lt;i class="fa fa-android"&gt;&lt;/i&gt;',
-      'Open source projects' : 'Android',
-      'Year Started': '2003',
-      '_tags': 'google'
-    },
-    {
-      '' : '&lt;i class="fa fa-firefox"&gt;&lt;/i&gt;',
-      'Open source projects' : 'Firefox',
-      'Year Started': '2003',
-      '_tags': 'mozilla'
-    },
-
-    //...
-  ];
-}
   {{/themed-syntax}}
 </div>
 <br>
@@ -87,7 +58,20 @@ myTable: {
   {{/bulma-column}}
 
   {{#bulma-column isHalf=true}}
-    {{bulma-table isStriped=true table=plain filterable=false}}
+    {{#bulma-table isStriped=true}}
+      <thead>
+       <tr>
+         <th>One</th>
+         <th>Two</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>Three</td>
+         <td>Four</td>
+       </tr>
+      </tbody>
+    {{/bulma-table}}
   {{/bulma-column}}
 {{/bulma-columns}}
 
@@ -101,7 +85,20 @@ myTable: {
   {{/bulma-column}}
 
   {{#bulma-column isHalf=true}}
-    {{bulma-table isNarrow=true table=plain filterable=false}}
+    {{#bulma-table isNarrow=true}}
+      <thead>
+       <tr>
+         <th>One</th>
+         <th>Two</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>Three</td>
+         <td>Four</td>
+       </tr>
+      </tbody>
+    {{/bulma-table}}
   {{/bulma-column}}
 {{/bulma-columns}}
 
@@ -118,6 +115,19 @@ myTable: {
   {{/bulma-column}}
 
   {{#bulma-column isHalf=true}}
-    {{bulma-table isNarrow=true isBordered=true isStriped=true table=plain filterable=false}}
+    {{#bulma-table isNarrow=true isBordered=true isStriped=true}}
+      <thead>
+       <tr>
+         <th>One</th>
+         <th>Two</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>Three</td>
+         <td>Four</td>
+       </tr>
+      </tbody>
+    {{/bulma-table}}
   {{/bulma-column}}
 {{/bulma-columns}}

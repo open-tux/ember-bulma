@@ -1,8 +1,11 @@
 /* jshint node: true */
 'use strict';
 
+var path = require('path');
+
 module.exports = {
   name: 'ember-bulma',
+
   init: function(app) {
     this.options = this.options || {};
     this.options.babel = this.options.babel || {};
@@ -18,18 +21,31 @@ module.exports = {
     if (typeof app.import !== 'function' && app.app) {
       this.app = app = app.app;
     }
+
     this._super.included(app);
 
+    // see: http://ember-cli.com/extending/#broccoli-build-options-for-in-repo-addons
     var target = (parentAddon || app);
-    var options = target.options || {};
+    target.options = target.options || {};
+
+
+    // Build all paths
+    var bulmaPath = path.join(app.bowerDirectory, 'bulma');
+
+    target.options.sassOptions = target.options.sassOptions || {};
+    target.options.sassOptions.includePaths = target.options.sassOptions.includePaths || [];
+
+    // Import sass dependencies
+    target.options.sassOptions.includePaths.push(bulmaPath);
+    // target.options.sassOptions.extension = 'sass';
 
     /** Font Awesome **/
-    if (!('includeFontAwesomeAssets' in options)) {
-      options.includeFontAwesomeAssets = true;
+    if (!('includeFontAwesomeAssets' in target.options)) {
+      target.options.includeFontAwesomeAssets = true;
     }
 
-    if (options.includeFontAwesomeAssets) {
-      if (!options.useScss) {
+    if (target.options.includeFontAwesomeAssets) {
+      if (!target.options.useScss) {
         target.import(target.bowerDirectory + "/font-awesome/css/font-awesome.css");
       }
 
@@ -41,14 +57,5 @@ module.exports = {
       target.import(target.bowerDirectory + "/font-awesome/fonts/FontAwesome.otf", { destDir: "fonts" });
     }
 
-    /** Bulma **/
-    if (!('includeBulmaAssets' in options)) {
-      options.includeBulmaAssets = true;
-    }
-
-    if (options.includeBulmaAssets) {
-      target.import(target.bowerDirectory + "/bulma/css/bulma.min.css");
-    }
-
-  },
+  }
 };

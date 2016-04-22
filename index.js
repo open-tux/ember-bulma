@@ -38,24 +38,5 @@ module.exports = {
     // Import sass dependencies
     target.options.sassOptions.includePaths.push(bulmaPath);
     // target.options.sassOptions.extension = 'sass';
-
-    /** Font Awesome **/
-    if (!('includeFontAwesomeAssets' in target.options)) {
-      target.options.includeFontAwesomeAssets = true;
-    }
-
-    if (target.options.includeFontAwesomeAssets) {
-      if (!target.options.useScss) {
-        target.import(target.bowerDirectory + "/font-awesome/css/font-awesome.css");
-      }
-
-      target.import(target.bowerDirectory + "/font-awesome/fonts/fontawesome-webfont.eot", { destDir: "fonts" });
-      target.import(target.bowerDirectory + "/font-awesome/fonts/fontawesome-webfont.svg", { destDir: "fonts" });
-      target.import(target.bowerDirectory + "/font-awesome/fonts/fontawesome-webfont.ttf", { destDir: "fonts" });
-      target.import(target.bowerDirectory + "/font-awesome/fonts/fontawesome-webfont.woff", { destDir: "fonts" });
-      target.import(target.bowerDirectory + "/font-awesome/fonts/fontawesome-webfont.woff2", { destDir: "fonts" });
-      target.import(target.bowerDirectory + "/font-awesome/fonts/FontAwesome.otf", { destDir: "fonts" });
-    }
-
   }
 };

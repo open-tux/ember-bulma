@@ -49,6 +49,9 @@
     "ember-cli-htmlbars": "^1.0.2",
     "ember-computed-decorators": "^0.2.2"
   },
+  "peerDependencies": {
+    "ember-font-awesome": "~2.1.0"
+  },
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "http://open-tux.github.io/ember-bulma/"

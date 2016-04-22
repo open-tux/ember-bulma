@@ -5,7 +5,25 @@
     Installation
   </h3>
 
-  {{#themed-syntax transparent="true" language="bash"}} ember install ember-bulma{{/themed-syntax}}
+  {{#themed-syntax transparent="true" language="bash"}}
+ember install ember-cli-sass
+ember install ember-bulma
+  {{/themed-syntax}}
+
+  <br>
+
+  <strong>Optional : </strong>
+  <br>
+  {{#themed-syntax transparent="true" language="bash"}}
+ember install ember-font-awesome
+  {{/themed-syntax}}
+
+  <br><br>
+  <h5>Then create a <span class="tag">styles/app.scss</span> file.</h5>
+
+  {{#themed-syntax transparent="true" language="scss"}}
+@import "bulma";
+  {{/themed-syntax}}
 
   <h3 class="subtitle">
     Source

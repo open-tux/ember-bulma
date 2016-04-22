@@ -167,11 +167,11 @@ mySubmitAction(button) {
 
 <h1 class="title">Form addons</h1>
 <h2 class="subtitle">
-  <p>If you want to <strong>attach</strong> controls together, use the <code>is-grouped</code> modifier on the <code>control</code> container:</p></h2>
+  <p>If you want to <strong>attach</strong> controls together, use the <code>has-addons</code> modifier on the <code>control</code> container:</p></h2>
 <hr>
 {{#bulma-columns}}
   {{#bulma-column content=true isHalf=true}}
-    <p class="control is-grouped">
+    <p class="control has-addons">
       {{bulma-input placeholder="Find a repository" control=false}}
       {{bulma-button isInfo=true icon="fa fa-search"}}
     </p>
@@ -191,7 +191,7 @@ mySubmitAction(button) {
 </p>
 {{#bulma-columns}}
   {{#bulma-column content=true isHalf=true}}
-    <p class="control is-grouped">
+    <p class="control has-addons">
       {{bulma-select options=demo.currencies onchange=(action (mut demo.currency)) value="target.value"}}
       {{bulma-input type="number" placeholder="Email" placeholder="Enter an amount" control=false value=demo.amount key-up=(action "format" demo.amount)}}
       {{bulma-button label="Transfer" isSuccess=true onmousedown=(action "transfer" demo.amount demo.currency)}}

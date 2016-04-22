@@ -62,7 +62,7 @@
      <code>isThird</code>
    </li>
    <li>
-     <code>isQuarter</code>
+     <code>isOneQuarter</code>
    </li>
  </ul>
  <p>The <em>other</em> columns will fill up the <strong>remaining</strong> space automatically.</p>
@@ -101,9 +101,9 @@
 {{/bulma-columns}}
 
 {{#bulma-columns}}
-      {{#bulma-column isQuarter=true}}
+      {{#bulma-column isOneQuarter=true}}
         {{#bulma-notification isInfo=true}}
-          <code class="html">isQuarter</code>
+          <code class="html">isOneQuarter</code>
         {{/bulma-notification}}
       {{/bulma-column}}
 
@@ -126,7 +126,7 @@
     &#123;&#123;!...&#125;&#125;
   &#123;&#123;/bulma-column&#125;&#125;
 
-  &#123;&#123;#bulma-column isQuarter=true&#125;&#125;
+  &#123;&#123;#bulma-column isOneQuarter=true&#125;&#125;
     &#123;&#123;!...&#125;&#125;
   &#123;&#123;/bulma-column&#125;&#125;
 &#123;&#123;/bulma-columns&#125;&#125;
@@ -577,11 +577,11 @@
 </div>
 
 {{#bulma-columns isMobile=true}}
-  {{#bulma-column isHalfMobile=true isThirdTablet=true isQuarterDesktop=true}}
+  {{#bulma-column isHalfMobile=true isThirdTablet=true isOneQuarterDesktop=true}}
     {{#bulma-notification isPrimary=true}}
       <code>isHalfMobile=true</code>
       <code>isThirdTablet=true</code>
-      <code>isQuarterDesktop=true</code>
+      <code>isOneQuarterDesktop=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
@@ -596,7 +596,7 @@
 " header="resize" isInfo=true}}
 
 {{#themed-syntax transparent="true" language="handlebars" }}
-&#123;&#123;#bulma-column isHalfMobile=true isThirdTablet=true isQuarterDesktop=true&#125;&#125;
+&#123;&#123;#bulma-column isHalfMobile=true isThirdTablet=true isOneQuarterDesktop=true&#125;&#125;
   &#123;&#123;!...&#125;&#125;
 &#123;&#123;/bulma-column&#125;&#125;
 {{/themed-syntax}}
@@ -608,27 +608,27 @@
 </div>
 
 {{#bulma-columns isMultiline=true isMobile=true}}
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isInfo=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isSuccess=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isWarning=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isDanger=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
@@ -638,15 +638,15 @@
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isSuccess=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isWarning=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
@@ -657,7 +657,7 @@
 
 {{#themed-syntax transparent="true" language="handlebars" }}
 &#123;&#123;#bulma-columns isMultiline=true isMobile=true&#125;&#125;
-  &#123;&#123;#bulma-column isQuarter=true&#125;&#125;
+  &#123;&#123;#bulma-column isOneQuarter=true&#125;&#125;
     &#123;&#123;!...&#125;&#125;
   &#123;&#123;/bulma-column&#125;&#125;
 &#123;&#123;/bulma-columns&#125;&#125;
@@ -698,27 +698,27 @@
 </div>
 
 {{#bulma-columns isGapless=true isMultiline=true isMobile=true}}
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isInfo=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isSuccess=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isWarning=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isDanger=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
@@ -728,15 +728,15 @@
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isSuccess=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 
-  {{#bulma-column isQuarter=true}}
+  {{#bulma-column isOneQuarter=true}}
     {{#bulma-notification isWarning=true}}
-      <code>isQuarter=true</code>
+      <code>isOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 

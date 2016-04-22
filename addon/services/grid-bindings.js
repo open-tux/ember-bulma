@@ -18,7 +18,7 @@ export default Ember.Service.extend({
     @private
   */
   _generateAllBindings() {
-    let possibilities = Ember.A([ 'half', 'third', 'quarter', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11' ]);
+    let possibilities = Ember.A([ 'half', 'third', 'one-quarter', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11' ]);
     let modifiers = Ember.A([ 'offset', 'desktop', 'mobile', 'tablet']);
     let bindings = Ember.A([]);
 

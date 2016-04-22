@@ -21,6 +21,10 @@ export const makeString = (arr, unique = true) => {
   @public
 */
 export const camelCase = (str) => {
+  let arr = str.split('-');
+  if(arr.length > 1) {
+    return arr.map(camelCase).join('');
+  }
   if ((/[a-z]/).test(str)) {
     let arr = str.split('');
     return `${arr[0].toUpperCase()}${arr.slice(1, arr.length)}`.replace(/,/g, '');

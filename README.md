@@ -8,8 +8,20 @@
 
 
 ## Installation
-  
-`ember install ember-bulma`
+```
+ember install ember-cli-sass
+ember install ember-bulma
+```
+
+**Optional :**
+```
+ember install ember-font-awesome
+```
+
+Then create a `styles/app.scss` file.
+```scss
+@import "bulma";
+```
 
 
 ## Documentation

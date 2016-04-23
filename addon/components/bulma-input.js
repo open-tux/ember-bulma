@@ -100,7 +100,7 @@ export default Ember.Component.extend({
   */
   @computed('type')
   _isNotTextInput(type) {
-    return type !== 'text' || type !== 'password';
+    return type === 'select' || type === 'radio' || type === 'checkbox';
   },
 
   /**
@@ -112,7 +112,7 @@ export default Ember.Component.extend({
   */
   @computed('type')
   _classFromType(type) {
-    return this.get('_isNotTextInput') ? 'input' : `${type}`;
+    return this.get('_isNotTextInput') ? `${type}` : 'input';
   },
 
   /**

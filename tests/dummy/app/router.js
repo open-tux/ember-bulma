@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('overview', { path: '/' });
   this.route('grid');
   this.route('navbar');
-  this.route('layout', function() {
+  this.route('uilayout', function() {
     this.route('container', { path: '/' });
     this.route('header');
     this.route('hero');
@@ -36,6 +36,7 @@ Router.map(function() {
     });
 
     this.route('menu');
+    this.route('panel');
     this.route('table');
   });
 });

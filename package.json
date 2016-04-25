@@ -1,6 +1,6 @@
 {
   "name": "ember-bulma",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ember Bulma is an ember addon for Bulma by Jeremy Thomas.",
   "directories": {
     "doc": "doc",
@@ -44,7 +44,13 @@
     "lodash-es": "^4.11.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework",
+    "composable"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.5",

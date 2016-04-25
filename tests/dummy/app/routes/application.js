@@ -72,6 +72,11 @@ export default Ember.Route.extend({
               classNames: ''
             },
             {
+              name: 'Panel',
+              route: 'uicomponents.panel',
+              classNames: ''
+            },
+            {
               name: 'Table',
               route: 'uicomponents.table',
               classNames: ''
@@ -81,31 +86,31 @@ export default Ember.Route.extend({
         {
           name: 'Layout',
           classNames: '',
-          route: 'layout.container',
+          route: 'uilayout.container',
           subnav: [
             {
               name: 'Container',
-              route: 'layout.container',
+              route: 'uilayout.container',
               classNames: ''
             },
             {
               name: 'Header',
-              route: 'layout.header',
+              route: 'uilayout.header',
               classNames: ''
             },
             {
               name: 'Hero',
-              route: 'layout.hero',
+              route: 'uilayout.hero',
               classNames: ''
             },
             {
               name: 'Section',
-              route: 'layout.section',
+              route: 'uilayout.section',
               classNames: ''
             },
             {
               name: 'Footer',
-              route: 'layout.footer',
+              route: 'uilayout.footer',
               classNames: ''
             }
           ]

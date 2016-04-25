@@ -4,15 +4,15 @@ export default Ember.Controller.extend({
   demoLinks: Ember.A([
     {
       name: 'One',
-      route: 'layout.hero'
+      route: 'uilayout.hero'
     },
     {
       name: 'Two',
-      route: 'layout.hero?fake'
+      route: 'uilayout.hero?fake'
     },
     {
       name: 'Three',
-      route: 'layout.hero?fake'
+      route: 'uilayout.hero?fake'
     }
   ])
 });

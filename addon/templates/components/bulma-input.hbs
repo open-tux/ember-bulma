@@ -21,12 +21,12 @@
       {{#if _useLabel}}
         {{!Checkbox or Radio input}}
         <label class="{{type}}">
-          {{input class=_classes type=_inputType placeholder=placeholder name=name id=id key-up="handleChange" checked=checked disabled=disabled}}
+          {{input class=_classes type=type placeholder=placeholder name=name id=id key-up="handleChange" checked=checked disabled=disabled}}
           {{label}}
         </label>
       {{else}}
         {{!Text input}}
-        {{input class=_classes value=value type=_inputType placeholder=placeholder name=name id=id key-up="handleChange" disabled=disabled}}
+        {{input class=_classes value=value type=type placeholder=placeholder name=name id=id key-up="handleChange" disabled=disabled}}
       {{/if}}
     {{/if}}
     {{#if _hasIcon}}

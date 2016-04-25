@@ -1,11 +1,25 @@
 <main class="no-theme">
   {{#bulma-hero isInfo=true isLeft=true isBold=true}}
+    {{#bulma-hero-header}}
+      {{#bulma-header isLeft=true}}
+        <h1 class="title header-item">Ember Bulma</h1>
+      {{/bulma-header}}
+      <div class="header-left"></div>
+      <div class="header-toggle"></div>
+      {{#bulma-header-menu isRight=true}}
+        <ul>
+          <li class="header-item">
+            {{#bulma-button isInfo=true isOutlined=true isInverted=true}}
+              <i class="fa fa-github"></i>&nbsp;Github
+            {{/bulma-button}}
+          </li>
+        </ul>
+      {{/bulma-header-menu}}
+    {{/bulma-hero-header}}
     {{#bulma-hero-content withContainer=true}}
-      <p class="title">
-        Ember Bulma
-      </p>
+      <p class="title is-4">Documentation</p>
       <p class="subtitle">
-        <strong>Ember Bulma</strong> is an <em>ember addon</em> for <strong xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Bulma</strong> by <strong xmlns:cc="http://creativecommons.org/ns#" href="http://jgthms.com" property="cc:attributionName" rel="cc:attributionURL">Jeremy Thomas</strong>.
+        <a href="https://github.com/open-tux/ember-bulma" target="_blank"><strong>Ember Bulma</strong></a> is an <em>ember addon</em> for <a xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type"><strong>Bulma</strong></a> by <strong xmlns:cc="http://creativecommons.org/ns#" href="http://jgthms.com" property="cc:attributionName" rel="cc:attributionURL">Jeremy Thomas</strong>.
       </p>
     {{/bulma-hero-content}}
     {{#bulma-hero-footer}}

@@ -53,4 +53,15 @@ ember install ember-font-awesome
     <a href="https://github.com/jgthms/bulma/" target="_blank">https://github.com/DockYard/ember-composable-helpers</a>
   </h4>
 
+  <!--Known Issues
+  Node sass, lib sass incompabitility causes Segment Fault 11 when compiling bulma > layout > hero.sass
+
+  Temporary Fix:
+  Manually install node-sass@3.4.2
+  at ember-cli-sass > broccoli-sass-source-maps
+
+  Official Issue:
+  https://github.com/aexmachina/broccoli-sass-source-maps/issues/19
+  -->
+
 </div>

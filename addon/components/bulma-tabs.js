@@ -6,7 +6,8 @@ import { makeString } from '../utils';
 const {
   isEqual,
   set,
-  get
+  get,
+  getOwner
   /* Object: { create: _create } */
 } = Ember;
 
@@ -14,16 +15,6 @@ export default Ember.Component.extend({
   layout,
   classNames: 'tabs',
   classNameBindings: ['isRight:is-right', 'isFullwidth:is-fullwidth', 'isBoxed:is-boxed', 'boxed:is-boxed', 'centered:is-centered', 'isCentered:is-centered', 'isToggle:is-toggle', 'toggle:is-toggle'],
-
-  /**
-    Signal if to be used as site navigation (top level routes)
-    // TODO: always highlight top level active item when isSiteNav is true
-
-    @property isSiteNav
-    @returns Boolean
-    @public
-  */
-  isSiteNav: false,
 
   /**
     If used inline, consumer will provide an array of tabs
@@ -57,15 +48,14 @@ export default Ember.Component.extend({
 
   /**
     Look up the router
-    // TODO: Ember 2.2+ - http://emberjs.com/blog/2016/01/15/ember-2-3-released.html - Ember.getOwner(container)
 
     @property _containerRouter
     @returns Class
     @private
   */
-  @computed('container')
-  _containerRouter(container) {
-    return container.lookup('router:main');
+  @computed()
+  _containerRouter() {
+    return getOwner(this).lookup('router:main');
   },
   actions: {
     /**

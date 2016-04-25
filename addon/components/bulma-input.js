@@ -26,18 +26,6 @@ export default Ember.Component.extend({
   control: false,
 
   /**
-    Remove any bulma prefixes for actual input type
-
-    @property _inputType
-    @returns String
-    @public
-  */
-  @computed('type')
-  _inputType(type) {
-    return (/menu/).test(type) ? type.replace('menu-', '') : type;
-  },
-
-  /**
     Determine if control container is required as per bulma docs, then set control flag accordingly
 
     @method _requiresControl

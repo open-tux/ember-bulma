@@ -6,19 +6,20 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('overview', { path: '/' });
-  this.resource('grid');
-  this.resource('navbar');
-  this.resource('layout', function() {
+  this.route('overview', { path: '/' });
+  this.route('grid');
+  this.route('navbar');
+  this.route('uilayout', function() {
     this.route('container', { path: '/' });
     this.route('header');
     this.route('hero');
     this.route('section');
     this.route('footer');
   });
-  this.resource('themes');
 
-  this.resource('uielements', function() {
+  this.route('themes');
+
+  this.route('uielements', function() {
     this.route('buttons', { path: '/' });
     this.route('form-controls');
     this.route('messages');
@@ -26,7 +27,7 @@ Router.map(function() {
     this.route('tags');
   });
 
-  this.resource('uicomponents', function() {
+  this.route('uicomponents', function() {
     this.route('tabs', { path: '/' }, function() {
       this.route('pictures');
       this.route('music');
@@ -35,6 +36,7 @@ Router.map(function() {
     });
 
     this.route('menu');
+    this.route('panel');
     this.route('table');
   });
 });

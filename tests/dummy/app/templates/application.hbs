@@ -1,16 +1,14 @@
 <main class="no-theme">
   {{#bulma-hero isInfo=true isLeft=true isBold=true}}
     {{#bulma-hero-header}}
-      {{#bulma-header isLeft=true}}
+      {{#bulma-header-menu isLeft=true}}
         <h1 class="title header-item">Ember Bulma</h1>
-      {{/bulma-header}}
-      <div class="header-left"></div>
-      <div class="header-toggle"></div>
+      {{/bulma-header-menu}}
       {{#bulma-header-menu isRight=true}}
         <ul>
           <li class="header-item">
             <!-- TODO: Solution for buttons that don't use actions -->
-            <a class="button is-info is-outlined is-inverted">
+            <a href="https://github.com/open-tux/ember-bulma" target="_blank" class="button is-info is-outlined is-inverted">
               <i class="fa fa-github"></i>&nbsp;Github
             </a>
           </li>

@@ -1,4 +1,4 @@
-<h1 class="title">Menu <span class="tag is-warning">Outdated</span></h1>
+<h1 class="title">Menu</h1>
 <h2 class="subtitle">
   A composable <strong>menu</strong>, for any type of vertical navigation
 </h2>
@@ -6,55 +6,54 @@
 <div class="example with-padding">
   {{#bulma-columns}}
     {{#bulma-column}}
-      {{#bulma-menu heading="Repositories"}}
-        <p class="menu-tabs">
-          {{#each demoTabs as |tab|}}
-            <a href="#" class="{{if tab.isActive 'is-active'}}" {{action "filterAction" tab}}>{{tab.name}}</a>
-          {{/each}}
-        </p>
-        {{#each demoBlocks as |block|}}
-          {{#if (contains filter block.type)}}
-          <a class="menu-block" href="#" {{action "noAction"}}>
-            <span class="menu-icon">
-              <i class="{{block.icon}}"></i>
-            </span>
-            {{block.name}}
-          </a>
-          {{/if}}
-        {{/each}}
-        {{bulma-input type="menu-checkbox" label="Remember my last filter"}}
-        <div class="menu-block">
-          {{bulma-button isPrimary=true isOutlined=true isFullwidth=true label="Reset all filters" onmousedown=(action "resetFilter")}}
-        </div>
+      {{#bulma-menu}}
+        {{#bulma-menu-list label="Administration"}}
+          <li><a href="#">Team Settings</a></li>
+          <li>
+            <a class="is-active" href="#">Manage Your Team</a>
+            <ul>
+              <li><a href="#">Members</a></li>
+              <li><a href="#">Plugins</a></li>
+              <li><a href="#">Add a member</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Invitations</a></li>
+          <li><a href="#">Authentication</a></li>
+        {{/bulma-menu-list}}
+
+        {{#bulma-menu-list label="Transactions"}}
+          <li><a href="#">Payments</a></li>
+          <li><a href="#">Transfers</a></li>
+          <li><a href="#">Balance</a></li>
+        {{/bulma-menu-list}}
+
       {{/bulma-menu}}
     {{/bulma-column}}
     {{#bulma-column isHalf=true}}
       {{#themed-syntax transparent="true" language="handlebars" }}
-  &#123;&#123;#bulma-menu heading="Repositories"&#125;&#125;
+&#123;&#123;#bulma-menu &#125;&#125;
 
-    &lt;p class="menu-tabs"&gt;
-      &#123;&#123;#each menuTabs as |tab|&#125;&#125;
-        &lt;a href="#" class="&#123;&#123;if tab.isActive 'is-active'&#125;&#125;" &#123;&#123;action "filterAction" tab.name&#125;&#125;&gt;&#123;&#123;tab.name&#125;&#125;&lt;/a&gt;
-      &#123;&#123;/each&#125;&#125;
-    &lt;/p&gt;
+  &#123;&#123;#bulma-menu-list label="Administration"&#125;&#125;
+    &lt;li&gt;&lt;a href="#"&gt;Team Settings&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class="is-active" href="#"&gt;Manage Your Team&lt;/a&gt;
+      &lt;ul>
+        &lt;li&gt;&lt;a href="#">Members&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#">Plugins&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#">Add a member&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href="#">Invitations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#">Authentication&lt;/a&gt;&lt;/li&gt;
+  &#123;&#123;/bulma-menu-list&#125;&#125;
 
-    &#123;&#123;#each menuBlocks as |block|&#125;&#125;
-      &#123;&#123;!Using ember-composable-helpers&#125;&#125;
-      &#123;&#123;#if (contains filter block.type)&#125;&#125;
-        &lt;a class="menu-block" href="#" &#123;&#123;action "filterAction" block&#125;&#125;&gt;
-          &lt;span class="menu-icon"&gt;&lt;i class="&#123;&#123;block.icon&#125;&#125;"&gt;&lt;/i&gt;&lt;/span&gt;
-          &#123;&#123;block.name&#125;&#125;
-        &lt;/a&gt;
-      &#123;&#123;/if&#125;&#125;
-    &#123;&#123;/each&#125;&#125;
+  &#123;&#123;#bulma-menu-list label="Transactions"&#125;&#125;
+    &lt;li&gt;&lt;a href="#"&gt;Payments&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Transfers&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Balance&lt;/a&gt;&lt;/li&gt;
+  &#123;&#123;/bulma-menu-list&#125;&#125;
 
-    &#123;&#123;bulma-input type="menu-checkbox" label="Remember my last filter"&#125;&#125;
-
-    &lt;div class="menu-block"&gt;
-      &#123;&#123;bulma-button isPrimary=true isOutlined=true isFullwidth=true label="Reset all filters" onmousedown=(action "resetFilter")&#125;&#125;
-    &lt;/div&gt;
-
-  &#123;&#123;/bulma-menu&#125;&#125;
+&#123;&#123;/bulma-menu&#125;&#125;
       {{/themed-syntax}}
     {{/bulma-column}}
   {{/bulma-columns}}

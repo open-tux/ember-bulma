@@ -1,0 +1,1 @@
+export { default } from 'ember-bulma/components/bulma-panel-block';

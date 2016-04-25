@@ -11,7 +11,7 @@ module.exports = {
  	afterInstall: function() {
     return this.addBowerPackagesToProject(
       [
-        { name: 'bulma', target: '~0.0.14' }
+        { name: 'bulma', target: '^0.0.23' }
       ]
     );
   }

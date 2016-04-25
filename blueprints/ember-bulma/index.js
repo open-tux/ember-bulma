@@ -11,7 +11,6 @@ module.exports = {
  	afterInstall: function() {
     return this.addBowerPackagesToProject(
       [
-        { name: 'font-awesome', target: '^4.5.0' },
         { name: 'bulma', target: '~0.0.14' }
       ]
     );

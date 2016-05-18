@@ -1,58 +1,7 @@
-$map: (
-  "is-primary": #650360,
-  "is-info": #00A4D9,
-  "is-success": #5eadb2,
-  "is-warning": #fce473,
-  "is-danger": #ed6c63
-);
+$primary: #650360;
+$info: #00A4D9;
+$success: #5eadb2;
+$warning: #fce473;
+$danger: #ed6c63;
 
-$generic: #aeb1b5;
-
-// TODO: Border radius
-
-.my-theme {
-  .hero, div.notification, div.message, a.button, span.tag, .checkbox input:checked, .menu-checkbox input:checked, .radio input:checked {
-    @each $modifier, $color in $map {
-      &.#{$modifier} {
-        background: #{$color};
-        border-color: #{$color};
-
-        &:hover {
-          background: #{$color};
-          border-color: #{$color};
-        }
-
-        &.is-outlined {
-          border-color: #{$color};
-          background: none;
-          color: #{$color};
-        }
-
-        /*
-         outliers
-        */
-        .message-header {
-          background: #{$color};
-        }
-
-        .message-body {
-          border-color: #{$color};
-          background: white;
-        }
-      }
-    }
-  }
-
-  //Bulma source: Select control currently does not have modifiers applied (use generic)
-  .select, .control .select {
-    select {
-      &:hover, &:focus {
-        border-color: $generic;
-        outline-color: $generic;
-      }
-    }
-    &:after {
-      border-color: $generic
-    }
-  }
-}
+$radius: 0;

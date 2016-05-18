@@ -5,7 +5,25 @@
     Installation
   </h3>
 
-  {{#themed-syntax transparent="true" language="bash"}} ember install ember-bulma{{/themed-syntax}}
+  {{#themed-syntax transparent="true" language="bash"}}
+ember install ember-cli-sass
+ember install ember-bulma
+  {{/themed-syntax}}
+
+  <br>
+
+  <strong>Optional : </strong>
+  <br>
+  {{#themed-syntax transparent="true" language="bash"}}
+ember install ember-font-awesome
+  {{/themed-syntax}}
+
+  <br><br>
+  <h5>Then create a <span class="tag">styles/app.scss</span> file.</h5>
+
+  {{#themed-syntax transparent="true" language="scss"}}
+@import "bulma";
+  {{/themed-syntax}}
 
   <h3 class="subtitle">
     Source
@@ -32,7 +50,18 @@
 
   <h4 class="subtitle">
     <span class="fa fa-github"/> Ember Composable Helpers:
-    <a href="https://github.com/jgthms/bulma/" target="_blank">https://github.com/DockYard/ember-composable-helpers</a>
+    <a href="https://github.com/DockYard/ember-composable-helpers" target="_blank">https://github.com/DockYard/ember-composable-helpers</a>
   </h4>
+
+  <!--Known Issues
+  Node sass, lib sass incompabitility causes Segment Fault 11 when compiling bulma > layout > hero.sass
+
+  Temporary Fix:
+  Manually install node-sass@3.4.2
+  at ember-cli-sass > broccoli-sass-source-maps
+
+  Official Issue:
+  https://github.com/aexmachina/broccoli-sass-source-maps/issues/19
+  -->
 
 </div>

@@ -31,3 +31,16 @@ pre, code {
   width: 5em;
   height: auto;
 }
+
+
+.select, .control .select {
+  select {
+    &:hover, &:focus {
+      border-color: $control;
+      outline-color: $control;
+    }
+  }
+  &:after {
+    border-color: $control
+  }
+}

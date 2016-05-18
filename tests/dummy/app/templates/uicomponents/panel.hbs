@@ -1,0 +1,69 @@
+<h1 class="title">Panel</h1>
+<h2 class="subtitle">
+  A composable <strong>panel</strong>, for compact controls
+</h2>
+<hr>
+<div class="example with-padding">
+  {{#bulma-columns}}
+    {{#bulma-column}}
+      {{#bulma-panel heading="Repositories"}}
+        {{#bulma-panel-tabs}}
+          {{#each demoTabs as |tab|}}
+            <a href="#" class="{{if tab.isActive 'is-active'}}" {{action "filterAction" tab}}>{{tab.name}}</a>
+          {{/each}}
+        {{/bulma-panel-tabs}}
+        {{#each demoBlocks as |block|}}
+          {{#if (contains filter block.type)}}
+          {{#bulma-panel-block}}
+            <a href="#">
+              <span class="panel-icon">
+                <i class="{{block.icon}}"></i>
+              </span>
+              {{block.name}}
+            </a>
+          {{/bulma-panel-block}}
+          {{/if}}
+        {{/each}}
+        {{#bulma-panel-block}}
+          {{bulma-input type="checkbox" label="Remember my last filter"}}
+        {{/bulma-panel-block}}
+        {{#bulma-panel-block}}
+          {{bulma-button isPrimary=true isOutlined=true isFullwidth=true label="Reset all filters" onmousedown=(action "resetFilter")}}
+        {{/bulma-panel-block}}
+      {{/bulma-panel}}
+    {{/bulma-column}}
+    {{#bulma-column isHalf=true}}
+      {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;#bulma-panel heading="Repositories"&#125;&#125;
+
+  &#123;&#123;#bulma-panel-tabs&#125;&#125;
+    &#123;&#123;#each panelTabs as |tab|&#125;&#125;
+      &lt;a href="#" class="&#123;&#123;if tab.isActive 'is-active'&#125;&#125;" &#123;&#123;action "filterAction" tab.name&#125;&#125;&gt;&#123;&#123;tab.name&#125;&#125;&lt;/a&gt;
+    &#123;&#123;/each&#125;&#125;
+  &#123;&#123;/bulma-panel-tabs&#125;&#125;
+
+  &#123;&#123;#each panelBlocks as |block|&#125;&#125;
+    &#123;&#123;!Using ember-composable-helpers&#125;&#125;
+    &#123;&#123;#if (contains filter block.type)&#125;&#125;
+      &#123;&#123;#bulma-panel-block&#125;&#125;
+        &lt;a class="panel-block" href="#"&gt;
+          &lt;span class="panel-icon"&gt;&lt;i class="&#123;&#123;block.icon&#125;&#125;"&gt;&lt;/i&gt;&lt;/span&gt;
+          &#123;&#123;block.name&#125;&#125;
+        &lt;/a&gt;
+      &#123;&#123;/bulma-panel-block&#125;&#125;
+    &#123;&#123;/if&#125;&#125;
+  &#123;&#123;/each&#125;&#125;
+
+  &#123;&#123;#bulma-panel-block&#125;&#125;
+    &#123;&#123;bulma-input type="checkbox" label="Remember my last filter"&#125;&#125;
+  &#123;&#123;/bulma-panel-block&#125;&#125;
+
+  &#123;&#123;#bulma-panel-block&#125;&#125;
+    &#123;&#123;bulma-button isPrimary=true isOutlined=true isFullwidth=true label="Reset all filters" onmousedown=(action "resetFilter")&#125;&#125;
+  &#123;&#123;/bulma-panel-block&#125;&#125;
+
+&#123;&#123;/bulma-panel&#125;&#125;
+      {{/themed-syntax}}
+    {{/bulma-column}}
+  {{/bulma-columns}}
+</div>

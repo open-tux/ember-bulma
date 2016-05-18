@@ -16,7 +16,7 @@ export default Ember.Component.extend({
     @returns Bool
     @public
   */
-  useContainer: true,
+  useContainer: false,
 
   /**
     Alias for useContainer

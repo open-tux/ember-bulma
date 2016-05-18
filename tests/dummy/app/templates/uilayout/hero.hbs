@@ -363,20 +363,21 @@
 <div class="with-padding example with-padding">
   {{#bulma-hero isWarning=true}}
     {{! Hero header: will stick at the top }}
-    {{#bulma-hero-header}}
-      {{#bulma-header}}
-          {{#bulma-header-menu left=true}}
-            <a class="header-item" href="#">
-              <img src="http://emberjs.com/images/brand/ember_Ember-Light.png" alt="logo" />
-            </a>
-          {{/bulma-header-menu}}
-          <span class="header-item">
-            {{bulma-tabs tabs=demoLinks}}
-          </span>
-          <span class="header-item">
-            {{bulma-button isDanger=true isInverted=true icon="fa fa-github" label="Download"}}
-          </span>
-      {{/bulma-header}}
+    {{#bulma-hero-header isInfo=trueclassNames}}
+      {{#bulma-header-menu isLeft=true}}
+        <a class="header-item" href="#">
+          <img src="http://emberjs.com/images/brand/ember_Ember-Light.png" alt="logo" />
+        </a>
+        <span class="header-item">
+          {{bulma-tabs tabs=demoLinks}}
+        </span>
+      {{/bulma-header-menu}}
+
+      {{#bulma-header-menu isRight=true}}
+        <span class="header-item">
+          {{bulma-button isDanger=true isInverted=true icon="fa fa-github" label="Download"}}
+        </span>
+      {{/bulma-header-menu}}
     {{/bulma-hero-header}}
 
     {{! Hero content: will be in the middle }}
@@ -399,20 +400,22 @@
 &#123;&#123;#bulma-hero isWarning=true&#125;&#125;
 
   &#123;&#123;! Hero header: will stick at the top &#125;&#125;
-  &#123;&#123;#bulma-hero-header&#125;&#125;
-    &#123;&#123;#bulma-header&#125;&#125;
-        &#123;&#123;#bulma-header-menu left=true&#125;&#125;
-          &lt;a class="header-item" href="#"&gt;
-            &lt;img src="http://emberjs.com/images/brand/ember_Ember-Light.png" alt="logo" /&gt;
-          &lt;/a&gt;
-        &#123;&#123;/bulma-header-menu&#125;&#125;
-        &lt;span class="header-item"&gt;
-          &#123;&#123;bulma-tabs tabs=someTabs&#125;&#125;
-        &lt;/span&gt;
-        &lt;span class="header-item"&gt;
-          &#123;&#123;bulma-button isInfo=true"is-danger is-inverted" icon="fa fa-github" label="Download" onmousedown=(action "someAction")&#125;&#125;
-        &lt;/span&gt;
-    &#123;&#123;/bulma-header&#125;&#125;
+
+  &#123;&#123;#bulma-hero-header isInfo=true&#125;&#125;
+    &#123;&#123;#bulma-header-menu isLeft=true&#125;&#125;
+      &lt;a class="header-item" href="#"&gt;
+        &lt;img src="http://emberjs.com/images/brand/ember_Ember-Light.png" alt="logo" /&gt;
+      &lt;/a&gt;
+      &lt;span class="header-item"&gt;
+        &#123;&#123;bulma-tabs tabs=someTabs&#125;&#125;
+      &lt;/span&gt;
+    &#123;&#123;/bulma-header-menu&#125;&#125;
+
+    &#123;&#123;#bulma-header-menu isRight=true&#125;&#125;
+      &lt;span class="header-item"&gt;
+        &#123;&#123;bulma-button isDanger=true isInverted=true icon="fa fa-github" label="Download"&#125;&#125;
+      &lt;/span&gt;
+    &#123;&#123;/bulma-header-menu&#125;&#125;
   &#123;&#123;/bulma-hero-header&#125;&#125;
 
   &#123;&#123;! Hero content: will be in the middle &#125;&#125;

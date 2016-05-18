@@ -20,6 +20,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    // Tree shaking test
+    'ember-bulma': {
+      // https://github.com/DockYard/ember-composable-helpers#configuration
+      // except: ['bulma-tag'] // excludes `bulma-tag`
     }
   };
 

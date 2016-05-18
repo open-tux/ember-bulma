@@ -10,20 +10,30 @@ ember install ember-cli-sass
 ember install ember-bulma
   {{/themed-syntax}}
 
-  <br>
-
-  <strong>Optional : </strong>
-  <br>
+  <h1 class="title is-5">Optional</h1>
   {{#themed-syntax transparent="true" language="bash"}}
 ember install ember-font-awesome
   {{/themed-syntax}}
 
-  <br><br>
-  <h5>Then create a <span class="tag">styles/app.scss</span> file.</h5>
+  <br>
+  <p>Then create a {{#bulma-tag}}styles/app.scss{{/bulma-tag}} file.</p>
 
   {{#themed-syntax transparent="true" language="scss"}}
 @import "bulma";
   {{/themed-syntax}}
+
+  <h1 class="title is-5">Experimental</h1>
+
+  <p><strong>Tree Shaking</strong> - exclude specified components from your build tree</p>
+  {{#themed-syntax transparent="true" language="javascript"}}
+// environment.js
+var ENV = {
+  // ...
+  'ember-bulma': {
+    except: ['bulma-tag'] // excludes `bulma-tag`
+  }
+  {{/themed-syntax}}
+
 
   <h3 class="subtitle">
     Source

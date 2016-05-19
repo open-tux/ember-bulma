@@ -5,6 +5,7 @@
         <a href="#" {{action "_handleRouting" tab}}>
           {{#if tab.icon}}
             <i class="{{tab.icon}}"></i>
+            {{#if tab.name}}&nbsp;{{/if}}
           {{/if}}
           {{tab.name}}
         </a>

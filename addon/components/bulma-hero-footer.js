@@ -1,9 +1,11 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-hero-footer';
+import { _responsiveHelpers } from '../constants';
 
 export default Ember.Component.extend({
   layout,
-  classNames: ['hero-footer'],
+  classNames: ['hero-foot'],
+  classNameBindings: _responsiveHelpers,
   /**
     Signal if content should be nested in a container (div.container)
 

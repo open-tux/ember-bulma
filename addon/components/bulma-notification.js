@@ -1,12 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-notification';
 import computed, { readOnly } from 'ember-computed-decorators';
-import { _colorBindings } from '../constants';
+import { _colorBindings, _responsiveHelpers } from '../constants';
 
 export default Ember.Component.extend({
   layout,
   classNames: ['notification'],
-  classNameBindings: _colorBindings,
+  classNameBindings: [].concat(_colorBindings, _responsiveHelpers),
 
   /**
     If a close action has been provided, close button should display by default

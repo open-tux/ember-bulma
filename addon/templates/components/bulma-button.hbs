@@ -1,12 +1,9 @@
 {{#unless hasBlock}}
   {{#if _hasIcon}}
-  <span class="icon">
-    <i class="{{icon}}"></i>
-  </span>
-  <span>{{label}}</span>
-  {{else}}
-    {{label}}
+    <i class="icon {{icon}}"></i>&nbsp;
   {{/if}}
+
+  {{#if _hasLabel}} {{label}} {{/if}}
 {{else}}
   {{yield}}
 {{/unless}}

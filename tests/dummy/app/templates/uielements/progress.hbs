@@ -1,0 +1,39 @@
+<h1 class="title">Progress bars</h1>
+<h2 class="subtitle">
+  Native HTML <strong>progress</strong> bars
+</h2>
+<hr>
+
+{{#bulma-columns}}
+  {{#bulma-column content=true isHalf=true}}
+    {{bulma-progress isPrimary=true value=20 max=100}}
+    {{bulma-progress isInfo=true value=40 max=100}}
+    {{bulma-progress isSuccess=true value=60 max=100}}
+    {{bulma-progress isWarning=true value=80 max=100}}
+    {{bulma-progress isDanger=true value=100 max=100}}
+  {{/bulma-column}}
+  {{#bulma-column content=true isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-progress isPrimary=true value=20 max=100&#125;&#125;
+&#123;&#123;bulma-progress isInfo=true value=40 max=100&#125;&#125;
+&#123;&#123;bulma-progress isSuccess=true value=60 max=100&#125;&#125;
+&#123;&#123;bulma-progress isWarning=true value=80 max=100&#125;&#125;
+&#123;&#123;bulma-progress isDanger=true value=100 max=100&#125;&#125;
+    {{/themed-syntax}}
+  {{/bulma-column}}
+{{/bulma-columns}}
+
+<div class="example with-padding">
+  {{#bulma-columns}}
+    {{#bulma-column content=true isHalf=true}}
+      {{bulma-progress isPrimary=true value=percentage max=100}}
+      {{bulma-button onmousedown=(action 'reset') label="Reset" isOutlined=true}}
+      {{bulma-button onmousedown=(action 'start') label="Go" isPrimary=true}}
+    {{/bulma-column}}
+    {{#bulma-column content=true isHalf=true}}
+      {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;bulma-progress isPrimary=true value=MyProgress max=myMax&#125;&#125;
+      {{/themed-syntax}}
+    {{/bulma-column}}
+  {{/bulma-columns}}
+</div>

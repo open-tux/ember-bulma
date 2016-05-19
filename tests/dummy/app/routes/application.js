@@ -13,17 +13,24 @@ export default Ember.Route.extend({
           icon: ''
         },
         {
+          name: 'Modifiers',
+          route: 'uimodifiers',
+          classNames: '',
+          icon: '',
+          subnav: [
+            {
+              name: 'Responsive Helpers',
+              route: 'uimodifiers.response-helpers',
+              classNames: ''
+            }
+          ]
+        },
+        {
           name: 'Grid',
           route: 'grid',
           classNames: '',
           icon: ''
         },
-        // TODO
-        // {
-        //   name: 'Navbar',
-        //   route: 'navbar',
-        //   classNames: ''
-        // },
         {
           name: 'Elements',
           route: 'uielements.buttons',
@@ -50,6 +57,11 @@ export default Ember.Route.extend({
               classNames: ''
             },
             {
+              name: 'Progress',
+              route: 'uielements.progress',
+              classNames: ''
+            },
+            {
               name: 'Tags',
               route: 'uielements.tags',
               classNames: ''
@@ -69,6 +81,11 @@ export default Ember.Route.extend({
             {
               name: 'Menu',
               route: 'uicomponents.menu',
+              classNames: ''
+            },
+            {
+              name: 'Nav',
+              route: 'uicomponents.nav',
               classNames: ''
             },
             {
@@ -93,11 +110,12 @@ export default Ember.Route.extend({
               route: 'uilayout.container',
               classNames: ''
             },
-            {
-              name: 'Header',
-              route: 'uilayout.header',
-              classNames: ''
-            },
+            //TODO Depecrate this
+            // {
+            //   name: 'Header',
+            //   route: 'uilayout.header',
+            //   classNames: ''
+            // },
             {
               name: 'Hero',
               route: 'uilayout.hero',

@@ -10,7 +10,7 @@
     "jquery": "1.11.3",
     "loader.js": "ember-cli/loader.js#3.2.1",
     "qunit": "~1.20.0",
-    "bulma": "^0.0.23",
+    "bulma": "^0.0.26",
     "font-awesome": "~4.5.0",
     "prism": "^1.4.1",
     "highlightjs": "^9.2.0",

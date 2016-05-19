@@ -2,6 +2,7 @@ import Ember from 'ember';
 import layout from '../templates/components/bulma-tabs';
 import computed, { readOnly, alias } from 'ember-computed-decorators';
 import { makeString } from '../utils';
+import { _responsiveHelpers } from '../constants';
 
 const {
   isEqual,
@@ -14,7 +15,16 @@ const {
 export default Ember.Component.extend({
   layout,
   classNames: 'tabs',
-  classNameBindings: ['isRight:is-right', 'isFullwidth:is-fullwidth', 'isBoxed:is-boxed', 'boxed:is-boxed', 'centered:is-centered', 'isCentered:is-centered', 'isToggle:is-toggle', 'toggle:is-toggle'],
+  classNameBindings: [
+    'isRight:is-right',
+    'isFullwidth:is-fullwidth',
+    'isBoxed:is-boxed',
+    'boxed:is-boxed',
+    'centered:is-centered',
+    'isCentered:is-centered',
+    'isToggle:is-toggle',
+    'toggle:is-toggle'
+  ].concat(_responsiveHelpers),
 
   /**
     If used inline, consumer will provide an array of tabs

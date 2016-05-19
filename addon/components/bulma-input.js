@@ -6,7 +6,6 @@ import { makeString } from '../utils';
 export default Ember.Component.extend({
   layout,
   tagName: '',
-
   /**
     Input type (text, radio, checkbox, password)
 

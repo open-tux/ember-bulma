@@ -44,3 +44,18 @@ pre, code {
     border-color: $control
   }
 }
+
+.menu-list {
+  a.light {
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+
+    &:hover{
+      color: $blue;
+    }
+  }
+}
+
+.active {
+  @extend .is-active;
+}

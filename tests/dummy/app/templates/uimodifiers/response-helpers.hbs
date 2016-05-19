@@ -1,0 +1,332 @@
+<h1 class="title">Responsive Modifiers</h1>
+<h2 class="subtitle">
+  <strong>Show/hide content</strong> depending on the width of the viewport
+</h2>
+<hr>
+
+<h3 class="title">Show</h3>
+<div class="content">
+  <p>
+    You can use one of the following <code>display</code> booleans:
+  </p>
+  <ul>
+    <li><code>block</code></li>
+    <li><code>flex</code></li>
+    <li><code>inline</code></li>
+    <li><code>inlineBlock</code></li>
+    <li><code>inlineFlex</code></li>
+  </ul>
+  <p>For example, here's how the <code>isFlex</code> modifier works:</p>
+</div>
+
+{{#bulma-table}}
+  <thead>
+    <tr>
+      <th>
+        Property
+      </th>
+      <th>
+        Mobile<br>
+        Up to <code>768px</code>
+      </th>
+      <th>
+        Tablet<br>
+        Between <code>769px</code> and <code>979px</code>
+      </th>
+      <th>
+        Desktop<br>
+        Between <code>980px</code> and <code>1179px</code>
+      </th>
+      <th>
+        Widescreen<br>
+        Above <code>1180px</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="is-narrow">
+        <code>isFlexMobile</code>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="is-narrow">
+        <code>isFlexTabletOnly</code>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="is-narrow">
+        <code>isFlexDesktopOnly</code>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="is-narrow">
+        <code>isFlexWidescreen</code>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="4">
+        <p>Modifiers to display <strong>up to</strong> or <strong>from</strong> a specific breakpoint</p>
+      </th>
+    </tr>
+    <tr>
+      <td class="is-narrow">
+        <code>isFlexTouch</code>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="is-narrow">
+        <code>isFlexTablet</code>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="is-narrow">
+        <code>isFlexDesktop</code>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification">unchanged</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+      <td class="is-narrow">
+        <p class="notification is-success">flex</p>
+      </td>
+    </tr>
+  </tbody>
+{{/bulma-table}}
+
+<div class="content">
+    <p>For the other display options, just replace <code>isFlex</code> with <code>isBlock</code> <code>isInline</code> <code>isInlineBlock</code> or <code>isInlineFlex</code>
+
+  </p><hr>
+
+  <h3 class="title">Hide</h3>
+
+  {{#bulma-table}}
+    <thead>
+      <tr>
+        <th>
+          Modifier
+        </th>
+        <th>
+          Mobile<br>
+          Up to <code>768px</code>
+        </th>
+        <th>
+          Tablet<br>
+          Between <code>769px</code> and <code>979px</code>
+        </th>
+        <th>
+          Desktop<br>
+          Between <code>980px</code> and <code>1179px</code>
+        </th>
+        <th>
+          Widescreen<br>
+          Above <code>1180px</code>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="is-narrow">
+          <code>isHiddenMobile</code>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="is-narrow">
+          <code>isHiddenTabletOnly</code>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="is-narrow">
+          <code>isHiddenDesktopOnly</code>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="is-narrow">
+          <code>isHiddenWidescreen</code>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="4">
+          <p>Modifiers to hide <strong>up to</strong> or <strong>from</strong> a specific breakpoint</p>
+        </th>
+      </tr>
+      <tr>
+        <td class="is-narrow">
+          <code>isHiddenTouch</code>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="is-narrow">
+          <code>isHiddenTablet</code>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="is-narrow">
+          <code>isHiddenDesktop</code>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification is-success">visible</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+        <td class="is-narrow">
+          <p class="notification">hidden</p>
+        </td>
+      </tr>
+    </tbody>
+  {{/bulma-table}}
+</div>

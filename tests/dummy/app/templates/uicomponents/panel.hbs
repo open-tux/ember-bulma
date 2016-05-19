@@ -14,14 +14,12 @@
         {{/bulma-panel-tabs}}
         {{#each demoBlocks as |block|}}
           {{#if (contains filter block.type)}}
-          {{#bulma-panel-block}}
-            <a href="#">
+            <a href="#" class="panel-block">
               <span class="panel-icon">
                 <i class="{{block.icon}}"></i>
               </span>
               {{block.name}}
             </a>
-          {{/bulma-panel-block}}
           {{/if}}
         {{/each}}
         {{#bulma-panel-block}}
@@ -45,12 +43,10 @@
   &#123;&#123;#each panelBlocks as |block|&#125;&#125;
     &#123;&#123;!Using ember-composable-helpers&#125;&#125;
     &#123;&#123;#if (contains filter block.type)&#125;&#125;
-      &#123;&#123;#bulma-panel-block&#125;&#125;
-        &lt;a class="panel-block" href="#"&gt;
-          &lt;span class="panel-icon"&gt;&lt;i class="&#123;&#123;block.icon&#125;&#125;"&gt;&lt;/i&gt;&lt;/span&gt;
-          &#123;&#123;block.name&#125;&#125;
-        &lt;/a&gt;
-      &#123;&#123;/bulma-panel-block&#125;&#125;
+      &lt;a class="panel-block" href="#"&gt;
+        &lt;span class="panel-icon"&gt;&lt;i class="&#123;&#123;block.icon&#125;&#125;"&gt;&lt;/i&gt;&lt;/span&gt;
+        &#123;&#123;block.name&#125;&#125;
+      &lt;/a&gt;
     &#123;&#123;/if&#125;&#125;
   &#123;&#123;/each&#125;&#125;
 

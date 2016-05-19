@@ -1,12 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-message';
 import computed, { readOnly, alias } from 'ember-computed-decorators';
-import { _colorBindings } from '../constants';
+import { _colorBindings, _responsiveHelpers } from '../constants';
 
 export default Ember.Component.extend({
   layout,
   classNames: ['message'],
-  classNameBindings: _colorBindings,
+  classNameBindings: [].concat(_colorBindings, _responsiveHelpers),
 
   /**
     A alternative semantic alias for body

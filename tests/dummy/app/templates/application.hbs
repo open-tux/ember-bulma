@@ -1,39 +1,106 @@
-<main class="no-theme">
-  {{#bulma-hero isInfo=true isLeft=true isBold=true}}
+<main>
+  {{#bulma-hero isInfo=true isBold=true}}
     {{#bulma-hero-header}}
-      {{#bulma-header-menu isLeft=true}}
-        <h1 class="title header-item">Ember Bulma</h1>
-      {{/bulma-header-menu}}
-      {{#bulma-header-menu isRight=true}}
-        <ul>
-          <li class="header-item">
-            <!-- TODO: Solution for buttons that don't use actions -->
-            <a href="https://github.com/open-tux/ember-bulma" target="_blank" class="button is-info is-outlined is-inverted">
-              <i class="fa fa-github"></i>&nbsp;Github
+      <div class="container">
+        {{#bulma-nav}}
+          {{#bulma-nav-left}}
+            <h1 class="title nav-item">Ember Bulma</h1>
+          {{/bulma-nav-left}}
+
+          {{#bulma-nav-center}}
+            {{!}}
+          {{/bulma-nav-center}}
+
+          {{#bulma-nav-toggle onmousedown=(action (toggle 'showToggleItems' this))}}
+            <span></span>
+            <span></span>
+            <span></span>
+          {{/bulma-nav-toggle}}
+
+          {{#bulma-nav-right isMenu=true}}
+            <a class="nav-item" href="http://bulma.io/" target="_blank">
+              Bulma.io
             </a>
-          </li>
-        </ul>
-      {{/bulma-header-menu}}
+            <a class="nav-item " href="http://emberjs.com" target="_blank">
+              Emberjs
+            </a>
+            <span class="nav-item">
+              <a class="button is-light is-outlined" href="https://github.com/open-tux/ember-bulma" target="_blank">
+                <span class="icon">
+                  <i class="fa fa-github"></i>
+                </span>
+                <span>Github</span>
+              </a>
+            </span>
+          {{/bulma-nav-right}}
+        {{/bulma-nav}}
+        {{#if showToggleItems}}
+          {{#bulma-menu isHiddenDesktopOnly=true isHiddenWidescreen=true}}
+            {{#bulma-menu-list}}
+              <li>
+                <a href="http://bulma.io/" class="light panel-block">Bulma.io</a>
+              </li>
+              <li>
+                <a href="http://emberjs.com" class="light panel-block">Emberjs</a>
+              </li>
+              <li>
+                <a href="https://github.com/open-tux/ember-bulma" target="_blank" class="light">
+                  <span class="icon">
+                    <i class="fa fa-github"></i>
+                  </span>
+                  <span>Github</span>
+                </a>
+              </li>
+            {{/bulma-menu-list}}
+          {{/bulma-menu}}
+        {{/if}}
+      </div>
     {{/bulma-hero-header}}
-    {{#bulma-hero-content withContainer=true}}
-      <p class="title is-4">Documentation</p>
-      <p class="subtitle">
-        <a href="https://github.com/open-tux/ember-bulma" target="_blank"><strong>Ember Bulma</strong></a> is an <em>ember addon</em> for <a xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type"><strong>Bulma</strong></a> by <strong xmlns:cc="http://creativecommons.org/ns#" href="http://jgthms.com" property="cc:attributionName" rel="cc:attributionURL">Jeremy Thomas</strong>.
-      </p>
+
+    {{#bulma-hero-content}}
+      <div class="container">
+        {{#bulma-columns isVcentered=true}}
+          {{#bulma-column}}
+            <p class="title">
+              Documentation
+            </p>
+            <p class="subtitle">
+              <a href="https://github.com/open-tux/ember-bulma" target="_blank"><strong>Ember Bulma</strong></a> is an <em>ember addon</em> for <a xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type"><strong>Bulma</strong></a> by <strong xmlns:cc="http://creativecommons.org/ns#" href="http://jgthms.com" property="cc:attributionName" rel="cc:attributionURL">Jeremy Thomas</strong>.
+            </p>
+          {{/bulma-column}}
+        {{/bulma-columns}}
+      </div>
     {{/bulma-hero-content}}
+
     {{#bulma-hero-footer}}
-      {{bulma-tabs isBoxed=true isCentered=true tabs=model.demoTabs isSiteNav=true}}
+      <div class="container">
+        {{bulma-tabs isBoxed=true tabs=model.demoTabs}}
+      </div>
     {{/bulma-hero-footer}}
+
   {{/bulma-hero}}
 
+  {{#if demoSubTabs.length}}
+    {{#bulma-nav hasShadow=true}}
+      <div class="container">
+        {{#bulma-nav-left}}
+          {{#each demoSubTabs as |tab|}}
+            {{#link-to tab.route class="nav-item is-tab"}}
+              {{tab.name}}
+            {{/link-to}}
+          {{/each}}
+        {{/bulma-nav-left}}
+      </div>
+    {{/bulma-nav}}
+  {{/if}}
+
+
   {{#bulma-section withContainer=false}}
-    {{#if demoSubTabs.length}}
-      {{bulma-tabs tabs=demoSubTabs isCentered=true}}
-    {{/if}}
-    {{#bulma-section}}
+    {{#bulma-container isFluid=true}}
       {{outlet}}
-    {{/bulma-section}}
+    {{/bulma-container}}
   {{/bulma-section}}
+
 </main>
 
 {{#bulma-footer}}

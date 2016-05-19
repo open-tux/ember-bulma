@@ -5,7 +5,6 @@ import computed, { readOnly } from 'ember-computed-decorators';
 export default Ember.Component.extend({
   layout,
   tagName: '',
-
   /**
     If used inline, consumer will provide an array of options to the select
 

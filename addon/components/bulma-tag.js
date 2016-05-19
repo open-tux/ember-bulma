@@ -1,13 +1,13 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-tag';
 import computed, { readOnly } from 'ember-computed-decorators';
-import { _colorBindings } from '../constants';
+import { _colorBindings, _responsiveHelpers } from '../constants';
 
 export default Ember.Component.extend({
   layout,
   tagName: 'span',
   classNames: ['tag'],
-  classNameBindings: _colorBindings,
+  classNameBindings: [].concat(_colorBindings, _responsiveHelpers),
 
   /**
     Explicitly define remove to override the internal method

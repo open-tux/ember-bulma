@@ -20,13 +20,22 @@ export default Ember.Component.extend({
   label: '',
 
   /**
-    Signal that an icon has been passed
+    Signal that an icon has been provided
 
     @property _hasIcon
     @returns Boolean
     @private
   */
   @bool('icon') _hasIcon,
+
+  /**
+    Signal that an label has been provided
+
+    @property _hasLabel
+    @returns Boolean
+    @private
+  */
+  @bool('label') _hasLabel,
 
   /**
     Binding for is-loading class

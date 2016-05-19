@@ -1,11 +1,18 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-hero-content';
 import computed, { alias } from 'ember-computed-decorators';
+import { _responsiveHelpers } from '../constants';
 
 export default Ember.Component.extend({
   layout,
-  classNames: ['hero-content'],
-  classNameBindings: ['full:is-fullwidth'],
+  classNames: ['hero-body'],
+  classNameBindings: [
+    'full:is-fullwidth'
+  ].concat(_responsiveHelpers),
+
+  /**
+
+  */
   fluidContainer: false,
 
   /**

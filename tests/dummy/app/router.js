@@ -8,7 +8,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('overview', { path: '/' });
   this.route('grid');
-  this.route('navbar');
+  this.route('uimodifiers', function() {
+    this.route('response-helpers', { path: '/' });
+  });
   this.route('uilayout', function() {
     this.route('container', { path: '/' });
     this.route('header');
@@ -25,6 +27,7 @@ Router.map(function() {
     this.route('messages');
     this.route('notifications');
     this.route('tags');
+    this.route('progress');
   });
 
   this.route('uicomponents', function() {
@@ -36,6 +39,7 @@ Router.map(function() {
     });
 
     this.route('menu');
+    this.route('nav');
     this.route('panel');
     this.route('table');
   });

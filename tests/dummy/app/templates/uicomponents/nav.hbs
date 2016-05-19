@@ -1,0 +1,84 @@
+<h1 class="title">Nav</h1>
+<h2 class="subtitle">
+  A responsive horizontal <strong>nav bar</strong> that can contain links, tabs, buttons, icons, and a logo
+</h2>
+<hr>
+
+<div class="content">
+  <p>
+    The <code>nav</code> container can have <strong>3 parts</strong>:
+  </p>
+  <ul>
+    <li><code>bulma-nav-left</code></li>
+    <li><code>bulma-nav-center</code></li>
+    <li><code>bulma-nav-right</code></li>
+  </ul>
+  <p>
+    For responsiveness, <strong>2 additional</strong> components are available:
+  </p>
+  <ul>
+    <li><code>bulma-nav-toggle</code> for the hamburger menu on mobile</li>
+    <li><code>bulma-nav-menu</code> for menu that is collapsable on mobile (you can combine it with <code>nav-right</code>)</li>
+  </ul>
+</div>
+
+
+<div class="example with-padding">
+  {{#bulma-nav hasShadow=true}}
+    {{#bulma-nav-left}}
+      <a class="nav-item" href="#">
+        <span class="icon">
+          <i class="fa fa-book"></i>
+        </span>
+      </a>
+    {{/bulma-nav-left}}
+
+    {{#bulma-nav-center}}
+      <a class="nav-item" href="#">
+        <span class="icon">
+          <i class="fa fa-github"></i>
+        </span>
+      </a>
+      <a class="nav-item" href="#">
+        <span class="icon">
+          <i class="fa fa-twitter"></i>
+        </span>
+      </a>
+    {{/bulma-nav-center}}
+
+    {{#bulma-nav-toggle onmousedown=(toggle 'navTabs' this)}}
+      <span></span>
+      <span></span>
+      <span></span>
+    {{/bulma-nav-toggle}}
+
+    {{#bulma-nav-right isMenu=true}}
+      <a class="nav-item" href="#">
+        Home
+      </a>
+      <a class="nav-item" href="#">
+        Documentation
+      </a>
+      <a class="nav-item" href="#">
+        Blog
+      </a>
+
+      <span class="nav-item">
+        {{bulma-button icon="fa fa-twitter" label="Tweet"}}
+        {{bulma-button icon="fa fa-download" label="Download" isPrimary=true}}
+      </span>
+    {{/bulma-nav-right}}
+  {{/bulma-nav}}
+  {{#if navTabs}}
+    <br>
+    {{#bulma-panel class="is-hidden-desktop-only is-hidden-widescreen"}}
+      <a href="#" class="panel-block">Home</a>
+      <a href="#" class="panel-block">Documentation</a>
+      <a href="#" class="panel-block">Blog</a>
+      {{#bulma-panel-block}}
+        {{bulma-button icon="fa fa-twitter" label="Tweet"}}
+        {{bulma-button icon="fa fa-download" label="Download" isPrimary=true}}
+      {{/bulma-panel-block}}
+    {{/bulma-panel}}
+  {{/if}}
+</div>

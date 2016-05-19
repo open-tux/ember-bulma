@@ -9,12 +9,23 @@ export default Ember.Component.extend({
   classNames: ['hero'],
   classNameBindings: [
     'bold:is-bold',
+    'isBold:is-bold',
+
     'medium:is-medium',
+    'isMedium:is-medium',
+
     'large:is-large',
+    'isLarge:is-large',
+
     'fullWidth:is-fullwidth',
+    'isFullWidth:is-fullwidth',
+
     'fullHeight:is-fullheight',
+    'isFullHeight:is-fullheight',
+
     'isLeft:is-left',
     'left:is-left',
+
     'isRight:is-right',
     'right:is-right'
   ].concat(_colorBindings, _responsiveHelpers),

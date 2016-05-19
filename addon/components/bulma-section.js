@@ -10,7 +10,8 @@ export default Ember.Component.extend({
   classNameBindings: _responsiveHelpers,
   /**
     Signal if content should be nested in a container (div.container)
-
+    // TODO depecrate this
+    
     @property withContainer
     @returns Boolean
     @public

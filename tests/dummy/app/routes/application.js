@@ -110,11 +110,12 @@ export default Ember.Route.extend({
               route: 'uilayout.container',
               classNames: ''
             },
-            {
-              name: 'Header',
-              route: 'uilayout.header',
-              classNames: ''
-            },
+            //TODO Depecrate this
+            // {
+            //   name: 'Header',
+            //   route: 'uilayout.header',
+            //   classNames: ''
+            // },
             {
               name: 'Hero',
               route: 'uilayout.hero',

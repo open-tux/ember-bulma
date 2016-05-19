@@ -81,4 +81,52 @@
       {{/bulma-panel-block}}
     {{/bulma-panel}}
   {{/if}}
+
+  {{#themed-syntax lang="handlebars"}}
+&#123;&#123;#bulma-nav hasShadow=true&#125;&#125;
+  &#123;&#123;#bulma-nav-left&#125;&#125;
+    &lt;a class="nav-item" href="#"&gt;
+      &lt;span class="icon"&gt;
+        &lt;i class="fa fa-book"&gt;&lt;/i&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+  &#123;&#123;/bulma-nav-left&#125;&#125;
+
+  &#123;&#123;#bulma-nav-center&#125;&#125;
+    &lt;a class="nav-item" href="#"&gt;
+      &lt;span class="icon"&gt;
+        &lt;i class="fa fa-github"&gt;&lt;/i&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a class="nav-item" href="#"&gt;
+      &lt;span class="icon"&gt;
+        &lt;i class="fa fa-twitter"&gt;&lt;/i&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+  &#123;&#123;/bulma-nav-center&#125;&#125;
+
+  &#123;&#123;#bulma-nav-toggle onmousedown=(toggle 'navTabs' this)&#125;&#125;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+  &#123;&#123;/bulma-nav-toggle&#125;&#125;
+
+  &#123;&#123;#bulma-nav-right isMenu=true&#125;&#125;
+    &lt;a class="nav-item" href="#"&gt;
+      Home
+    &lt;/a&gt;
+    &lt;a class="nav-item" href="#"&gt;
+      Documentation
+    &lt;/a&gt;
+    &lt;a class="nav-item" href="#"&gt;
+      Blog
+    &lt;/a&gt;
+
+    &lt;span class="nav-item"&gt;
+      &#123;&#123;bulma-button icon="fa fa-twitter" label="Tweet"&#125;&#125;
+      &#123;&#123;bulma-button icon="fa fa-download" label="Download" isPrimary=true&#125;&#125;
+    &lt;/span&gt;
+  &#123;&#123;/bulma-nav-right&#125;&#125;
+&#123;&#123;/bulma-nav&#125;&#125;
+  {{/themed-syntax}}
 </div>

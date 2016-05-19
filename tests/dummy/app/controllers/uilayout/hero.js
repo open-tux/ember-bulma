@@ -13,6 +13,14 @@ export default Ember.Controller.extend({
     {
       name: 'Three',
       route: 'uilayout.hero?fake'
+    },
+    {
+      name: 'Four',
+      route: 'uilayout.hero?fake'
+    },
+    {
+      name: 'Five',
+      route: 'uilayout.hero?fake'
     }
   ])
 });

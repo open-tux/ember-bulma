@@ -55,79 +55,105 @@
 <div class="content">
  <p>If you want to change the <strong>size</strong> of a single column, you can use one the following classes:</p>
  <ul>
-   <li>
-     <code>isHalf</code>
-   </li>
-   <li>
-     <code>isThird</code>
-   </li>
-   <li>
-     <code>isOneQuarter</code>
-   </li>
+   <li><code>isThreeQuarters</code></li>
+   <li><code>isTwoThirds</code></li>
+   <li><code>isHalf</code></li>
+   <li><code>isOneThird</code></li>
+   <li><code>isOneQuarter</code></li>
  </ul>
  <p>The <em>other</em> columns will fill up the <strong>remaining</strong> space automatically.</p>
 </div>
 
 {{#bulma-columns}}
-      {{#bulma-column isHalf=true}}
-        {{#bulma-notification isInfo=true}}
-          <code class="html">isHalf</code>
-        {{/bulma-notification}}
-      {{/bulma-column}}
+    {{#bulma-column isThreeQuarters=true}}
+      {{#bulma-notification isInfo=true}}
+        <code class="html">isThreeQuarters</code>
+      {{/bulma-notification}}
+    {{/bulma-column}}
 
-      {{#bulma-column}}
-        {{bulma-notification isWarning=true notification="Auto"}}
-      {{/bulma-column}}
+    {{#bulma-column}}
+      {{bulma-notification isWarning=true notification="Auto"}}
+    {{/bulma-column}}
 
-      {{#bulma-column}}
-        {{bulma-notification isDanger=true  notification="Auto"}}
-      {{/bulma-column}}
+    {{#bulma-column}}
+      {{bulma-notification isDanger=true  notification="Auto"}}
+    {{/bulma-column}}
 {{/bulma-columns}}
 
 {{#bulma-columns}}
-      {{#bulma-column isThird=true}}
-        {{#bulma-notification isInfo=true}}
-          <code class="html">isThird</code>
-        {{/bulma-notification}}
-      {{/bulma-column}}
+    {{#bulma-column isTwoThirds=true}}
+      {{#bulma-notification isInfo=true}}
+        <code class="html">isTwoThirds</code>
+      {{/bulma-notification}}
+    {{/bulma-column}}
 
-      {{#bulma-column}}
-        {{bulma-notification isSuccess=true notification="Auto"}}
-      {{/bulma-column}}
+    {{#bulma-column}}
+      {{bulma-notification isWarning=true notification="Auto"}}
+    {{/bulma-column}}
 
-      {{#bulma-column}}
-        {{bulma-notification isWarning=true notification="Auto"}}
-      {{/bulma-column}}
+    {{#bulma-column}}
+      {{bulma-notification isDanger=true  notification="Auto"}}
+    {{/bulma-column}}
 {{/bulma-columns}}
 
 {{#bulma-columns}}
-      {{#bulma-column isOneQuarter=true}}
-        {{#bulma-notification isInfo=true}}
-          <code class="html">isOneQuarter</code>
-        {{/bulma-notification}}
-      {{/bulma-column}}
+    {{#bulma-column isHalf=true}}
+      {{#bulma-notification isInfo=true}}
+        <code class="html">isHalf</code>
+      {{/bulma-notification}}
+    {{/bulma-column}}
 
-      {{#bulma-column}}
-        {{bulma-notification isSuccess=true notification="Auto"}}
-      {{/bulma-column}}
+    {{#bulma-column}}
+      {{bulma-notification isSuccess=true notification="Auto"}}
+    {{/bulma-column}}
 
-      {{#bulma-column}}
-        {{bulma-notification isDanger=true notification="Auto"}}
-      {{/bulma-column}}
+    {{#bulma-column}}
+      {{bulma-notification isWarning=true notification="Auto"}}
+    {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+    {{#bulma-column isOneThird=true}}
+      {{#bulma-notification isInfo=true}}
+        <code class="html">isOneThird</code>
+      {{/bulma-notification}}
+    {{/bulma-column}}
+
+    {{#bulma-column}}
+      {{bulma-notification isSuccess=true notification="Auto"}}
+    {{/bulma-column}}
+
+    {{#bulma-column}}
+      {{bulma-notification isDanger=true notification="Auto"}}
+    {{/bulma-column}}
+{{/bulma-columns}}
+
+{{#bulma-columns}}
+    {{#bulma-column isOneQuarter=true}}
+      {{#bulma-notification isInfo=true}}
+        <code class="html">isOneQuarter</code>
+      {{/bulma-notification}}
+    {{/bulma-column}}
+
+    {{#bulma-column}}
+      {{bulma-notification isSuccess=true notification="Auto"}}
+    {{/bulma-column}}
+
+    {{#bulma-column}}
+      {{bulma-notification isDanger=true notification="Auto"}}
+    {{/bulma-column}}
 {{/bulma-columns}}
 
 {{#themed-syntax transparent="true" language="handlebars" }}
 &#123;&#123;#bulma-columns&#125;&#125;
   &#123;&#123;#bulma-column isHalf=true&#125;&#125;
-    &#123;&#123;!...&#125;&#125;
+    isHalf
   &#123;&#123;/bulma-column&#125;&#125;
-
-  &#123;&#123;#bulma-column isThird=true&#125;&#125;
-    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;
+    Auto
   &#123;&#123;/bulma-column&#125;&#125;
-
-  &#123;&#123;#bulma-column isOneQuarter=true&#125;&#125;
-    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;#bulma-column&#125;&#125;
+    Auto
   &#123;&#123;/bulma-column&#125;&#125;
 &#123;&#123;/bulma-columns&#125;&#125;
 {{/themed-syntax}}
@@ -462,15 +488,11 @@
   </p>
 </div>
 
-<div class="columns is-mobile">
-  <div class="column is-half is-offset-quarter"></div>
-</div>
-
 {{#bulma-columns isMobile=true}}
-  {{#bulma-column isHalf=true isOffsetQuarter=true}}
+  {{#bulma-column isHalf=true isOffsetOneQuarter=true}}
     {{#bulma-notification isInfo=true}}
       <code class="html">isHalf=true</code>
-      <code class="html">isOffsetQuarter=true</code>
+      <code class="html">isOffsetOneQuarter=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
 {{/bulma-columns}}
@@ -577,10 +599,10 @@
 </div>
 
 {{#bulma-columns isMobile=true}}
-  {{#bulma-column isHalfMobile=true isThirdTablet=true isOneQuarterDesktop=true}}
+  {{#bulma-column isHalfMobile=true isOneThirdTablet=true isOneQuarterDesktop=true}}
     {{#bulma-notification isPrimary=true}}
       <code>isHalfMobile=true</code>
-      <code>isThirdTablet=true</code>
+      <code>isOneThirdTablet=true</code>
       <code>isOneQuarterDesktop=true</code>
     {{/bulma-notification}}
   {{/bulma-column}}
@@ -596,7 +618,7 @@
 " header="resize" isInfo=true}}
 
 {{#themed-syntax transparent="true" language="handlebars" }}
-&#123;&#123;#bulma-column isHalfMobile=true isThirdTablet=true isOneQuarterDesktop=true&#125;&#125;
+&#123;&#123;#bulma-column isHalfMobile=true isOneThirdTablet=true isOneQuarterDesktop=true&#125;&#125;
   &#123;&#123;!...&#125;&#125;
 &#123;&#123;/bulma-column&#125;&#125;
 {{/themed-syntax}}

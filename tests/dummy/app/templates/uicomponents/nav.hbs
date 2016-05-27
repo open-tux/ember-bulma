@@ -46,7 +46,7 @@
       </a>
     {{/bulma-nav-center}}
 
-    {{#bulma-nav-toggle onmousedown=(toggle 'navTabs' this)}}
+    {{#bulma-nav-toggle onmousedown=(toggle 'toggleNav' this)}}
       <span></span>
       <span></span>
       <span></span>
@@ -69,9 +69,9 @@
       </span>
     {{/bulma-nav-right}}
   {{/bulma-nav}}
-  {{#if navTabs}}
+  {{#if toggleNav}}
     <br>
-    {{#bulma-panel class="is-hidden-desktop-only is-hidden-widescreen"}}
+    {{#bulma-panel isHiddenDesktop=true isHiddenTablet=true isHiddenWidescreen=true}}
       <a href="#" class="panel-block">Home</a>
       <a href="#" class="panel-block">Documentation</a>
       <a href="#" class="panel-block">Blog</a>
@@ -105,7 +105,7 @@
     &lt;/a&gt;
   &#123;&#123;/bulma-nav-center&#125;&#125;
 
-  &#123;&#123;#bulma-nav-toggle onmousedown=(toggle 'navTabs' this)&#125;&#125;
+  &#123;&#123;#bulma-nav-toggle onmousedown=(toggle 'toggleNav' this)&#125;&#125;
     &lt;span&gt;&lt;/span&gt;
     &lt;span&gt;&lt;/span&gt;
     &lt;span&gt;&lt;/span&gt;
@@ -128,5 +128,12 @@
     &lt;/span&gt;
   &#123;&#123;/bulma-nav-right&#125;&#125;
 &#123;&#123;/bulma-nav&#125;&#125;
+
+&#123;&#123;#if toggleNav&#125;&#125;
+  &#123;&#123;#bulma-panel isHiddenDesktop=true isHiddenTablet=true isHiddenWidescreen=true&#125;&#125;
+    &#123;&#123;!...&#125;&#125;
+  &#123;&#123;/bulma-panel&#125;&#125;
+&#123;&#123;/if&#125;&#125;
+
   {{/themed-syntax}}
 </div>

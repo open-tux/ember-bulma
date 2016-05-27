@@ -17,9 +17,10 @@ export default Ember.Service.extend({
     @method _generateAllBindings
     @private
   */
+
   _generateAllBindings() {
-    let possibilities = Ember.A([ 'half', 'third', 'one-quarter', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11' ]);
-    let modifiers = Ember.A([ 'offset', 'desktop', 'mobile', 'tablet']);
+    let possibilities = Ember.A([ 'three-quarters', 'two-thirds', 'half', 'one-third', 'one-quarter', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11' ]);
+    let modifiers = Ember.A([ 'offset', 'narrow', 'desktop', 'mobile', 'tablet']);
     let bindings = Ember.A([]);
 
     possibilities.forEach((item) => {
@@ -28,7 +29,14 @@ export default Ember.Service.extend({
 
       //Add all the modifiers to all the possibilities
       modifiers.forEach(modifier => {
-        bindings.pushObject(`is${camelCase(item)}${camelCase(modifier)}:is-${item}-${modifier}`);
+        // offset & narrow should be prepended since 0.2.6
+        // TODO: scale this better
+        if (modifier === 'offset' || modifier === 'narrow') {
+          bindings.pushObject(`is${camelCase(modifier)}${camelCase(item)}:is-${modifier}-${item}`);
+        } else {
+          // append modifier
+          bindings.pushObject(`is${camelCase(item)}${camelCase(modifier)}:is-${item}-${modifier}`);
+        }
       });
     });
     this.set('all', bindings);

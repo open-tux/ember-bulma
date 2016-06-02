@@ -27,10 +27,10 @@ export default Ember.Controller.extend({
       if (filtered.length) {
         filteredByCurrentPath = get(tab, 'subnav');
         run.schedule('afterRender', function() {
-          set(tab,'isActive', true);
+          set(tab, 'isActive', true);
         });
       }
     });
-    return filteredByCurrentPath || [];
+    return filteredByCurrentPath ? filteredByCurrentPath.sortBy('name') : [];
   }
 });

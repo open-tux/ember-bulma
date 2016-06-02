@@ -42,6 +42,7 @@ Router.map(function() {
     this.route('nav');
     this.route('panel');
     this.route('table');
+    this.route('modal');
   });
 });
 

@@ -46,12 +46,15 @@ pre, code {
 }
 
 .menu-list {
-  a.light {
-    color: white;
-    border-bottom: 1px solid rgba(255,255,255,0.25);
-
-    &:hover{
-      color: $blue;
+  li {
+    a.light {
+      padding: 1rem 0 1rem 1rem;
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      font-size: 120%;
+      &:hover{
+        color: $blue;
+      }
     }
   }
 }

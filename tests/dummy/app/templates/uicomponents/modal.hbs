@@ -1,0 +1,37 @@
+<h1 class="title">Modal</h1>
+<h2 class="subtitle">
+  A classic <strong>modal</strong> overlay, in which you can include any content you want
+</h2>
+<hr>
+{{#bulma-columns}}
+  {{#bulma-column}}
+    {{bulma-button onmousedown=(toggle 'showModal' this) label="Launch Example Modal" isPrimary=true}}
+
+    {{#bulma-modal show=showModal onclose=(toggle 'showModal' this)}}
+      <div class="box">
+        I am a modal.
+      </div>
+    {{/bulma-modal}}
+  {{/bulma-column}}
+  {{#bulma-column isHalf=true}}
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&#123;&#123;! Leveraging ember-composable-helpers `toggle` (not included) &#125;&#125;  
+&#123;&#123;#bulma-modal show=showModal onclose=(toggle 'showModal' this)&#125;&#125;
+  &lt;div class="box"&gt;
+    I am a modal.
+  &lt;/div&gt;
+&#123;&#123;/bulma-modal&#125;&#125;
+    {{/themed-syntax}}
+
+    <hr>
+    <div class="content">
+      <h2 class="subtitle">Properties &amp; Methods</h2>
+      <ul>
+        <li><code>withBackground</code> - Include background container (default is true)</li>
+        <li><code>isCentered</code> - Wraps content with .modal-container which also centers content (default is true)</li>
+        <li><code>withClose</code> - Include close button (default is true)</li>
+        <li><code>onclose</code> - Function to apply when closing modal (default is null)</li>
+      </ul>
+    </div>
+  {{/bulma-column}}
+{{/bulma-columns}}

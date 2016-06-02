@@ -1,0 +1,20 @@
+{{#if withBackground}}
+  {{bulma-modal-background}}
+{{/if}}
+
+
+{{#if isCentered}}
+  <div class="modal-container">
+    <div class="modal-content">
+      {{yield}}
+    </div>
+  </div>
+{{else}}
+  <div class="modal-content">
+    {{yield}}
+  </div>
+{{/if}}
+
+{{#if withClose}}
+  {{bulma-modal-close onclose=onclose}}
+{{/if}}

@@ -9,134 +9,115 @@ export default Ember.Route.extend({
         {
           name: 'Overview',
           route: 'overview',
-          classNames: '',
           icon: ''
         },
         {
           name: 'Modifiers',
           route: 'uimodifiers',
-          classNames: '',
           icon: '',
           subnav: [
             {
               name: 'Responsive Helpers',
-              route: 'uimodifiers.response-helpers',
-              classNames: ''
+              route: 'uimodifiers.response-helpers'
             }
           ]
         },
         {
           name: 'Grid',
           route: 'grid',
-          classNames: '',
           icon: ''
         },
         {
           name: 'Elements',
           route: 'uielements.buttons',
-          classNames: '',
           subnav: [
             {
               name: 'Buttons',
-              route: 'uielements.buttons',
-              classNames: ''
+              route: 'uielements.buttons'
             },
             {
               name: 'Form Controls',
-              route: 'uielements.form-controls',
-              classNames: ''
+              route: 'uielements.form-controls'
             },
             {
               name: 'Messages',
-              route: 'uielements.messages',
-              classNames: ''
+              route: 'uielements.messages'
             },
             {
               name: 'Notifications',
-              route: 'uielements.notifications',
-              classNames: ''
+              route: 'uielements.notifications'
             },
             {
               name: 'Progress',
-              route: 'uielements.progress',
-              classNames: ''
+              route: 'uielements.progress'
             },
             {
               name: 'Tags',
-              route: 'uielements.tags',
-              classNames: ''
+              route: 'uielements.tags'
             }
           ]
         },
         {
           name: 'Components',
           route: 'uicomponents.tabs.index',
-          classNames: '',
           subnav: [
             {
+              name: 'Modal',
+              route: 'uicomponents.modal'
+            },
+            {
               name: 'Tabs',
-              route: 'uicomponents.tabs.index',
-              classNames: ''
+              route: 'uicomponents.tabs.index'
             },
             {
               name: 'Menu',
-              route: 'uicomponents.menu',
-              classNames: ''
+              route: 'uicomponents.menu'
             },
             {
               name: 'Nav',
-              route: 'uicomponents.nav',
-              classNames: ''
+              route: 'uicomponents.nav'
             },
             {
               name: 'Panel',
-              route: 'uicomponents.panel',
-              classNames: ''
+              route: 'uicomponents.panel'
             },
             {
               name: 'Table',
-              route: 'uicomponents.table',
-              classNames: ''
+              route: 'uicomponents.table'
             }
           ]
         },
         {
           name: 'Layout',
-          classNames: '',
           route: 'uilayout.container',
           subnav: [
             {
               name: 'Container',
-              route: 'uilayout.container',
-              classNames: ''
+              route: 'uilayout.container'
             },
             //TODO Depecrate this
             // {
             //   name: 'Header',
             //   route: 'uilayout.header',
-            //   classNames: ''
+            //
             // },
             {
               name: 'Hero',
-              route: 'uilayout.hero',
-              classNames: ''
+              route: 'uilayout.hero'
             },
             {
               name: 'Section',
-              route: 'uilayout.section',
-              classNames: ''
+              route: 'uilayout.section'
             },
             {
               name: 'Footer',
-              route: 'uilayout.footer',
-              classNames: ''
+              route: 'uilayout.footer'
             }
           ]
         },
         {
           name: 'Themes',
-          route: 'themes',
-          classNames: ''
+          route: 'themes'
         }
       ]
     };

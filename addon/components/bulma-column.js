@@ -24,7 +24,8 @@ export default Ember.Component.extend({
     let gridBindings = get(this, 'gridBindings.all');
     set(this, 'classNameBindings', ['content'].concat(gridBindings, _responsiveHelpers));
   },
-  didInitAttrs() {
+  init() {
+    this._super(...arguments);
     this.concatBindings();
   }
 });

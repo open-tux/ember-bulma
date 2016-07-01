@@ -1,7 +1,7 @@
 {
   "name": "ember-bulma",
   "dependencies": {
-    "ember": "2.4.1",
+    "ember": "2.6.1",
     "ember-cli-shims": "0.0.6",
     "ember-cli-test-loader": "0.2.1",
     "ember-qunit": "0.4.16",

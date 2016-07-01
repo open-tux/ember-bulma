@@ -1,6 +1,6 @@
 # ember-bulma
 
-[Ember Bulma](http://open-tux.github.io/ember-bulma/) is an ember addon for [Bulma](https://github.com/jgthms/bulma) by Jeremy Thomas.
+[Ember Bulma](http://open-tux.github.io/ember-bulma/) is a collection of Ember components and services for [Bulma](https://github.com/jgthms/bulma), a modern CSS framework by Jeremy Thomas
 
 ---
 

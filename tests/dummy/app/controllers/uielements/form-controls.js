@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import computed, { lt } from 'ember-computed-decorators';
+import computed, { lte } from 'ember-computed-decorators';
 
 const { run } = Ember;
 const { later } = run;
@@ -36,7 +36,7 @@ export default Ember.Controller.extend({
   /**
 
   */
-  @lt('demo.textAreaCharsRemaining', 1) demoTextAreaCharsWarning,
+  @lte('demo.textAreaCharsRemaining', 10) demoTextAreaCharsWarning,
 
   /**
 

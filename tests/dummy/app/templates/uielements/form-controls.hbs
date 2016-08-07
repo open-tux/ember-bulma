@@ -1,4 +1,4 @@
-<h1 class="title">Form controls</h1>
+<h1 class="title">Forms Controls</h1>
 <h2 class="subtitle">
   All generic <strong>form controls</strong>, designed for consistency
 </h2>
@@ -8,6 +8,8 @@
     <ul>
       <li><code>bulma-input</code></li>
       <li><code>bulma-textarea</code></li>
+      <li><code>bulma-checkbox</code></li>
+      <li><code>bulma-radio</code></li>
       <li><code>bulma-select</code></li>
     </ul>
   <p>When combining several controls in a <strong>form</strong>, use the <code>.control</code> class as a <strong>container</strong> or set <code>control=true</code>, to keep the spacing consistent.</p>
@@ -15,28 +17,69 @@
 {{#bulma-columns}}
   {{#bulma-column content=true isHalf=true}}
     <p>{{demo.greeting}}, {{demo.inputValue}}</p>
-    <p>
-      {{bulma-input placeholder="First name" control=true value=demo.inputValue key-up=(action "changeAction")}}
+    <p class="control">
+      {{bulma-input
+        placeholder="Username"
+        oninput=(action (mut demo.inputValue) value="target.value")
+      }}
+    </p>
+    <p class="control">
+      {{bulma-input
+        type="password"
+        placeholder="Password"
+      }}
+    </p>
+    <p class="control">
       {{#bulma-select control=true}}
         <select onchange={{action (mut demo.greeting) value="target.value"}}>
           <option value="Hello">English</option>
           <option value="Hola">Español</option>
         </select>
       {{/bulma-select}}
-      {{bulma-input isTextArea=true control=true placeholder="Text area" value=demo.textAreaValue}}
-      <p>
-        <div class="tag {{if demoTextAreaCharsWarning 'is-danger'}}">{{demoTextAreaCharsRemaining}} chars remaining</div>
-      </p>
-      {{bulma-input label="Remember me" type="checkbox" control=true}}
-      <p class="control">
-        {{bulma-input label="Yes" name="question" type="radio"}}
-        {{bulma-input label="No" name="question" type="radio"}}
-      </p>
-      <p class="control">
-        {{bulma-button isPrimary=true label="Submit" onmousedown=(action "submitAction")}}
-        {{bulma-button label="Cancel"}}
-      </p>
-      {{#themed-syntax transparent="true" language="javascript" }}
+    </p>
+    <p class="control">
+      {{bulma-textarea placeholder="Text area" oninput=(action (mut demo.textAreaValue) value="target.value")}}
+    </p>
+    <p>
+      <div class="tag {{if demoTextAreaCharsWarning 'is-danger'}}">{{demoTextAreaCharsRemaining}} chars remaining</div>
+    </p>
+
+    <hr>
+    <p class="control">
+      <label class="checkbox">
+        <span class="is-green">
+          <i class="{{if isImportant 'fa fa-flag' 'fa fa-flag-o'}}"></i>
+        </span>
+        &nbsp;&nbsp;
+        {{bulma-checkbox onchange=(action (toggle 'isImportant' this))}}
+        Important
+      </label>
+    </p>
+
+    <p class="control">
+      My favorite color is: <strong>{{myColor}}</strong>
+    </p>
+    <p class="control">
+      <label class="checkbox">
+        {{bulma-radio name="myGroup" value="Green" onchange=(action (mut myColor) value="target.value")}}
+        Green
+      </label>&nbsp;
+      <label class="checkbox">
+        {{bulma-radio name="myGroup" value="Yellow" onchange=(action (mut myColor) value="target.value")}}
+        Yellow
+      </label>&nbsp;
+      <label class="checkbox">
+        {{bulma-radio name="myGroup" value="Blue" onchange=(action (mut myColor) value="target.value")}}
+        Blue
+      </label>
+    </p>
+
+    <p class="control">
+      {{bulma-button isPrimary=true label="Submit" onmousedown=(action "submitAction")}}
+      {{bulma-button label="Cancel"}}
+    </p>
+    <p>
+    {{#themed-syntax transparent="true" language="javascript" }}
 //Consuming App's Controller
 mySubmitAction(button) {
   button.set('isLoading', true);
@@ -51,13 +94,31 @@ mySubmitAction(button) {
     });
   });
 }
-      {{/themed-syntax}}
+    {{/themed-syntax}}
     </p>
   {{/bulma-column}}
   {{#bulma-column content=true isHalf=true}}
+  <br><strong>
+    bulma-input
+  </strong><br>
     {{#themed-syntax transparent="true" language="handlebars" }}
-&#123;&#123;bulma-input placeholder="Text input" control=true value=firstName&#125;&#125;
+&lt;p class="control"&gt;
+  &#123;&#123;bulma-input
+    placeholder="First name"
+    oninput=(action (mut someValue) value="target.value")
+  &#125;&#125;
 
+  &#123;&#123;! or &#125;&#125;
+
+  &#123;&#123;#bulma-input&#125;&#125;
+   &lt;input oninput=&#123;&#123;action (mut someValue) value="target.value"&#125;&#125; /&gt;
+  &#123;&#123;/bulma-input&#125;&#125;
+&lt;/p&gt;
+    {{/themed-syntax}}
+<br><strong>
+  bulma-select
+</strong><br>
+    {{#themed-syntax transparent="true" language="handlebars" }}
 &#123;&#123;bulma-select options=options onchange=(action "mySelectAction") control=true&#125;&#125;
 
 &#123;&#123;! or &#125;&#125;
@@ -70,11 +131,36 @@ mySubmitAction(button) {
     &lt;/select&gt;
   &#123;&#123;/bulma-select&#125;&#125;
 &lt;/p&gt;
-
-&#123;&#123;bulma-input isTextarea=true control=true placeholder="Text area" value=message&#125;&#125;
-
-&#123;&#123;bulma-input label="Remember me" type="checkbox" control=true&#125;&#125;
-
+    {{/themed-syntax}}
+    <br><strong>
+      bulma-textarea
+    </strong><br>
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&lt;p class="control"&gt;
+  &#123;&#123;bulma-textarea placeholder="Text area" oninput=(action (mut someValue) value="target.value")&#125;&#125;
+  &#123;&#123;!or}}
+  &#123;&#123;#bulma-textarea&#125;&#125;
+    &lt;textarea&gt;
+      ...
+    &lt;/textarea&gt;
+  &#123;&#123;/bulma-textarea&#125;&#125;
+&lt;/p&gt;
+    {{/themed-syntax}}
+    <br><strong>
+      bulma-checkbox
+    </strong><br>
+    {{#themed-syntax transparent="true" language="handlebars" }}
+&lt;p class="control"&gt;
+  &lt;label class="checkbox"&gt;
+    &#123;&#123;bulma-checkbox onchange=(action (toggle 'rememberMe' this))&#125;&#125;
+    Remember me
+  &lt;/label&gt;
+&lt;/p&gt;
+    {{/themed-syntax}}
+    <br><strong>
+      bulma-radio
+    </strong><br>
+    {{#themed-syntax transparent="true" language="handlebars" }}
 &lt;p class="control"&gt;
   &#123;&#123;bulma-input label="Yes" name="question" type="radio"&#125;&#125;
   &#123;&#123;bulma-input label="No" name="question" type="radio"&#125;&#125;

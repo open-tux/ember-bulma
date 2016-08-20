@@ -3,7 +3,7 @@
     {{#if hasBlock}}
       {{yield}}
     {{else}}
-      <select onchange={{action "handleChange"}}>
+      <select class="{{_classes}}" onchange={{action "handleChange"}}>
         {{#each options as |option|}}
           <option>{{option}}</option>
         {{/each}}

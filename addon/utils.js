@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
-const { isArray } = Ember;
+const {
+  isArray,
+  A
+} = Ember;
 
 /**
   Convert an array to space delimited String
@@ -32,3 +35,63 @@ export const camelCase = (str) => {
     return str;
   }
 };
+
+const blacklist = A(['tagName', 'removeChild']);
+
+export const nativeAttrs  = {
+  /**
+    * Iterates through the prototype properties of an html element (while considering blacklisted items)
+    *
+    * @method attrsFor
+    * @private
+    */
+  attrsFor: (htmlElement) => {
+    let a = [];
+    for (var attr in htmlElement) {
+      if (!blacklist.contains(attr)) {
+        a.push(attr);
+      }
+    };
+    return a;
+  },
+
+  /**
+    * A list of all of the attributes of a native textarea
+    *
+    * @property textarea
+    * @private
+    */
+  get textarea() {
+    return this.attrsFor(window.HTMLTextAreaElement.prototype);
+  },
+
+  /**
+    * A list of all of the attributes of a native textarea
+    *
+    * @property input
+    * @private
+    */
+  get input() {
+    return this.attrsFor(window.HTMLInputElement.prototype);
+  }
+}
+
+/**
+  * Deprecation messages util
+  *
+  * @method deprecations
+  * @private
+  */
+export const deprecations = (items) => {
+  let msg = {
+    control: `control=true is no longer supported. Please wrap the component in a container with the class .control`,
+    isTextarea: `isTextarea=true is no longer supported. Please use bulma-textarea component instead`,
+    isLoading: `isLoading=true is no longer supported. Please wrap the component in a container with the classes .control and .is-loading`
+  };
+
+  items.forEach((item) => {
+    if (item.value && msg.hasOwnProperty(item.name)) {
+      console.warn(msg[item.name]);
+    }
+  });
+}

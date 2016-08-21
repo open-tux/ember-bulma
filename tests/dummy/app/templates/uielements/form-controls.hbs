@@ -84,7 +84,8 @@
 mySubmitAction(button) {
   button.set('isLoading', true);
 
-  somethingAsyncHappens.then(() => {
+  somethingAsyncHappens
+  .then(() => {
     button.setProperties({
       'isLoading': false,
       'icon':  'fa fa-check',
@@ -227,7 +228,7 @@ mySubmitAction(button) {
 {{#bulma-columns}}
   {{#bulma-column content=true isHalf=true}}
     <p class="control">
-      {{bulma-input placeholder="Disabled input"  disabled=true}}
+      {{bulma-input placeholder="Disabled input" disabled=true}}
     </p>
 
     <p class="control">
@@ -241,8 +242,14 @@ mySubmitAction(button) {
       </label>
     </p>
     <p class="control">
-      {{bulma-radio label="Yes" name="question" type="radio" disabled=true}}
-      {{bulma-radio label="No" name="question" type="radio" disabled=true}}
+      <label class="radio">
+        {{bulma-radio name="question" disabled=true}}
+        Yellow
+      </label>
+      <label class="radio">
+        {{bulma-radio name="question" disabled=true}}
+        Green
+      </label>
     </p>
     <p class="control">
       {{bulma-button isPrimary=true label="Submit" disabled=true}}
@@ -252,18 +259,27 @@ mySubmitAction(button) {
   {{/bulma-column}}
   {{#bulma-column content=true isHalf=true}}
     {{#themed-syntax transparent="true" language="handlebars" }}
-&#123;&#123;bulma-input placeholder="Disabled input"  disabled=true&#125;&#125;
+&#123;&#123;bulma-input placeholder="Disabled input" disabled=true&#125;&#125;
 
 &#123;&#123;bulma-input  placeholder="Disabled textarea" disabled=true&#125;&#125;
 
 &lt;label class="checkbox is-disabled"&gt;
-  &#123;&#123;bulma-input type="checkbox"  disabled=true&#125;&#125;
+  &#123;&#123;bulma-input type="checkbox" disabled=true&#125;&#125;
   Disabled
 &lt;/label&gt;
 
 &lt;p class="control"&gt;
-  &#123;&#123;bulma-input label="Yes" name="question" type="radio" disabled=true&#125;&#125;
-  &#123;&#123;bulma-input label="No" name="question" type="radio" disabled=true&#125;&#125;
+  &lt;label class="radio"&gt;
+    &#123;&#123;bulma-radio name="colorsGroup" disabled=true&#125;&#125;
+    Yellow
+  &lt;/label&gt;
+&lt;/p&gt;
+
+&lt;p class="control"&gt;
+  &lt;label class="radio"&gt;
+    &#123;&#123;bulma-radio name="colorsGroup" disabled=true&#125;&#125;
+    Green
+  &lt;/label&gt;
 &lt;/p&gt;
 
 &lt;p class="control"&gt;
@@ -288,7 +304,10 @@ mySubmitAction(button) {
   {{#bulma-column content=true isHalf=true}}
     {{#themed-syntax transparent="true" language="handlebars" }}
 &lt;p class="control is-grouped"&gt;
-  &#123;&#123;bulma-input placeholder="Find a repository" control=false key-up=(action "owasp")&#125;&#125;
+  &#123;&#123;bulma-input
+    placeholder="Find a repository"
+    oninput=(action (mut query) value="target.value")
+  &#125;&#125;
   &#123;&#123;bulma-button isInfo=true icon="fa fa-search"&#125;&#125;
 &lt;/p&gt;
     {{/themed-syntax}}
@@ -302,7 +321,7 @@ mySubmitAction(button) {
   {{#bulma-column content=true isHalf=true}}
     <p class="control has-addons">
       {{bulma-select options=demo.currencies onchange=(action (mut demo.currency)) value="target.value"}}
-      {{bulma-input type="number" placeholder="Email" placeholder="Enter an amount" control=false value=demo.amount key-up=(action "format" demo.amount)}}
+      {{bulma-input type="number" placeholder="Email" placeholder="Enter an amount" value=demo.amount key-up=(action "format" demo.amount)}}
       {{bulma-button label="Transfer" isSuccess=true onmousedown=(action "transfer" demo.amount demo.currency)}}
     </p>
     <p>
@@ -312,8 +331,11 @@ mySubmitAction(button) {
     {{#bulma-column content=true isHalf=true}}
       {{#themed-syntax transparent="true" language="handlebars" }}
 &lt;p class="control is-grouped"&gt;
-  &#123;&#123;bulma-select options=options onchange=(action (mut currency)) value="target.value"&#125;&#125;
-  &#123;&#123;bulma-input type="number" placeholder="Enter an amount" control=false value=amount&#125;&#125;
+  &#123;&#123;bulma-select
+    options=options
+    onchange=(action (mut currency)) value="target.value"
+  &#125;&#125;
+  &#123;&#123;bulma-input type="number" placeholder="Enter an amount" value=amount&#125;&#125;
   &#123;&#123;bulma-button
     label="Transfer"
     isSuccess=true

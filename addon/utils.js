@@ -84,9 +84,9 @@ export const nativeAttrs  = {
   */
 export const deprecations = (items) => {
   let msg = {
-    control: `control=true is no longer supported. Please wrap the component in a container with the class .control`,
+    control: `control=true is no longer supported. Please wrap the component in a bulma-control component, or with a container using the class .control`,
     isTextarea: `isTextarea=true is no longer supported. Please use bulma-textarea component instead`,
-    isLoading: `isLoading=true is no longer supported. Please wrap the component in a container with the classes .control and .is-loading`
+    isLoading: `isLoading=true is no longer supported. Please wrap the component in a bulma-control container with the isLoading flag, or any container using the classes .control and .is-loading`
   };
 
   items.forEach((item) => {

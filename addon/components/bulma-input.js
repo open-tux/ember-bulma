@@ -24,6 +24,15 @@ export default Component.extend({
   ],
   attributeBindings: ['isDisabled:disabled','disabled'].concat(input),
 
+  /**
+    * Default class name binding
+    *
+    * @property isNormal
+    * @type Bool
+    * @default true
+    */
+  isNormal: true,
+
   init() {
     this._super(...arguments);
 

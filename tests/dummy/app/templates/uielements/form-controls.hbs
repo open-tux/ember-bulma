@@ -328,7 +328,7 @@ mySubmitAction(button) {
   {{#bulma-column content=true isHalf=true}}
     {{#bulma-control hasAddons=true}}
       {{bulma-select options=demo.currencies onchange=(action (mut demo.currency)) value="target.value"}}
-      {{bulma-input type="number" placeholder="Email" placeholder="Enter an amount" value=demo.amount key-up=(action "format" demo.amount)}}
+      {{bulma-input type="number" placeholder="Email" placeholder="Enter an amount" value=demo.amount oninput=(action "format" demo.amount)}}
       {{bulma-button label="Transfer" isSuccess=true onmousedown=(action "transfer" demo.amount demo.currency)}}
     {{/bulma-control}}
     <p>

@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-input';
-import computed, { readOnly, alias, bool, or } from 'ember-computed-decorators';
+import computed, { alias } from 'ember-computed-decorators';
 import { makeString, nativeAttrs, deprecations } from '../utils';
 
 const {
@@ -40,7 +40,8 @@ export default Component.extend({
     deprecations([
       { name: 'control', value: get(this, 'control') },
       { name: 'isLoading', value: get(this, 'isLoading')},
-      { name: 'isTextarea', value: get(this, 'isTextarea')}
+      { name: 'isTextarea', value: get(this, 'isTextarea')},
+      { name: 'key-up', value: get(this, 'key-up')}
     ]);
   }
 });

@@ -1,6 +1,13 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-modal';
 
+const {
+  Component,
+  run: { schedule },
+  get,
+  set
+} = Ember;
+
 /**
   * A classic modal overlay, in which you can include any content you want
   *
@@ -8,7 +15,7 @@ import layout from '../templates/components/bulma-modal';
   * @extends Ember Component
   */
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   classNames: ['modal'],
   classNameBindings: ['show:is-active'],
@@ -50,5 +57,31 @@ export default Ember.Component.extend({
     * @default null
     * @public
     */
-  onclose: null
+  onclose: null,
+
+  /**
+    * Add event handler for escape key to execute onclose
+    *
+    * @method escapeHandler
+    * @private
+    */
+  escapeHandler() {
+    schedule('afterRender', () => {
+      document.onkeyup = (e) => {
+        if (get(e, 'keyCode') === 27 && get(this, 'onclose')) {
+          get(this, 'onclose')();
+        }
+      };
+    });
+  },
+
+  willDestroyElement() {
+    // revert event handler
+    document.onkeyup = null
+  },
+
+  init() {
+    this._super(...arguments);
+    this.escapeHandler();
+  }
 });

@@ -69,7 +69,7 @@ export default Component.extend({
   */
   escapeHandler(e) {
     if (get(this, 'onclose') && get(e, 'keyCode') === 27) {
-      get(this, 'onclose').apply(this, ...arguments);
+      get(this, 'onclose')();
     }
   },
 

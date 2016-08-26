@@ -8,6 +8,8 @@ const {
   set
 } = Ember;
 
+const jQuery = Ember.$;
+
 /**
   * A classic modal overlay, in which you can include any content you want
   *
@@ -60,28 +62,45 @@ export default Component.extend({
   onclose: null,
 
   /**
-    * Add event handler for escape key to execute onclose
+    * Execute on close when escape is pressed
     *
     * @method escapeHandler
     * @private
+  */
+  escapeHandler(e) {
+    if (get(this, 'onclose') && get(e, 'keyCode') === 27) {
+      get(this, 'onclose').apply(this, ...arguments);
+    }
+  },
+
+  /**
+    *
+    * @method attachKeyUpHandlers
+    * @private
     */
-  escapeHandler() {
+  attachKeyUpHandlers() {
     schedule('afterRender', () => {
-      document.onkeyup = (e) => {
-        if (get(e, 'keyCode') === 27 && get(this, 'onclose')) {
-          get(this, 'onclose')();
-        }
-      };
+      jQuery(document).on('keyup.ember-bulma-modal',
+      Ember.run.bind(this, this.escapeHandler));
     });
   },
 
-  willDestroyElement() {
-    // revert event handler
-    document.onkeyup = null
+  /**
+    *
+    * @method detatchKeyUpHandlers
+    * @private
+    */
+  detatchKeyUpHandlers() {
+    jQuery(document).off('keyup.ember-bulma-modal');
   },
 
   init() {
     this._super(...arguments);
-    this.escapeHandler();
+    this.attachKeyUpHandlers();
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+    this.detatchKeyUpHandlers();
   }
 });

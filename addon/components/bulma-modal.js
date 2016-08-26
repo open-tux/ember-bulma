@@ -90,7 +90,7 @@ export default Component.extend({
     * @method detatchKeyUpHandlers
     * @private
     */
-  detatchKeyUpHandlers() {
+  detachKeyUpHandlers() {
     jQuery(document).off('keyup.ember-bulma-modal');
   },
 
@@ -101,6 +101,6 @@ export default Component.extend({
 
   willDestroyElement() {
     this._super(...arguments);
-    this.detatchKeyUpHandlers();
+    this.detachKeyUpHandlers();
   }
 });

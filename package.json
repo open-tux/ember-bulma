@@ -1,6 +1,6 @@
 {
   "name": "ember-bulma",
-  "version": "0.0.26-a",
+  "version": "0.0.26-b",
   "description": "Ember Bulma is a collection of Ember components and services for Bulma, a modern CSS framework by Jeremy Thomas",
   "directories": {
     "doc": "doc",

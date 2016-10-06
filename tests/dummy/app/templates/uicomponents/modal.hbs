@@ -7,7 +7,7 @@
   {{#bulma-column}}
     {{bulma-button onmousedown=(toggle 'showModal' this) label="Launch Example Modal" isPrimary=true}}
 
-    {{#bulma-modal show=showModal onclose=(toggle 'showModal' this)}}
+    {{#bulma-modal show=showModal onclose=(if showModal (toggle 'showModal' this))}}
       <div class="box">
         I am a modal.
       </div>
@@ -15,8 +15,8 @@
   {{/bulma-column}}
   {{#bulma-column isHalf=true}}
     {{#themed-syntax transparent="true" language="handlebars" }}
-&#123;&#123;! Leveraging ember-composable-helpers `toggle` (not included) &#125;&#125;  
-&#123;&#123;#bulma-modal show=showModal onclose=(toggle 'showModal' this)&#125;&#125;
+&#123;&#123;! Leveraging ember-composable-helpers `toggle` (not included) &#125;&#125;
+&#123;&#123;#bulma-modal show=showModal onclose=(if showModal (toggle 'showModal' this))&#125;&#125;
   &lt;div class="box"&gt;
     I am a modal.
   &lt;/div&gt;

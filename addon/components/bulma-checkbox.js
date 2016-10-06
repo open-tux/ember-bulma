@@ -11,6 +11,12 @@ export default BulmaInput.extend({
   layout,
   classNames: ['checkbox'],
   type: 'checkbox',
+  // Bindings are not comprehensive. More complex implementations should use a native element with classes applied
+  classNameBindings: [
+    'capture',
+    'checked',
+    'list'
+  ],
 
   init() {
     this._super(...arguments);

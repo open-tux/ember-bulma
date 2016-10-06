@@ -1,7 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-textarea';
 import computed, { read } from 'ember-computed-decorators';
-import { nativeAttrs } from './../utils';
 
 const {
   Component,
@@ -9,13 +8,26 @@ const {
   set
 } = Ember;
 
-const {
-  textarea
-} = nativeAttrs;
-
 export default Component.extend({
   layout,
   tagName: 'textarea',
   classNames: ['textarea'],
-  attributeBindings: [].concat(textarea),
+  // Bindings are not comprehensive. More complex implementations should use a native element with classes applied
+  attributeBindings: [
+    'isDisabled: disabled',
+    'autofocus',
+    'cols',
+    'disabled',
+    'form',
+    'name',
+    'placeholder',
+    'readonly',
+    'required',
+    'rows',
+    'wrap',
+    'onkeydown',
+    'onkeyup',
+    'onkeypress',
+    'oninput'
+  ]
 });

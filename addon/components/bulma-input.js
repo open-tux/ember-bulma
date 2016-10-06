@@ -1,17 +1,13 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-input';
 import computed, { alias } from 'ember-computed-decorators';
-import { makeString, nativeAttrs, deprecations } from '../utils';
+import { makeString, deprecations } from '../utils';
 
 const {
   Component,
   get,
   set
 } = Ember;
-
-const {
-  input
-} = nativeAttrs;
 
 export default Component.extend({
   layout,
@@ -22,7 +18,32 @@ export default Component.extend({
     'isMedium:is-medium',
     'isLarge:is-large'
   ],
-  attributeBindings: ['isDisabled:disabled','disabled'].concat(input),
+  // Bindings are not comprehensive. More complex implementations should use a native element with classes applied
+  attributeBindings: [
+    'type',
+    'value',
+    'name',
+    'accept',
+    'isDisabled:disabled','disabled',
+    'autocomplete',
+    'autofocus',
+    'dirname',
+    'list',
+    'readonly',
+    'size',
+    'required',
+    'multiple',
+    'maxlength',
+    'pattern',
+    'min',
+    'step',
+    'placeholder',
+    'onkeydown',
+    'onkeyup',
+    'onkeypress',
+    'oninput',
+    'onchange'
+  ],
 
   /**
     * Default class name binding

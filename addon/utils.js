@@ -36,46 +36,6 @@ export const camelCase = (str) => {
   }
 };
 
-const blacklist = A(['tagName', 'removeChild']);
-
-export const nativeAttrs  = {
-  /**
-    * Iterates through the prototype properties of an html element (while considering blacklisted items)
-    *
-    * @method attrsFor
-    * @private
-    */
-  attrsFor: (htmlElement) => {
-    let a = [];
-    for (var attr in htmlElement) {
-      if (!blacklist.contains(attr)) {
-        a.push(attr);
-      }
-    };
-    return a;
-  },
-
-  /**
-    * A list of all of the attributes of a native textarea
-    *
-    * @property textarea
-    * @private
-    */
-  get textarea() {
-    return this.attrsFor(window.HTMLTextAreaElement.prototype);
-  },
-
-  /**
-    * A list of all of the attributes of a native textarea
-    *
-    * @property input
-    * @private
-    */
-  get input() {
-    return this.attrsFor(window.HTMLInputElement.prototype);
-  }
-}
-
 /**
   * Deprecation messages util
   *

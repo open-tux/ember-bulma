@@ -12,6 +12,7 @@ export default Component.extend({
   layout,
   tagName: 'textarea',
   classNames: ['textarea'],
+  // Bindings are not comprehensive. More complex implementations should use a native element with classes applied
   attributeBindings: [
     'isDisabled: disabled',
     'autofocus',

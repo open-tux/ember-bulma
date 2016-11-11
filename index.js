@@ -22,20 +22,20 @@ module.exports = {
   },
 
   included: function(app, parentAddon) {
-     // see: https://github.com/ember-cli/ember-cli/issues/3718
-    if (typeof app.import !== 'function' && app.app) {
-      this.app = app = app.app;
+    this._super.included.apply(this, arguments);
+
+    var target = parentAddon || app;
+
+    // allow addon to be nested - see: https://github.com/ember-cli/ember-cli/issues/3718
+    if (target.app) {
+      target = target.app;
     }
 
-    this._super.included(app);
-
     // see: http://ember-cli.com/extending/#broccoli-build-options-for-in-repo-addons
-    var target = (parentAddon || app);
     target.options = target.options || {};
 
-
     // Build all paths
-    var bulmaPath = path.join(app.bowerDirectory, 'bulma');
+    var bulmaPath = path.join(target.bowerDirectory, 'bulma');
 
     target.options.sassOptions = target.options.sassOptions || {};
     target.options.sassOptions.includePaths = target.options.sassOptions.includePaths || [];
@@ -44,7 +44,7 @@ module.exports = {
     target.options.sassOptions.includePaths.push(bulmaPath);
     // target.options.sassOptions.extension = 'sass';
 
-    var config = app.project.config(app.env) || {};
+    var config = target.project.config(target.env) || {};
     var addonConfig = config[this.name] || {};
 
     // console.log('addon config: ', addonConfig);

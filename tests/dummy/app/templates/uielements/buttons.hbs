@@ -174,8 +174,8 @@ myButtonAction(buttonInstance) {
       {{bulma-button isSuccess=true icon="fa fa-check" label="Save"}}
       {{bulma-button isDanger=true icon="fa fa-times" label="Delete"}}
       {{#bulma-button isDanger=true isOutlined=true}}
-        <i class="fa fa-times"/>&nbsp;
-        Delete
+        <span class="icon"><i class="fa fa-times"/></span>
+        <span>Delete</span>
       {{/bulma-button}}
     </p>
   {{/bulma-column}}
@@ -192,8 +192,8 @@ myButtonAction(buttonInstance) {
 &#123;&#123;! Or &#125;&#125;
 
 &#123;&#123;#bulma-button isDanger=true isOutlined=true&#125;&#125;
-&nbsp;&nbsp;&lt;i class="fa fa-times"/&gt;
-&nbsp;&nbsp;Delete
+&nbsp;&nbsp;&lt;span class="icon"&gt;&lt;i class="fa fa-times"/&gt;&lt;/span&gt;
+&nbsp;&nbsp;&lt;span&gt;Delete&lt;/span&gt;
 &#123;&#123;/bulma-button&#125;&#125;
     {{/themed-syntax}}
   {{/bulma-column}}

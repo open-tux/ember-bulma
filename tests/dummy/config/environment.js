@@ -9,6 +9,8 @@ module.exports = function(environment) {
     locationType: 'hash',
     contentSecurityPolicy: {
       'img-src': "'self' data: emberjs.com assets-cdn.github.com",
+      'style-src': "'self' maxcdn.bootstrapcdn.com",
+      'font-src': "'self' maxcdn.bootstrapcdn.com"
     },
     EmberENV: {
       FEATURES: {

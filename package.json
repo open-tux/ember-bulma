@@ -1,6 +1,6 @@
 {
   "name": "ember-bulma",
-  "version": "0.1.2-alpha",
+  "version": "0.1.2",
   "description": "Ember Bulma is a collection of Ember components and services for Bulma, a modern CSS framework by Jeremy Thomas",
   "directories": {
     "doc": "doc",
@@ -29,6 +29,7 @@
     "ember-cli-release": "^1.0.0-beta.2",
     "ember-cli-sass": "^5.3.1",
     "ember-cli-sri": "^1.1.0",
+    "ember-cli-test-loader": "1.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-composable-helpers": "0.16.0",
     "ember-disable-prototype-extensions": "^1.0.0",
@@ -56,9 +57,6 @@
     "ember-cli-babel": "^5.1.5",
     "ember-cli-htmlbars": "^1.0.8",
     "ember-computed-decorators": "^0.2.2"
-  },
-  "optionalDependencies": {
-    "ember-font-awesome": "2.1.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",

@@ -1,14 +1,9 @@
 {
   "name": "ember-bulma",
   "dependencies": {
-    "ember": "~2.8.1",
-    "ember-cli-shims": "0.0.6",
-    "ember-qunit": "0.4.16",
-    "ember-qunit-notifications": "0.1.0",
-    "ember-resolver": "~0.1.20",
+    "ember": "~2.10.0",
+    "ember-cli-shims": "0.1.3",
     "jquery": "1.11.3",
-    "loader.js": "ember-cli/loader.js#3.2.1",
-    "qunit": "~1.20.0",
     "bulma": "0.1.2",
     "font-awesome": "~4.5.0",
     "prism": "^1.4.1",

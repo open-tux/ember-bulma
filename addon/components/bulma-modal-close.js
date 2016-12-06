@@ -28,14 +28,6 @@ export default Ember.Component.extend({
     this.close();
   },
 
-  //TODO Not working
-  /**
-    *
-    */
-  didRender() {
-    this.$().focus();
-  },
-
   /**
     *
     */

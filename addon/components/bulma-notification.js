@@ -1,9 +1,13 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-notification';
-import computed, { readOnly } from 'ember-computed-decorators';
+import computed from 'ember-computed-decorators';
 import { _colorBindings, _responsiveHelpers } from '../constants';
 
-export default Ember.Component.extend({
+const {
+  Component
+} = Ember;
+
+export default Component.extend({
   layout,
   classNames: ['notification'],
   classNameBindings: [].concat(_colorBindings, _responsiveHelpers),

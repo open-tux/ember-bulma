@@ -1,7 +1,12 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  demoLinks: Ember.A([
+const {
+  Controller,
+  A: emberArray
+} = Ember;
+
+export default Controller.extend({
+  demoLinks: emberArray([
     {
       name: 'One',
       route: 'uilayout.hero'

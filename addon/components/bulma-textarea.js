@@ -1,11 +1,8 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-textarea';
-import computed, { read } from 'ember-computed-decorators';
 
 const {
-  Component,
-  get,
-  set
+  Component
 } = Ember;
 
 export default Component.extend({

@@ -1,10 +1,10 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-tabs';
-import computed, { readOnly, alias } from 'ember-computed-decorators';
-import { makeString } from '../utils';
+import computed from 'ember-computed-decorators';
 import { _responsiveHelpers } from '../constants';
 
 const {
+  Component,
   isEqual,
   set,
   get,
@@ -12,7 +12,7 @@ const {
   /* Object: { create: _create } */
 } = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   classNames: 'tabs',
   classNameBindings: [

@@ -3,18 +3,17 @@ import layout from '../templates/components/bulma-modal';
 
 const {
   Component,
-  run: { schedule },
+  run: { schedule, bind },
   get,
-  set
+  $: _$
 } = Ember;
-
-const _$ = Ember.$;
 
 /**
   * A classic modal overlay, in which you can include any content you want
   *
   * @class BulmaModal
   * @extends Ember Component
+  * @private
   */
 
 export default Component.extend({
@@ -75,14 +74,14 @@ export default Component.extend({
 
   /**
     * Attach event handlers
-    
+
     * @method attachKeyUpHandlers
     * @private
     */
   attachKeyUpHandlers() {
     schedule('afterRender', () => {
       _$(document).on('keyup.ember-bulma-modal',
-      Ember.run.bind(this, this.escapeHandler));
+      bind(this, this.escapeHandler));
     });
   },
 

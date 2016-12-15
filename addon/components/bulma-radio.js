@@ -4,7 +4,7 @@ import layout from '../templates/components/bulma-checkbox';
 
 const {
   get,
-  set
+  A: emberArray
 } = Ember;
 
 export default BulmaInput.extend({
@@ -22,6 +22,6 @@ export default BulmaInput.extend({
     this._super(...arguments);
 
     // Remove the inherited input class name (as it breaks the styling)
-    get(this, 'classNames').removeObject('input');
+    emberArray(get(this, 'classNames')).removeObject('input');
   }
 });

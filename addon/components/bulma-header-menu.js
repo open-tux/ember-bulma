@@ -2,7 +2,12 @@ import Ember from 'ember';
 import layout from '../templates/components/bulma-header-menu';
 import { _responsiveHelpers } from '../constants';
 
-export default Ember.Component.extend({
+const {
+  Component,
+  A
+} = Ember;
+
+export default Component.extend({
   layout,
   classNames: ['header-menu'],
   classNameBindings: [
@@ -18,5 +23,5 @@ export default Ember.Component.extend({
     @returns Array
     @public
   */
-  links: Ember.A([])
+  links: A([])
 });

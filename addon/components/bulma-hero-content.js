@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-hero-content';
-import computed, { alias } from 'ember-computed-decorators';
+import { alias } from 'ember-computed-decorators';
 import { _responsiveHelpers } from '../constants';
 
 const {
@@ -38,5 +38,5 @@ export default Component.extend({
     @returns Bool
     @public
   */
-  @alias('useContainer') container
+  @alias('useContainer') container: false
 });

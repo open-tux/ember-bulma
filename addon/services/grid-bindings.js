@@ -2,7 +2,8 @@ import Ember from 'ember';
 import { camelCase } from '../utils';
 
 const {
-  Service
+  Service,
+  A: emberArray
 } = Ember;
 
 export default Service.extend({
@@ -22,9 +23,9 @@ export default Service.extend({
     @private
   */
   _generateAllBindings() {
-    let possibilities = Ember.A([ 'three-quarters', 'two-thirds', 'half', 'one-third', 'one-quarter', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11' ]);
-    let modifiers = Ember.A([ 'offset', 'narrow', 'desktop', 'mobile', 'tablet']);
-    let bindings = Ember.A([]);
+    let possibilities = emberArray([ 'three-quarters', 'two-thirds', 'half', 'one-third', 'one-quarter', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11' ]);
+    let modifiers = emberArray([ 'offset', 'narrow', 'desktop', 'mobile', 'tablet']);
+    let bindings = emberArray([]);
 
     possibilities.forEach((item) => {
       // Add all the possibilities

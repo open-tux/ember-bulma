@@ -1,12 +1,10 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-input';
-import computed, { alias } from 'ember-computed-decorators';
-import { makeString, deprecations } from '../utils';
+import { deprecations } from '../utils';
 
 const {
   Component,
-  get,
-  set
+  get
 } = Ember;
 
 export default Component.extend({

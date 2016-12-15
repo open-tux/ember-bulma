@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import computed from 'ember-computed-decorators';
 
 const {
   Controller,

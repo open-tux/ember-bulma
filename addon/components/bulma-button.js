@@ -1,9 +1,13 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-button';
-import computed, { readOnly, alias, bool } from 'ember-computed-decorators';
+import { alias, bool } from 'ember-computed-decorators';
 import { _colorBindings } from '../constants';
 
-export default Ember.Component.extend({
+const {
+  Component
+} = Ember;
+
+export default Component.extend({
   layout,
   tagName: 'a',
   classNames: ['button'],
@@ -26,7 +30,7 @@ export default Ember.Component.extend({
     @returns Boolean
     @private
   */
-  @bool('icon') _hasIcon,
+  @bool('icon') _hasIcon: false,
 
   /**
     Signal that an label has been provided
@@ -35,7 +39,7 @@ export default Ember.Component.extend({
     @returns Boolean
     @private
   */
-  @bool('label') _hasLabel,
+  @bool('label') _hasLabel: false,
 
   /**
     Binding for is-loading class
@@ -67,5 +71,5 @@ export default Ember.Component.extend({
     @returns Boolean
     @public
   */
-  @alias('isLoading') loading
+  @alias('isLoading') loading: false
 });

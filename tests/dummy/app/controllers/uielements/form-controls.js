@@ -3,7 +3,8 @@ import computed, { lte } from 'ember-computed-decorators';
 
 const {
   Controller,
-  run: { later }
+  run: { later },
+  Logger
 } = Ember;
 
 export default Controller.extend({
@@ -39,9 +40,10 @@ export default Controller.extend({
 
   /**
     @property demoTextAreaCharsWarning
+    @type Bool
     @private
   */
-  @lte('demo.textAreaCharsRemaining', 10) demoTextAreaCharsWarning,
+  @lte('demo.textAreaCharsRemaining', 10) demoTextAreaCharsWarning: false,
 
   /**
     @property demoTextAreaCharsRemaining
@@ -57,16 +59,18 @@ export default Controller.extend({
       @method format
       @private
     */
-    format(n) {
-      // format
+    format() {
+      return;
     },
 
     /**
+      Simulate some change
+
       @method changeAction
       @private
     */
     changeAction() {
-      // simulate some change
+      return;
     },
 
     /**
@@ -74,7 +78,7 @@ export default Controller.extend({
       @private
     */
     transfer(amount, currency) {
-      console.log('simulate transfer: ', `${currency}${amount}`);
+      Logger.log('simulate transfer: ', `${currency}${amount}`);
     },
 
     /**

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const {
   isArray,
-  A
+  Logger
 } = Ember;
 
 /**
@@ -52,7 +52,7 @@ export const deprecations = (items) => {
 
   items.forEach((item) => {
     if (item.value && msg.hasOwnProperty(item.name)) {
-      console.warn(msg[item.name]);
+      Logger.warn(msg[item.name]);
     }
   });
 };

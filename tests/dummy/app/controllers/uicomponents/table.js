@@ -1,13 +1,10 @@
 import Ember from 'ember';
-import computed, { alias } from 'ember-computed-decorators';
-import hbs from 'htmlbars-inline-precompile';
 
 const {
   Controller
 } = Ember;
 
 export default Controller.extend({
-
   plain: {
     rows: [
       {
@@ -45,7 +42,7 @@ export default Controller.extend({
       },
       {
         '': '<i class="fa fa-wordpress"></i>',
-        'Open source projects' : 'Wordpress',
+        'Open source projects': 'Wordpress',
         'Year Started': '2003',
         'Links': '<a href="#"><i class="fa fa-github"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-globe"></i></a>',
         '_tags': 'wysiwyg'

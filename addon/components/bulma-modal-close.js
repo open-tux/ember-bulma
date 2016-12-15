@@ -2,11 +2,11 @@ import Ember from 'ember';
 import layout from '../templates/components/bulma-modal-close';
 
 const {
-  get,
-  set
+  Component,
+  get
 } = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: 'button',
   classNames: 'modal-close',

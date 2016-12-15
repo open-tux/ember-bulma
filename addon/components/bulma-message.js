@@ -19,5 +19,5 @@ export default Component.extend({
     @returns String
     @private
   */
-  @alias('body') message
+  @alias('body') message: null
 });

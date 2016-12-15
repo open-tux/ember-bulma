@@ -42,13 +42,16 @@ export default Component.extend({
     'onkeyup',
     'onkeypress',
     'oninput',
-    'onchange'
+    'onchange',
+    'onblur',
+    'onfocus'
   ],
 
   /**
     * Default class name binding
     *
     * @property isNormal
+    * @public
     * @type Bool
     * @default true
     */
@@ -60,9 +63,9 @@ export default Component.extend({
     // Make user aware of deprecations for this Component
     deprecations([
       { name: 'control', value: get(this, 'control') },
-      { name: 'isLoading', value: get(this, 'isLoading')},
-      { name: 'isTextarea', value: get(this, 'isTextarea')},
-      { name: 'key-up', value: get(this, 'key-up')}
+      { name: 'isLoading', value: get(this, 'isLoading') },
+      { name: 'isTextarea', value: get(this, 'isTextarea') },
+      { name: 'key-up', value: get(this, 'key-up') }
     ]);
   }
 });

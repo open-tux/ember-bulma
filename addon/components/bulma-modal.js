@@ -8,7 +8,7 @@ const {
   set
 } = Ember;
 
-const jQuery = Ember.$;
+const _$ = Ember.$;
 
 /**
   * A classic modal overlay, in which you can include any content you want
@@ -74,24 +74,26 @@ export default Component.extend({
   },
 
   /**
-    *
+    * Attach event handlers
+    
     * @method attachKeyUpHandlers
     * @private
     */
   attachKeyUpHandlers() {
     schedule('afterRender', () => {
-      jQuery(document).on('keyup.ember-bulma-modal',
+      _$(document).on('keyup.ember-bulma-modal',
       Ember.run.bind(this, this.escapeHandler));
     });
   },
 
   /**
-    *
+    * Remove event handlers
+
     * @method detatchKeyUpHandlers
     * @private
     */
   detachKeyUpHandlers() {
-    jQuery(document).off('keyup.ember-bulma-modal');
+    _$(document).off('keyup.ember-bulma-modal');
   },
 
   init() {

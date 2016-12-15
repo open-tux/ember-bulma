@@ -8,7 +8,6 @@ moduleForComponent('bulma-nav-right', 'Integration | Component | bulma nav right
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{bulma-nav-right}}`);
 
   assert.equal(this.$().text().trim(), '');

@@ -58,7 +58,7 @@ export default Ember.Component.extend({
 
     // Make user aware of deprecations for this Component
     deprecations([
-      { name: 'control', value: get(this, 'control') },
+      { name: 'control', value: get(this, 'control') }
     ]);
   }
 });

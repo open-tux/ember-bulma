@@ -25,7 +25,7 @@ export const makeString = (arr, unique = true) => {
 */
 export const camelCase = (str) => {
   let arr = str.split('-');
-  if(arr.length > 1) {
+  if (arr.length > 1) {
     return arr.map(camelCase).join('');
   }
   if ((/[a-z]/).test(str)) {
@@ -55,4 +55,4 @@ export const deprecations = (items) => {
       console.warn(msg[item.name]);
     }
   });
-}
+};

@@ -3,6 +3,6 @@ import layout from '../templates/components/bulma-message-header';
 import { _responsiveHelpers } from '../constants';
 
 export default Ember.Component.extend({
-  layout: layout,
+  layout,
   classNameBindings: _responsiveHelpers
 });

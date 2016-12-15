@@ -8,7 +8,6 @@ moduleForComponent('bulma-modal', 'Integration | Component | bulma modal', {
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{bulma-modal}}`);
 
   assert.equal(this.$().text().trim(), '');

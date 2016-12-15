@@ -6,10 +6,8 @@ moduleForComponent('bulma-hero-content', 'Integration | Component | bulma hero c
 });
 
 test('it renders', function(assert) {
-  
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
-
   this.render(hbs`{{bulma-hero-content}}`);
 
   assert.equal(this.$().text().trim(), '');

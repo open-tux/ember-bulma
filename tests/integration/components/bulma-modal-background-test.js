@@ -8,7 +8,6 @@ moduleForComponent('bulma-modal-background', 'Integration | Component | bulma mo
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{bulma-modal-background}}`);
 
   assert.equal(this.$().text().trim(), '');

@@ -6,10 +6,8 @@ moduleForComponent('bulma-select', 'Integration | Component | bulma select', {
 });
 
 test('it renders', function(assert) {
-  
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
-
   this.render(hbs`{{bulma-select}}`);
 
   assert.equal(this.$().text().trim(), '');

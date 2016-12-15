@@ -1,8 +1,12 @@
 import Ember from 'ember';
 import computed,  { alias } from 'ember-computed-decorators';
 
-export default Ember.Route.extend({
-  @alias('model') demo,
+const {
+  Route
+} = Ember;
+
+export default Route.extend({
+  @alias('model') demo: null,
   model() {
     return {
       demoTabs: [
@@ -95,12 +99,6 @@ export default Ember.Route.extend({
               name: 'Container',
               route: 'uilayout.container'
             },
-            //TODO Depecrate this
-            // {
-            //   name: 'Header',
-            //   route: 'uilayout.header',
-            //
-            // },
             {
               name: 'Hero',
               route: 'uilayout.hero'

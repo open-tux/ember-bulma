@@ -3,7 +3,11 @@ import layout from '../templates/components/bulma-hero-content';
 import computed, { alias } from 'ember-computed-decorators';
 import { _responsiveHelpers } from '../constants';
 
-export default Ember.Component.extend({
+const {
+  Component
+} = Ember;
+
+export default Component.extend({
   layout,
   classNames: ['hero-body'],
   classNameBindings: [
@@ -11,7 +15,10 @@ export default Ember.Component.extend({
   ].concat(_responsiveHelpers),
 
   /**
+    Signal if is-fluid should be added to the outer container
 
+    @property fluidContainer
+    @public
   */
   fluidContainer: false,
 

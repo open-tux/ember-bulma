@@ -1,9 +1,13 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-message';
-import computed, { readOnly, alias } from 'ember-computed-decorators';
+import { alias } from 'ember-computed-decorators';
 import { _colorBindings, _responsiveHelpers } from '../constants';
 
-export default Ember.Component.extend({
+const {
+  Component
+} = Ember;
+
+export default Component.extend({
   layout,
   classNames: ['message'],
   classNameBindings: [].concat(_colorBindings, _responsiveHelpers),
@@ -15,5 +19,5 @@ export default Ember.Component.extend({
     @returns String
     @private
   */
-  @alias('body') message,
+  @alias('body') message: null
 });

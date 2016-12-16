@@ -6,10 +6,8 @@ moduleForComponent('bulma-tabs', 'Integration | Component | bulma tabs', {
 });
 
 test('it renders', function(assert) {
-  
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
-
   this.render(hbs`{{bulma-tabs}}`);
 
   assert.equal(this.$().text().trim(), '');

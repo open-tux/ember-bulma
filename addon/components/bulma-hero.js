@@ -1,9 +1,13 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-hero';
 import { _colorBindings, _responsiveHelpers } from '../constants';
-import computed, { alias } from 'ember-computed-decorators';
+import { alias } from 'ember-computed-decorators';
 
-export default Ember.Component.extend({
+const {
+  Component
+} = Ember;
+
+export default Component.extend({
   layout,
   tagName: 'section',
   classNames: ['hero'],
@@ -46,5 +50,5 @@ export default Ember.Component.extend({
     @returns Bool
     @public
   */
-  @alias('useContainer') container
+  @alias('useContainer') container: false
 });

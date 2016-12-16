@@ -1,9 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-section';
-import computed, { alias } from 'ember-computed-decorators';
 import { _responsiveHelpers } from '../constants';
 
-export default Ember.Component.extend({
+const {
+  Component
+} = Ember;
+
+export default Component.extend({
   layout,
   tagName: 'section',
   classNames: ['section'],
@@ -11,11 +14,10 @@ export default Ember.Component.extend({
   /**
     Signal if content should be nested in a container (div.container)
     // TODO depecrate this
-    
+
     @property withContainer
     @returns Boolean
     @public
   */
-  withContainer: true,
-
+  withContainer: true
 });

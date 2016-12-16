@@ -6,10 +6,8 @@ moduleForComponent('bulma-message-body', 'Integration | Component | bulma messag
 });
 
 test('it renders', function(assert) {
-  
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
-
   this.render(hbs`{{bulma-message-body}}`);
 
   assert.equal(this.$().text().trim(), '');

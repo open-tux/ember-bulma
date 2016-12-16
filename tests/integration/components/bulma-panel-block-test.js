@@ -8,7 +8,6 @@ moduleForComponent('bulma-panel-block', 'Integration | Component | bulma panel b
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{bulma-panel-block}}`);
 
   assert.equal(this.$().text().trim(), '');

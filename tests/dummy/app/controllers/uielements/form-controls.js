@@ -1,12 +1,16 @@
 import Ember from 'ember';
 import computed, { lte } from 'ember-computed-decorators';
 
-const { run } = Ember;
-const { later } = run;
+const {
+  Controller,
+  run: { later },
+  Logger
+} = Ember;
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   /**
-
+    @property demo
+    @private
   */
   @computed()
   demo() {
@@ -17,11 +21,12 @@ export default Ember.Controller.extend({
       currency: '$',
       textAreaValue: null,
       inputValue: null
-    }
+    };
   },
 
   /**
-
+    @property demoSelectedCurrency
+    @private
   */
   @computed('demo.currency')
   demoSelectedCurrency(currency) {
@@ -34,12 +39,15 @@ export default Ember.Controller.extend({
   },
 
   /**
-
+    @property demoTextAreaCharsWarning
+    @type Bool
+    @private
   */
-  @lte('demo.textAreaCharsRemaining', 10) demoTextAreaCharsWarning,
+  @lte('demo.textAreaCharsRemaining', 10) demoTextAreaCharsWarning: false,
 
   /**
-
+    @property demoTextAreaCharsRemaining
+    @private
   */
   @computed('demo.textAreaValue')
   demoTextAreaCharsRemaining(val) {
@@ -48,35 +56,42 @@ export default Ember.Controller.extend({
   },
   actions: {
     /**
-
+      @method format
+      @private
     */
-    format(n){
-      //format
+    format() {
+      return;
     },
 
     /**
+      Simulate some change
 
+      @method changeAction
+      @private
     */
     changeAction() {
-      //simulate some change
+      return;
     },
 
     /**
-
+      @method transfer
+      @private
     */
     transfer(amount, currency) {
-      console.log('simulate transfer: ', `${currency}${amount}`);
+      Logger.log('simulate transfer: ', `${currency}${amount}`);
     },
 
     /**
-
+      @method updateCurrency
+      @private
     */
     updateCurrency(val) {
       this.set('demo.currency', val);
     },
 
     /**
-
+      @method submitAction
+      @private
     */
     submitAction(button) {
       this.set('submitButton', button);

@@ -1,10 +1,10 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-tabs';
-import computed, { readOnly, alias } from 'ember-computed-decorators';
-import { makeString } from '../utils';
+import computed from 'ember-computed-decorators';
 import { _responsiveHelpers } from '../constants';
 
 const {
+  Component,
   isEqual,
   set,
   get,
@@ -12,7 +12,7 @@ const {
   /* Object: { create: _create } */
 } = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   classNames: 'tabs',
   classNameBindings: [
@@ -44,7 +44,7 @@ export default Ember.Component.extend({
   */
   @computed('tabs.[]', '_containerRouter.currentRouteName')
   _processedTabs(tabs, routeName) {
-    //Compare the provided route to the current route
+    // Compare the provided route to the current route
     if (tabs) {
       return tabs.map((tab) => {
         set(tab, 'isActive', isEqual(get(tab, 'route'), routeName));
@@ -54,7 +54,6 @@ export default Ember.Component.extend({
       return [];
     }
   },
-
 
   /**
     Look up the router
@@ -75,11 +74,11 @@ export default Ember.Component.extend({
       @public
     */
     routeTab(tab, tabs) {
-      //De-activate all tabs
+      // De-activate all tabs
       Ember.A(tabs).setEach('isActive', false);
 
       this.get('_containerRouter').transitionTo(get(tab, 'route')).then(() => {
-        //Activate this tab using Ember.set (works with POJO or Ember Object)
+        // Activate this tab using Ember.set (works with POJO or Ember Object)
         set(tab, 'isActive', true);
       });
     },

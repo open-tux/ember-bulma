@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
         e: true,
         f: true
       }
-    }
+    };
   },
   actions: {
     closeAction(which) {

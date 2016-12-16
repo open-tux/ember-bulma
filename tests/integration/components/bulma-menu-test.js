@@ -6,10 +6,8 @@ moduleForComponent('bulma-menu', 'Integration | Component | bulma menu', {
 });
 
 test('it renders', function(assert) {
-  
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
-
   this.render(hbs`{{bulma-menu}}`);
 
   assert.equal(this.$().text().trim(), '');

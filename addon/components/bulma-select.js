@@ -1,13 +1,14 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-select';
-import computed, { readOnly } from 'ember-computed-decorators';
+import computed from 'ember-computed-decorators';
 import { deprecations } from '../utils';
 
 const {
+  Component,
   get
 } = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: '',
   classNames: ['bulma-select'],
@@ -58,7 +59,7 @@ export default Ember.Component.extend({
 
     // Make user aware of deprecations for this Component
     deprecations([
-      { name: 'control', value: get(this, 'control') },
+      { name: 'control', value: get(this, 'control') }
     ]);
   }
 });

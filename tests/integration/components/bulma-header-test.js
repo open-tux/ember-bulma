@@ -6,10 +6,8 @@ moduleForComponent('bulma-header', 'Integration | Component | bulma header', {
 });
 
 test('it renders', function(assert) {
-  
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
-
   this.render(hbs`{{bulma-header}}`);
 
   assert.equal(this.$().text().trim(), '');

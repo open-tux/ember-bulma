@@ -8,7 +8,6 @@ moduleForComponent('bulma-menu-list', 'Integration | Component | bulma menu list
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{bulma-menu-list}}`);
 
   assert.equal(this.$().text().trim(), '');

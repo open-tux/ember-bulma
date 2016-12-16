@@ -2,16 +2,18 @@ import Ember from 'ember';
 import computed from 'ember-computed-decorators';
 
 const {
+  Controller,
   get,
   set,
   A,
   run
 } = Ember;
 
-export default Ember.Controller.extend({
+export default Controller.extend({
 
   /**
-    Establish when subnav should be visible // TODO assess composable helpers
+    Establish when subnav should be visible
+    // REVIEW composable helpers
 
     @property demoSubTabs
     @returns Array

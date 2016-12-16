@@ -1,7 +1,12 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  elements: Ember.A([
+const {
+  Controller,
+  A: emberArray
+} = Ember;
+
+export default Controller.extend({
+  elements: emberArray([
     {
       label: 'Primary',
       primary: true

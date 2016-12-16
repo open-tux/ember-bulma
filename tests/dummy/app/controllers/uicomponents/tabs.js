@@ -5,12 +5,12 @@ export default Ember.Controller.extend({
   /*
     Some mock models for demo purposed
   */
-  @alias('demo.browsers') browsers,
-  @alias('demo.media') media,
-  @alias('demo.plain') plain,
-  @alias('demo.tech') tech,
-  @alias('demo.social') social,
-  @alias('demo.git') git,
+  @alias('demo.browsers') browsers: null,
+  @alias('demo.media') media: null,
+  @alias('demo.plain') plain: null,
+  @alias('demo.tech') tech: null,
+  @alias('demo.social') social: null,
+  @alias('demo.git') git: null,
   @computed()
   demo() {
     return {

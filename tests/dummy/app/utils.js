@@ -1,5 +1,10 @@
 import Ember from 'ember';
 
+const {
+  Object: emberObject,
+  A: emberArray
+} = Ember;
+
 /**
   Evaluate if item is an Object
 
@@ -19,7 +24,7 @@ export const isObject = (item) => {
   @public
 */
 export const fromPOJO = (obj) => {
-  return Ember.Object.create(obj);
+  return emberObject.create(obj);
 };
 
 /**
@@ -30,7 +35,7 @@ export const fromPOJO = (obj) => {
   @public
 */
 export const fromPOJA = (arr) => {
-  return Ember.A(arr.map((item) => {
+  return emberArray(arr.map((item) => {
     return isObject(item) ? fromPOJO(item) : item;
   }));
 };

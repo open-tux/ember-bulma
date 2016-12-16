@@ -8,7 +8,6 @@ moduleForComponent('bulma-progress', 'Integration | Component | bulma progress',
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{bulma-progress}}`);
 
   assert.equal(this.$().text().trim(), '');

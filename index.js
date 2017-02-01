@@ -35,7 +35,7 @@ module.exports = {
     target.options = target.options || {};
 
     // Build all paths
-    var bulmaPath = path.join(target.bowerDirectory || '', 'bulma');
+    var bulmaPath = path.join(target.bowerDirectory || 'bower_components', 'bulma');
 
     target.options.sassOptions = target.options.sassOptions || {};
     target.options.sassOptions.includePaths = target.options.sassOptions.includePaths || [];

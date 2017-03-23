@@ -18,7 +18,6 @@
   "author": "Open Tux",
   "license": "MIT",
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
     "broccoli-asset-rev": "^2.4.5",
     "ember-cli": "2.10.0",
     "ember-cli-app-version": "^2.0.0",
@@ -56,6 +55,7 @@
     "composable"
   ],
   "dependencies": {
+    "babel-eslint": "^7.1.1",
     "broccoli-funnel": "^1.0.1",
     "ember-cli-babel": "^5.1.5",
     "ember-cli-htmlbars": "^1.0.10",

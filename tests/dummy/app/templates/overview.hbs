@@ -6,20 +6,19 @@
   </h3>
 
   {{#themed-syntax transparent="true" language="bash"}}
-ember install ember-cli-sass
 ember install ember-bulma
   {{/themed-syntax}}
 
-  <h1 class="title is-5">Optional</h1>
-  {{#themed-syntax transparent="true" language="bash"}}
-ember install ember-font-awesome
-  {{/themed-syntax}}
-
   <br>
-  <p>Then create a {{#bulma-tag}}styles/app.scss{{/bulma-tag}} file.</p>
+  <p>Then create a {{#bulma-tag}}ember-cli-sass{{/bulma-tag}} NPM dependency and create a SCSS file in your App called {{#bulma-tag}}styles/app.scss{{/bulma-tag}} with the following import statement:</p>
 
   {{#themed-syntax transparent="true" language="scss"}}
 @import "bulma";
+  {{/themed-syntax}}
+
+  <h1 class="title is-5">Optional Addon</h1>
+  {{#themed-syntax transparent="true" language="bash"}}
+ember install ember-font-awesome
   {{/themed-syntax}}
 
   <h1 class="title is-5">Experimental</h1>

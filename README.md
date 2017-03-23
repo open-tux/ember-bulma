@@ -9,20 +9,18 @@
 
 ## Installation
 ```
-ember install ember-cli-sass
 ember install ember-bulma
+```
+
+This will automatically install the `ember-cli-sass` NPM dependency and create a SCSS file in your App called `styles/app.scss` with the following import statement:
+```scss
+@import "bulma";
 ```
 
 **Optional :**
 ```
 ember install ember-font-awesome
 ```
-
-Then create a `styles/app.scss` file.
-```scss
-@import "bulma";
-```
-
 
 ## Documentation
 

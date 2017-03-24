@@ -52,7 +52,7 @@
     "ember-resolver": "^2.0.3",
     "ember-source": "~2.12.0",
     "ember-suave": "4.0.1",
-    "ember-themed-syntax": "0.0.6",
+    "ember-themed-syntax": "0.0.7",
     "loader.js": "^4.2.3",
     "lodash-es": "^4.11.1"
   },

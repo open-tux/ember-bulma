@@ -1,5 +1,4 @@
-/* jshint node: true */
-
+/* eslint-env node */
 
 module.exports = function(environment) {
   var ENV = {
@@ -16,6 +15,10 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
     },
 
@@ -41,7 +44,6 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.rootURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter

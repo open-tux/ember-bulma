@@ -8,8 +8,8 @@ const {
   isEqual,
   set,
   get,
-  getOwner
-  /* Object: { create: _create } */
+  getOwner,
+  A: emberArray
 } = Ember;
 
 export default Component.extend({
@@ -33,7 +33,7 @@ export default Component.extend({
     @returns Array
     @public
   */
-  tabs: Ember.A([]),
+  tabs: emberArray([]),
 
   /**
     Convert POJA of tabs
@@ -75,7 +75,7 @@ export default Component.extend({
     */
     routeTab(tab, tabs) {
       // De-activate all tabs
-      Ember.A(tabs).setEach('isActive', false);
+      emberArray(tabs).setEach('isActive', false);
 
       this.get('_containerRouter').transitionTo(get(tab, 'route')).then(() => {
         // Activate this tab using Ember.set (works with POJO or Ember Object)

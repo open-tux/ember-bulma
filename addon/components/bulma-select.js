@@ -5,6 +5,7 @@ import { deprecations } from '../utils';
 
 const {
   Component,
+  A: emberArray,
   get
 } = Ember;
 
@@ -19,7 +20,7 @@ export default Component.extend({
     @returns Array
     @public
   */
-  options: Ember.A([]),
+  options: emberArray([]),
 
   /**
     * If used inline, pass through classNames

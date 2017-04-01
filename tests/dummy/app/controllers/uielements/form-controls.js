@@ -100,7 +100,7 @@ export default Controller.extend({
       later(() => {
         button.setProperties({
           'isLoading': false,
-          'icon':  'fa fa-check',
+          'icon': 'fa fa-check',
           'label': 'Sent',
           'primary': false,
           'success': true

@@ -23,8 +23,8 @@ export default Service.extend({
     @private
   */
   _generateAllBindings() {
-    let possibilities = emberArray([ 'three-quarters', 'two-thirds', 'half', 'one-third', 'one-quarter', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11' ]);
-    let modifiers = emberArray([ 'offset', 'narrow', 'desktop', 'mobile', 'tablet']);
+    let possibilities = emberArray(['three-quarters', 'two-thirds', 'half', 'one-third', 'one-quarter', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']);
+    let modifiers = emberArray(['offset', 'narrow', 'desktop', 'mobile', 'tablet']);
     let bindings = emberArray([]);
 
     possibilities.forEach((item) => {

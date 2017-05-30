@@ -47,6 +47,10 @@ export default Service.extend({
   },
 
   init() {
-    this._generateAllBindings();
+    /*
+      REVIEW Why do this assemblage as a process when values are always static?
+      Instead just use static result as a constant, and keep this code if nomenclature changes, but never execute
+    */
+    // this._generateAllBindings();
   }
 });

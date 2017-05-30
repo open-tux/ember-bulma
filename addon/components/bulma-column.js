@@ -1,18 +1,16 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-column';
-import { _responsiveHelpers } from '../constants';
+import { _responsiveHelpers, _gridBindings } from '../constants';
 
 const {
   Component,
-  inject: { service },
-  get,
   set
 } = Ember;
 
 export default Component.extend({
   layout,
   classNames: ['column'],
-  gridBindings: service('grid-bindings'),
+  // REVIEW can this property and the concatBindings method be combined as an es5 get or computed?
   classNameBindings: [],
 
   /**
@@ -22,8 +20,7 @@ export default Component.extend({
     @private
   */
   concatBindings() {
-    let gridBindings = get(this, 'gridBindings.all');
-    set(this, 'classNameBindings', ['content'].concat(gridBindings, _responsiveHelpers));
+    set(this, 'classNameBindings', ['content'].concat(_gridBindings, _responsiveHelpers));
   },
 
   init() {

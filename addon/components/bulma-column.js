@@ -4,8 +4,6 @@ import { _responsiveHelpers, _gridBindings } from '../constants';
 
 const {
   Component,
-  inject: { service },
-  get,
   set
 } = Ember;
 
@@ -22,7 +20,6 @@ export default Component.extend({
     @private
   */
   concatBindings() {
-    let gridBindings = get(this, 'gridBindings.all');
     set(this, 'classNameBindings', ['content'].concat(_gridBindings, _responsiveHelpers));
   },
 

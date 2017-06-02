@@ -34,8 +34,8 @@ module.exports = {
     // see: http://ember-cli.com/extending/#broccoli-build-options-for-in-repo-addons
     target.options = target.options || {};
 
-    // Build all paths
-    var bulmaPath = path.join(target.bowerDirectory || 'bower_components', 'bulma');
+    // Build path to Bulma's sass paths
+    var bulmaPath = path.join(target.project.root, 'node_modules', 'bulma');
 
     target.options.sassOptions = target.options.sassOptions || {};
     target.options.sassOptions.includePaths = target.options.sassOptions.includePaths || [];
@@ -46,8 +46,6 @@ module.exports = {
 
     var config = target.project.config(target.env) || {};
     var addonConfig = config[this.name] || {};
-
-    // console.log('addon config: ', addonConfig);
 
     this.whitelist = this.generateWhitelist(addonConfig);
     this.blacklist = this.generateBlacklist(addonConfig);
@@ -83,7 +81,7 @@ module.exports = {
         });
       }]
     });
-    // console.log('funnelTree', funnelTree);
+
     return funnelTree;
   },
 

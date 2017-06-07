@@ -5,7 +5,7 @@ module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
     // Add options here
     babel: {
-      optional: ['es7.decorators']
+      plugins: ['transform-decorators-legacy']
     }
   });
 

@@ -1,27 +1,27 @@
 /* eslint-env node */
 'use strict';
 
-var path = require('path');
-var Funnel = require('broccoli-funnel');
-var intersection = require('./lib/intersection');
-var difference = require('./lib/difference');
+const path = require('path');
+const Funnel = require('broccoli-funnel');
+const intersection = require('./lib/intersection');
+const difference = require('./lib/difference');
 
 module.exports = {
   name: 'ember-bulma',
 
-  init: function(app) {
+  init(app) {
     this._super.init && this._super.init.apply(this, arguments);
 
     this.options = this.options || {};
     this.options.babel = this.options.babel || {};
-    this.options.babel.optional = this.options.babel.optional || [];
+    this.options.babel.plugins = this.options.babel.plugins || [];
 
-    if (this.options.babel.optional.indexOf('es7.decorators') === -1) {
-      this.options.babel.optional.push('es7.decorators');
+    if (this.options.babel.plugins.indexOf('transform-decorators-legacy') === -1) {
+      this.options.babel.plugins.push('transform-decorators-legacy');
     }
   },
 
-  included: function(app, parentAddon) {
+  included(app, parentAddon) {
     this._super.included.apply(this, arguments);
 
     var target = parentAddon || app;
@@ -56,14 +56,14 @@ module.exports = {
     https://github.com/DockYard/ember-composable-components/
     https://github.com/DockYard/ember-composable-components#configuration
   */
-  treeForAddon: function() {
+  treeForAddon() {
     // see: https://github.com/ember-cli/ember-cli/issues/4463
     var tree = this._super.treeForAddon.apply(this, arguments);
 
     return this.filterComponents(tree, new RegExp('^modules\/' + this.name + '\/components\/', 'i'));
   },
 
-  filterComponents: function(tree, regex) {
+  filterComponents(tree, regex) {
     var whitelist = this.whitelist;
     var blacklist = this.blacklist;
     var _this = this;
@@ -85,7 +85,7 @@ module.exports = {
     return funnelTree;
   },
 
-  exclusionFilter: function(name, regex, lists) {
+  exclusionFilter(name, regex, lists) {
     var whitelist = lists.whitelist || [];
     var blacklist = lists.blacklist || [];
     var isAddonComponent = regex.test(name);
@@ -121,7 +121,7 @@ module.exports = {
     return !isWhitelisted || isBlacklisted;
   },
 
-  generateWhitelist: function(addonConfig) {
+  generateWhitelist(addonConfig) {
     var only = addonConfig.only || [];
     var except = addonConfig.except || [];
 
@@ -132,7 +132,7 @@ module.exports = {
     return only;
   },
 
-  generateBlacklist: function(addonConfig) {
+  generateBlacklist(addonConfig) {
     var only = addonConfig.only || [];
     var except = addonConfig.except || [];
 
@@ -143,7 +143,7 @@ module.exports = {
     return except;
   },
 
-  isDevelopingAddon: function() {
+  isDevelopingAddon() {
     return true;
   }
 };

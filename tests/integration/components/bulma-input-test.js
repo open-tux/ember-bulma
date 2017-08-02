@@ -11,13 +11,4 @@ test('it renders', function(assert) {
   this.render(hbs`{{bulma-input}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:" + EOL +
-  this.render(hbs`
-    {{#bulma-input}}
-      template block text
-    {{/bulma-input}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

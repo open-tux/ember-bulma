@@ -1,3 +1,7 @@
+[![npm version](https://badge.fury.io/js/ember-bulma.svg)](https://badge.fury.io/js/ember-bulma)
+[![Build Status](https://travis-ci.org/open-tux/ember-bulma.svg?branch=master)](https://travis-ci.org/open-tux/ember-bulma)
+[![Ember Observer Score](http://emberobserver.com/badges/ember-bulma.svg)](https://emberobserver.com/addons/ember-bulma)
+
 # ember-bulma
 
 [Ember Bulma](http://open-tux.github.io/ember-bulma/) is a collection of Ember components and services for [Bulma](https://github.com/jgthms/bulma), a modern CSS framework by Jeremy Thomas

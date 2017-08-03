@@ -11,13 +11,4 @@ test('it renders', function(assert) {
   this.render(hbs`{{bulma-radio}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#bulma-radio}}
-      template block text
-    {{/bulma-radio}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

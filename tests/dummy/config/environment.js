@@ -6,7 +6,7 @@ module.exports = function(environment) {
     modulePrefix: 'dummy',
     environment,
     rootURL: '/',
-    locationType: 'hash',
+    locationType: 'auto',
     contentSecurityPolicy: {
       'img-src': "'self' data: emberjs.com assets-cdn.github.com",
       'style-src': "'self' maxcdn.bootstrapcdn.com",

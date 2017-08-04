@@ -10,7 +10,8 @@ module.exports = {
     'plugin:ember-suave/recommended'
   ],
   env: {
-    browser: true
+    browser: true,
+    node: true
   },
   rules: {
   }

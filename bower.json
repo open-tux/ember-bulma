@@ -1,7 +1,7 @@
 {
   "name": "ember-bulma",
   "dependencies": {
-    "font-awesome": "~4.5.0",
+    "font-awesome": "~4.7.0",
     "prism": "^1.4.1",
     "highlightjs": "^9.4.0",
     "code-highlight-linenums": "^0.2.0",

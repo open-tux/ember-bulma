@@ -34,7 +34,7 @@ before_install:
 
 install:
   - bower install # TODO: Remove addon's dependency on `bower`
-  - yarn install --no-lockfile --non-interactive
+  - yarn install --no-lockfile --non-interactive --ignore-engines
 
 script:
   # Usually, it's ok to finish the test scenario without reverting

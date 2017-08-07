@@ -13,7 +13,7 @@ module.exports = {
     // Error: Failed to load plugin ember-suave: Cannot find module 'eslint-plugin-ember-suave'
     return this.addPackagesToProject(
       [
-        { name: 'bulma', target: '^0.5.0' },
+        { name: 'bulma', target: '^0.5.1' },
         { name: 'ember-cli-sass', target: '~6.1.2' },
         { name: 'eslint-plugin-ember-suave', target: '~1.0.0' }
       ]

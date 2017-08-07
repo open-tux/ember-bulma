@@ -69,6 +69,7 @@
     "ember-source": "~2.14.1",
     "ember-themed-syntax": "0.0.7",
     "eslint-plugin-ember-suave": "^1.0.0",
+    "github-post-release": "^1.13.0",
     "husky": "^0.14.3",
     "loader.js": "^4.2.3",
     "semantic-release": "^6.3.6"
@@ -82,5 +83,9 @@
     "after": [
       "ember-computed-decorators"
     ]
+  },
+  "release": {
+    "analyzeCommits": "simple-commit-message",
+    "generateNotes": "github-post-release"
   }
 }

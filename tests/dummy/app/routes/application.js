@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { alias } from 'ember-computed-decorators';
+import { alias } from 'ember-decorators/object/computed';
 
 const {
   Route

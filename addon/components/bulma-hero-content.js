@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-hero-content';
-import { alias } from 'ember-computed-decorators';
+import { alias } from 'ember-decorators/object/computed';
 import { _responsiveHelpers } from '../constants';
 
 const {

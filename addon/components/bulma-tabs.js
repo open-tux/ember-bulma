@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-tabs';
-import computed from 'ember-computed-decorators';
+import { computed } from 'ember-decorators/object';
 import { _responsiveHelpers } from '../constants';
 
 const {

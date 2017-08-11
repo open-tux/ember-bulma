@@ -69,7 +69,6 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.14.1",
     "ember-themed-syntax": "^0.1.1",
-    "eslint-plugin-ember-suave": "^1.0.0",
     "highlightjs": "^9.10.0",
     "hljs-themes": "^1.0.0",
     "husky": "^0.14.3",

@@ -1,5 +1,6 @@
 import Ember from 'ember';
-import computed, { lte } from 'ember-computed-decorators';
+import { computed } from 'ember-decorators/object';
+import { lte } from 'ember-decorators/object/computed';
 
 const {
   Controller,

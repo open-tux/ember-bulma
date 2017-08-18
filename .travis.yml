@@ -6,6 +6,10 @@ node_js:
   - "4"
 
 sudo: false
+dist: trusty
+
+addons:
+  chrome: stable
 
 cache:
   yarn: true
@@ -28,12 +32,8 @@ matrix:
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
-  - yarn global add bower phantomjs-prebuilt
-  - bower --version
-  - phantomjs --version
 
 install:
-  - bower install # TODO: Remove addon's dependency on `bower`
   - yarn install --no-lockfile --non-interactive
 
 script:

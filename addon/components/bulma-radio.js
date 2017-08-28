@@ -21,7 +21,7 @@ export default BulmaInput.extend({
   init() {
     this._super(...arguments);
 
-    let defaultAttrBindings = get(this, 'attributeBindings').slice(0);
+    let defaultAttrBindings = get(this, 'attributeBindings').slice();
 
     defaultAttrBindings.push('checked');
 

@@ -12,15 +12,20 @@ export default BulmaInput.extend({
 
   classNames: ['radio'],
   type: 'radio',
+
   // Bindings are not comprehensive. More complex implementations should use a native element with classes applied
   classNameBindings: [
-    'capture',
-    'checked',
-    'list'
+    'checked'
   ],
 
   init() {
     this._super(...arguments);
+
+    let defaultAttrBindings = get(this, 'attributeBindings').slice(0);
+
+    defaultAttrBindings.push('checked');
+
+    set(this, 'attributeBindings', defaultAttrBindings);
 
     // classNames reset
     // Remove the inherited `input` class name (as it breaks the styling)

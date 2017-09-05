@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import BulmaInput from '../components/bulma-input';
-import layout from '../templates/components/bulma-checkbox';
+import layout from '../templates/components/bulma-radio';
 
 const {
   get,

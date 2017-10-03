@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-nav';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -10,5 +10,5 @@ export default Component.extend({
   layout,
   tagName: 'nav',
   classNames: ['nav'],
-  classNameBindings: ['hasShadow:has-shadow'].concat(_responsiveHelpers)
+  classNameBindings: ['hasShadow:has-shadow'].concat(_helpers, _responsiveHelpers)
 });

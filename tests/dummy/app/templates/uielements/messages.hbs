@@ -4,7 +4,7 @@
 <hr>
 {{#bulma-columns}}
   {{#bulma-column isHalf=true}}
-    {{#bulma-message}}
+    {{#bulma-message isUnselectable=true}}
       <div class="message-header">
         Hello World
       </div>
@@ -26,7 +26,7 @@
   {{/bulma-column}}
   {{#bulma-column content=true isHalf=true}}
     {{#themed-syntax transparent="true" language="handlebars" }}
-&#123;&#123;#bulma-message&#125;&#125;
+&#123;&#123;#bulma-message isUnselectable=true&#125;&#125;
   &lt;div class="message-header"&gt;
     Hello World
   &lt;/div&gt;

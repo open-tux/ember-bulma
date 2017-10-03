@@ -14,7 +14,8 @@ Router.map(function() {
   this.route('overview', { path: '/' });
   this.route('grid');
   this.route('uimodifiers', function() {
-    this.route('response-helpers', { path: '/' });
+    this.route('helpers', { path: '/' });
+    this.route('responsive-helpers');
   });
   this.route('uilayout', function() {
     this.route('container', { path: '/' });

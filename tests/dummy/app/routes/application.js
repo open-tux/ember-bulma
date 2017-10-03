@@ -9,8 +9,7 @@ export default Route.extend({
   @alias('model') demo: null,
   model() {
     return {
-      demoTabs: [
-        {
+      demoTabs: [{
           name: 'Overview',
           route: 'overview',
           icon: ''
@@ -19,12 +18,13 @@ export default Route.extend({
           name: 'Modifiers',
           route: 'uimodifiers',
           icon: '',
-          subnav: [
-            {
-              name: 'Responsive Helpers',
-              route: 'uimodifiers.response-helpers'
-            }
-          ]
+          subnav: [{
+            name: 'Helpers',
+            route: 'uimodifiers.helpers'
+          }, {
+            name: 'Responsive Helpers',
+            route: 'uimodifiers.responsive-helpers'
+          }]
         },
         {
           name: 'Grid',
@@ -34,8 +34,7 @@ export default Route.extend({
         {
           name: 'Elements',
           route: 'uielements.buttons',
-          subnav: [
-            {
+          subnav: [{
               name: 'Buttons',
               route: 'uielements.buttons'
             },
@@ -64,8 +63,7 @@ export default Route.extend({
         {
           name: 'Components',
           route: 'uicomponents.tabs.index',
-          subnav: [
-            {
+          subnav: [{
               name: 'Modal',
               route: 'uicomponents.modal'
             },
@@ -94,8 +92,7 @@ export default Route.extend({
         {
           name: 'Layout',
           route: 'uilayout.container',
-          subnav: [
-            {
+          subnav: [{
               name: 'Container',
               route: 'uilayout.container'
             },
@@ -111,6 +108,11 @@ export default Route.extend({
               name: 'Footer',
               route: 'uilayout.footer'
             }
+            // TODO: Add Header
+            // {
+            //   name: 'Header',
+            //   route: 'uilayout.header'
+            // }
           ]
         },
         {

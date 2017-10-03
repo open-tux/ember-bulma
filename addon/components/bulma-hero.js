@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-hero';
-import { _colorBindings, _responsiveHelpers } from '../constants';
+import { _helpers, _colorBindings, _responsiveHelpers } from '../constants';
 import { alias } from 'ember-decorators/object/computed';
 
 const {
@@ -32,7 +32,7 @@ export default Component.extend({
 
     'isRight:is-right',
     'right:is-right'
-  ].concat(_colorBindings, _responsiveHelpers),
+  ].concat(_helpers, _colorBindings, _responsiveHelpers),
 
   /**
     Signal if container wrapper should be used

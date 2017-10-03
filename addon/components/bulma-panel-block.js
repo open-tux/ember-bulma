@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-panel-block';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -9,5 +9,5 @@ const {
 export default Component.extend({
   layout,
   classNames: ['panel-block'],
-  classNameBindings: _responsiveHelpers
+  classNameBindings: [].concat(_helpers, _responsiveHelpers),
 });

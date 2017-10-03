@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-header-menu';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component,
@@ -15,7 +15,7 @@ export default Component.extend({
     'isRight:header-right',
     'left:header-left',
     'right:header-right'
-  ].concat(_responsiveHelpers),
+  ].concat(_helpers, _responsiveHelpers),
   /**
     Array of links for this menu
 

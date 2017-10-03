@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-section';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -10,9 +10,10 @@ export default Component.extend({
   layout,
   tagName: 'section',
   classNames: ['section'],
-  classNameBindings: _responsiveHelpers,
+  classNameBindings: [].concat(_helpers, _responsiveHelpers),
   /**
     Signal if content should be nested in a container (div.container)
+
     // TODO depecrate this
 
     @property withContainer

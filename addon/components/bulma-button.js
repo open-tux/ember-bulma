@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-button';
 import { alias, bool } from 'ember-decorators/object/computed';
-import { _colorBindings } from '../constants';
+import { _colorBindings, _helpers } from '../constants';
 
 const {
   Component
@@ -11,7 +11,7 @@ export default Component.extend({
   layout,
   tagName: 'a',
   classNames: ['button'],
-  classNameBindings: ['isLoading:is-loading', 'loading:is-loading', 'isOutlined:is-outlined', 'outlined:is-outlined', 'isFullwidth:is-fullwidth', 'isFullWidth:is-fullwidth', 'isInverted:is-inverted', 'inverted:is-inverted'].concat(_colorBindings),
+  classNameBindings: ['isLoading:is-loading', 'loading:is-loading', 'isOutlined:is-outlined', 'outlined:is-outlined', 'isFullwidth:is-fullwidth', 'isFullWidth:is-fullwidth', 'isInverted:is-inverted', 'inverted:is-inverted'].concat(_colorBindings, _helpers),
   attributeBindings: ['disabled'],
 
   /**

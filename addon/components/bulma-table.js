@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-button';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -17,5 +17,5 @@ export default Component.extend({
     'striped:is-striped',
     'isNarrow:is-narrow',
     'narrow:is-narrow'
-  ].concat(_responsiveHelpers)
+  ].concat(_helpers, _responsiveHelpers)
 });

@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-progress';
-import { _colorBindings, _responsiveHelpers } from '../constants';
+import { _helpers, _colorBindings, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -12,5 +12,5 @@ export default Component.extend({
   classNames: ['progress'],
   attributeBindings: ['value', 'max'],
   label: null,
-  classNameBindings: [].concat(_colorBindings, _responsiveHelpers)
+  classNameBindings: [].concat(_helpers, _colorBindings, _responsiveHelpers)
 });

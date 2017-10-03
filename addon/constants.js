@@ -10,7 +10,7 @@ export const _colorBindings = ['dark:is-dark', 'isDark:is-dark', 'info:is-info',
 /**
   All the responsive helpers
 
-  @property responsiveHelpers
+  @property _responsiveHelpers
   @returns Array
   @private
 */
@@ -69,6 +69,31 @@ export const _responsiveHelpers = [
   'inline',
   'inlineBlock:inline-block',
   'inlineFlex:inline-flex'
+];
+
+/**
+  All general UI class helpers
+
+  @property _helpers
+  @returns Array
+  @private
+*/
+export const _helpers = [
+  // Float
+  'isClearfix:is-clearfix',
+  'isPulledLeft:is-pulled-left',
+  'isPulledRight:is-pulled-right',
+
+  // Spacing
+  'isMarginless:is-marginless',
+  'isPaddingless:is-paddingless',
+
+  // Other
+  'isOverlay:is-overlay',
+  'isClipped:is-clipped',
+  'isRadiusless:is-radiusless',
+  'isShadowless:is-shadowless',
+  'isUnselectable:is-unselectable'
 ];
 
 /**

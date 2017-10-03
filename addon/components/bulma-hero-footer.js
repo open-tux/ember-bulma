@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-hero-footer';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -9,7 +9,7 @@ const {
 export default Component.extend({
   layout,
   classNames: ['hero-foot'],
-  classNameBindings: _responsiveHelpers,
+  classNameBindings: [].concat(_helpers, _responsiveHelpers),
   /**
     Signal if content should be nested in a container (div.container)
 

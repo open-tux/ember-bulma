@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-tabs';
 import { computed } from 'ember-decorators/object';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component,
@@ -24,7 +24,7 @@ export default Component.extend({
     'isCentered:is-centered',
     'isToggle:is-toggle',
     'toggle:is-toggle'
-  ].concat(_responsiveHelpers),
+  ].concat(_helpers, _responsiveHelpers),
 
   /**
     If used inline, consumer will provide an array of tabs

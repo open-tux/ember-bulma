@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-input';
 import { deprecations } from '../utils';
+import { _helpers } from '../constants';
 
 const {
   Component,
@@ -15,7 +16,7 @@ export default Component.extend({
     'isSmall:is-small',
     'isMedium:is-medium',
     'isLarge:is-large'
-  ],
+  ].concat(_helpers),
   // Bindings are not comprehensive. More complex implementations should use a native element with classes applied
   attributeBindings: [
     'type',

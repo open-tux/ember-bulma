@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-control';
+import { _helpers } from '../constants';
 
 const {
   Component
@@ -20,5 +21,5 @@ export default Component.extend({
     'isGroup:is-group',
     'isExpanded:is-expanded',
     'isHorizontal:is-horizontal'
-  ]
+  ].concat(_helpers)
 });

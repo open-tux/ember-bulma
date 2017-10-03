@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-column';
-import { _responsiveHelpers, _gridBindings } from '../constants';
+import { _helpers, _responsiveHelpers, _gridBindings } from '../constants';
 
 const {
   Component,
@@ -20,7 +20,7 @@ export default Component.extend({
     @private
   */
   concatBindings() {
-    set(this, 'classNameBindings', ['content'].concat(_gridBindings, _responsiveHelpers));
+    set(this, 'classNameBindings', ['content'].concat(_gridBindings, _responsiveHelpers, _helpers));
   },
 
   init() {

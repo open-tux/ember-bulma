@@ -23,7 +23,11 @@
           {{/if}}
         {{/each}}
         {{#bulma-panel-block}}
-          {{bulma-input type="checkbox" label="Remember my last filter"}}
+          {{#bulma-control}}
+            <label class="checkbox">
+              {{bulma-checkbox}} Remember me
+            </label>
+          {{/bulma-control}}
         {{/bulma-panel-block}}
         {{#bulma-panel-block}}
           {{bulma-button isPrimary=true isOutlined=true isFullwidth=true label="Reset all filters" onmousedown=(action "resetFilter")}}

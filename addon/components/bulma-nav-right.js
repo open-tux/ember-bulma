@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-nav-right';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -9,5 +9,5 @@ const {
 export default Component.extend({
   layout,
   classNames: ['nav-right'],
-  classNameBindings: ['isMenu:nav-menu'].concat(_responsiveHelpers)
+  classNameBindings: ['isMenu:nav-menu'].concat(_helpers, _responsiveHelpers)
 });

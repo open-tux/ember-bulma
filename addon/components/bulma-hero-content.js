@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-hero-content';
 import { alias } from 'ember-decorators/object/computed';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -12,7 +12,7 @@ export default Component.extend({
   classNames: ['hero-body'],
   classNameBindings: [
     'full:is-fullwidth'
-  ].concat(_responsiveHelpers),
+  ].concat(_helpers, _responsiveHelpers),
 
   /**
     Signal if is-fluid should be added to the outer container

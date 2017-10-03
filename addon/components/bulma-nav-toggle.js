@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-nav-toggle';
-import { _responsiveHelpers } from '../constants';
+import { _helpers, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -10,7 +10,7 @@ export default Component.extend({
   layout,
   tagName: 'span',
   classNames: ['nav-toggle'],
-  classNameBindings: _responsiveHelpers,
+  classNameBindings: [].concat(_helpers, _responsiveHelpers),
   /**
     Handle click action on mousedown, return instance of component for mutablity
 

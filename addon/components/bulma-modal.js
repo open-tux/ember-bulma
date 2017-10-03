@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-modal';
+import { _helpers } from '../constants';
 
 const {
   Component,
@@ -19,7 +20,7 @@ const {
 export default Component.extend({
   layout,
   classNames: ['modal'],
-  classNameBindings: ['show:is-active'],
+  classNameBindings: ['show:is-active'].concat(_helpers),
   /**
     * Include background container
     *

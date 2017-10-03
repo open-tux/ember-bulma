@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/bulma-notification';
 import { computed } from 'ember-decorators/object';
-import { _colorBindings, _responsiveHelpers } from '../constants';
+import { _helpers, _colorBindings, _responsiveHelpers } from '../constants';
 
 const {
   Component
@@ -10,7 +10,7 @@ const {
 export default Component.extend({
   layout,
   classNames: ['notification'],
-  classNameBindings: [].concat(_colorBindings, _responsiveHelpers),
+  classNameBindings: [].concat(_helpers, _colorBindings, _responsiveHelpers),
 
   /**
     If a close action has been provided, close button should display by default

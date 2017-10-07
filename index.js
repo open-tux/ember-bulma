@@ -35,7 +35,7 @@ module.exports = {
     target.options = target.options || {};
 
     // Build path to Bulma's sass paths
-    var bulmaPath = path.join(target.project.root, 'node_modules', 'bulma');
+    let bulmaPath = path.dirname(require.resolve('bulma'));
 
     target.options.sassOptions = target.options.sassOptions || {};
     target.options.sassOptions.includePaths = target.options.sassOptions.includePaths || [];

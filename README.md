@@ -29,6 +29,15 @@ This will automatically install the `ember-cli-sass` NPM dependency and create a
 ember install ember-font-awesome
 ```
 
+## deploy
+
+Deploy the demo app:
+
+```sh
+ember deploy production
+```
+
+
 ## Documentation
 
 - Ember Bulma: <http://open-tux.github.io/ember-bulma/>

@@ -24,7 +24,8 @@
     "commitmsg": "commitlint -e",
     "start": "ember server",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "ember try:each"
+    "test": "ember try:each",
+    "inspect": "node --inspect --debug-brk node_modules/.bin/ember s"
   },
   "config": {
     "commitizen": {

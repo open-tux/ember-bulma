@@ -9,7 +9,7 @@ const difference = require('./lib/difference');
 module.exports = {
   name: 'ember-bulma',
 
-  init(app) {
+  init() {
     this._super.init && this._super.init.apply(this, arguments);
 
     this.options = this.options || {};
@@ -21,31 +21,40 @@ module.exports = {
     }
   },
 
-  included(app, parentAddon) {
+  included() {
     this._super.included.apply(this, arguments);
 
-    var target = parentAddon || app;
+    let app;
 
-    // allow addon to be nested - see: https://github.com/ember-cli/ember-cli/issues/3718
-    if (target.app) {
-      target = target.app;
+    // Climb up the hierarchy of addons up to the host
+    // If the addon has the `_findHost()` method (in ember-cli >= 2.7.0) then use it
+    if (typeof this._findHost === 'function') {
+      app = this._findHost();
+    } else {
+      // Otherwise, use the copied `_findHost()` implementation
+      // https://github.com/ember-cli/ember-cli/blob/v2.15.1/lib/models/addon.js#L614-L625
+      let current = this;
+      do {
+        app = current.app || app;
+      } while (current.parent.parent && (current = current.parent));
     }
 
+    this.app = app;
+
     // see: http://ember-cli.com/extending/#broccoli-build-options-for-in-repo-addons
-    target.options = target.options || {};
+    app.options = app.options || {};
 
     // Build path to Bulma's sass paths
-    var bulmaPath = path.join(target.project.root, 'node_modules', 'bulma');
+    let bulmaPath = path.dirname(require.resolve('bulma'));
 
-    target.options.sassOptions = target.options.sassOptions || {};
-    target.options.sassOptions.includePaths = target.options.sassOptions.includePaths || [];
+    app.options.sassOptions = app.options.sassOptions || {};
+    app.options.sassOptions.includePaths = app.options.sassOptions.includePaths || [];
 
     // Import sass dependencies
-    target.options.sassOptions.includePaths.push(bulmaPath);
-    // target.options.sassOptions.extension = 'sass';
+    app.options.sassOptions.includePaths.push(bulmaPath);
 
-    var config = target.project.config(target.env) || {};
-    var addonConfig = config[this.name] || {};
+    let config = app.project.config(app.env) || {};
+    let addonConfig = config[this.name] || {};
 
     this.whitelist = this.generateWhitelist(addonConfig);
     this.blacklist = this.generateBlacklist(addonConfig);

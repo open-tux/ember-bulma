@@ -29,12 +29,13 @@ This will automatically install the `ember-cli-sass` NPM dependency and create a
 ember install ember-font-awesome
 ```
 
-## deploy
+## Deploy
 
 Deploy the demo app:
 
 ```sh
 ember deploy production
+git push upstream gh-pages
 ```
 
 

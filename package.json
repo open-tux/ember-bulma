@@ -36,6 +36,7 @@
     }
   },
   "dependencies": {
+    "@ember-decorators/babel-transforms": "^2.0.0",
     "babel-eslint": "^7.2.3",
     "broccoli-funnel": "^1.2.0",
     "ember-cli-babel": "^6.6.0",

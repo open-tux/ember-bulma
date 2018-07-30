@@ -150,9 +150,5 @@ module.exports = {
     }
 
     return except;
-  },
-
-  isDevelopingAddon() {
-    return true;
   }
 };
